@@ -7,6 +7,7 @@
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="../node_modules/lit/polyfill-support.js"></script>
     <script type="module" src="../my-element.js"></script>
+    <script type="module" src="../motion-carousal.js"></script>
     <style>
       p {
         border: solid 1px blue;
@@ -18,5 +19,16 @@
     <my-element>
       <p>This is child content</p>
     </my-element>
+
+    <h2>motion-carousel</h2>
+    <motion-carousel id="carousel">
+      <img src="https://picsum.photos/seed/1/200">
+      <img src="https://picsum.photos/seed/2/200">
+      <img src="https://picsum.photos/seed/3/200">
+      <img src="https://picsum.photos/seed/4/200">
+      <img src="https://picsum.photos/seed/5/200">
+      <img src="https://picsum.photos/seed/6/200">
+    </motion-carousel>
+
   </body>
 </html>
