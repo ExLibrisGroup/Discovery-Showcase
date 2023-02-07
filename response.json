@@ -1,1077 +1,1330 @@
-{"beaconO22":"4763",
-  "info" : {
-    "totalResultsLocal" : 39761,
-    "totalResultsPC" : -1,
-    "total" : 39761,
-    "first" : 1,
-    "last" : 10
+[ {"beaconO22":"2906",
+  "context" : "L",
+  "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99247464000121",
+  "adaptor" : "Local Search Engine",
+  "pnx" : {
+    "display" : {
+      "source" : [ "Alma" ],
+      "type" : [ "book" ],
+      "language" : [ "eng" ],
+      "title" : [ "Bee" ],
+      "subject" : [ "Bees", "Insects", "Electronic books" ],
+      "format" : [ "1 online resource (209 p.)" ],
+      "identifier" : [ "$$CISBN$$V1-282-26417-6;$$CISBN$$V9786612264177;$$CISBN$$V1-86189-483-X;$$COCLC$$V(OCoLC)437089676;$$CISBN$$V1-86189-256-X" ],
+      "creationdate" : [ "2006" ],
+      "creator" : [ "Preston, Claire.$$QPreston, Claire." ],
+      "publisher" : [ "London : Reaktion" ],
+      "description" : [ "Claire Preston's Bee offers a comprehensive survey of the natural and cultural history of the bee and explores the impressive body of literature that has grown out of man's search for honey" ],
+      "mms" : [ "99247464000121" ],
+      "series" : [ "Animal$$QAnimal", "Animal (Reaktion Books)$$QAnimal (Reaktion Books)" ],
+      "contents" : [ "Bee Cover; Imprint page; Contents; 1 The Reasons for Bees; 2 Biological Bee; 3 Kept Bee; 4 Political Bee; 5 Pious/Corrupt Bee; 6 Utile Bee; 7 Aesthetic Bee; 8 Folkloric Bee; 9 Playful Bee; 10 BeeMovie; 11 Retired Bee; Timeline of the Bee; References; Bibliography; Associations &Websites; Acknowledgements; Photo Acknowledgements; Index" ],
+      "relation" : [ "$$Cform$$VLink to related record$$QLink to related record" ],
+      "place" : [ "London :" ],
+      "version" : [ "1" ]
+    },
+    "control" : {
+      "sourcerecordid" : [ "99247464000121" ],
+      "recordid" : [ "alma99247464000121" ],
+      "sourceid" : "alma",
+      "originalsourceid" : [ "1000000000693203" ],
+      "sourcesystem" : [ "EBC" ],
+      "sourceformat" : [ "MARC21" ],
+      "score" : [ "0.015625" ],
+      "isDedup" : false
+    },
+    "addata" : {
+      "aulast" : [ "Preston" ],
+      "aufirst" : [ "Claire." ],
+      "auinit" : [ "C" ],
+      "au" : [ "Preston, Claire." ],
+      "creatorfull" : [ "$$NPreston, Claire.$$LPreston$$FClaire.$$Rauthor" ],
+      "date" : [ "2006" ],
+      "isbn" : [ "1-282-26417-6", "9786612264177", "1-86189-483-X", "1-86189-256-X" ],
+      "notes" : [ "Includes bibliographical references (p. 187-194) and index." ],
+      "abstract" : [ "Claire Preston's Bee offers a comprehensive survey of the natural and cultural history of the bee and explores the impressive body of literature that has grown out of man's search for honey" ],
+      "cop" : [ "London" ],
+      "pub" : [ "Reaktion" ],
+      "oclcid" : [ "(ckb)1000000000693203", "(ebl)410795", "(ocolc)437089676", "(ssid)ssj335078", "(pqkbmanifestationid)11253876", "(pqkbtitlecode)tc335078", "(pqkbworkid)10273516", "(pqkb)11310698", "(miaapq)ebc410795", "(vaalasp)pl7369", "(vaalasp)1000362041" ],
+      "seriestitle" : [ "Animal" ],
+      "format" : [ "book" ],
+      "genre" : [ "book" ],
+      "ristype" : [ "BOOK" ],
+      "btitle" : [ "Bee" ]
+    },
+    "sort" : {
+      "title" : [ "Bee [electronic resource] /" ],
+      "author" : [ "Preston, Claire." ],
+      "creationdate" : [ "2006" ]
+    },
+    "facets" : {
+      "frbrtype" : [ "6" ],
+      "frbrgroupid" : [ "9060723610146012074" ]
+    }
   },
-  "highlights" : {
-    "subject" : [ "Biology" ],
-    "toc" : [ "Biology", "biology" ],
-    "description" : [ "Biology" ],
-    "title" : [ "Biology" ],
-    "addtitle" : [ "Biology" ],
-    "termsUnion" : [ "Biology", "biology" ]
+  "delivery" : {
+    "bestlocation" : null,
+    "holding" : null,
+    "electronicServices" : null,
+    "additionalElectronicServices" : null,
+    "filteredByGroupServices" : null,
+    "quickAccessService" : null,
+    "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+    "serviceMode" : [ "howovp", "Viewit" ],
+    "availability" : [ "not_restricted", "no_inventory" ],
+    "availabilityLinks" : null,
+    "availabilityLinksUrl" : null,
+    "displayedAvailability" : "Not available",
+    "displayLocation" : null,
+    "additionalLocations" : null,
+    "physicalItemTextCodes" : null,
+    "feDisplayOtherLocations" : null,
+    "almaInstitutionsList" : [ {
+      "getitLink" : [ {
+        "displayText" : "Alma-E",
+        "linkRecordId" : "99265272200191"
+      } ],
+      "instCode" : "EXLDEMO3_INST",
+      "instName" : "Open University",
+      "instId" : "193",
+      "availabilityStatus" : "available_online",
+      "envURL" : ""
+    } ],
+    "recordInstitutionCode" : null,
+    "recordOwner" : "EXLDEMO2_INST",
+    "hasFilteredServices" : null,
+    "digitalAuxiliaryMode" : false,
+    "hideResourceSharing" : false,
+    "sharedDigitalCandidates" : null,
+    "consolidatedCoverage" : null,
+    "electronicContextObjectId" : null,
+    "GetIt1" : [ {
+      "category" : "Alma-P",
+      "links" : [ {
+        "isLinktoOnline" : false,
+        "getItTabText" : "service_howtogetit",
+        "adaptorid" : "ALMA_01",
+        "ilsApiId" : "",
+        "link" : "HowToGetIt",
+        "inst4opac" : "",
+        "displayText" : null,
+        "@id" : "_:0"
+      } ]
+    } ],
+    "physicalServiceId" : null,
+    "link" : [ {
+      "@id" : ":_0",
+      "linkType" : "thumbnail",
+      "linkURL" : "https://static.scientificamerican.com/blogs/cache/file/600DA4BD-04D4-4C8C-905FA886498C4676_source.jpg?w=590&h=800&5BC43184-B8BE-4F08-B6CC9EA97F80AABC",
+      "displayLabel" : "thumbnail"
+    } ],
+    "hasD" : null
   },
-  "docs" : [ {
-    "context" : "L",
-    "adaptor" : "Local Search Engine",
-    "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99455749200121",
-    "pnx" : {
-      "display" : {
-        "source" : [ "Alma" ],
-        "type" : [ "book" ],
-        "language" : [ "eng" ],
-        "title" : [ "Biology" ],
-        "subject" : [ "Biology" ],
-        "format" : [ "1 online resource" ],
-        "identifier" : [ "$$CISBN$$V9781947172517;$$CISBN$$V1947172514;$$CISBN$$V1-947172-51-4" ],
-        "creationdate" : [ "2018" ],
-        "creator" : [ "Clark, Mary Ann, author.$$QClark, Mary Ann" ],
-        "publisher" : [ "OpenStax" ],
-        "mms" : [ "99455749200121" ],
-        "contributor" : [ "Choi, Jung Ho, 1956- author.$$QChoi, Jung Ho", "Douglas, Matthew M., 1949- author.$$QDouglas, Matthew M.", "OpenStax College, issuing body.$$QOpenStax College" ],
-        "addtitle" : [ "Biology 2e" ],
-        "edition" : [ "2 edition." ],
-        "contents" : [ "The study of life -- The chemical foundation of life -- Biological macromolecules -- Cell structure -- Structure and function of plasma membranes -- Metabolism -- Cellular respiration -- Photosynthesis -- Cell communication -- Cell reproduction -- Meiosis and sexual reproduction -- Mendel's experiments and heredity -- Modern understandings of inheritance -- DNA structure and function -- Genes and proteins -- Gene expression -- Biotechnology and genomics -- Evolution and the origin of species -- The evolution of populations -- Phylogenies and the history of life -- Viruses -- Prokaryotes : bacteria and archaea -- Protists -- Fungi -- Seedless plants -- Seed plants -- Introduction to animal diversity -- Invertebrates -- Vertebrates -- Plant form and physiology -- Soil and plant nutrition -- Plant reproduction -- The animal body : basic form and function -- Animal nutrition and the digestive system -- The nervous system -- Sensory systems -- The endocrine system -- The musculoskeletal system -- The respiratory system -- The circulatory system -- Osmotic regulation and excretion -- The immune system -- Animal reproduction and development -- Ecology and the biosphere -- Population and community ecology -- Ecosystems -- Conservation biology and biodiversity -- The periodic table of elements -- Geological time -- Measurements and the metric system." ],
-        "genre" : [ "Textbooks." ],
-        "relation" : [ "$$Cform$$VLink to related record$$QLink to related record" ],
-        "place" : [ "Houston, Texas :" ],
-        "version" : [ "1" ]
-      },
-      "control" : {
-        "sourcerecordid" : [ "99455749200121" ],
-        "recordid" : [ "alma99455749200121" ],
-        "sourceid" : "alma",
-        "originalsourceid" : [ "(CKB)4970000000101873" ],
-        "sourcesystem" : [ "CKB" ],
-        "sourceformat" : [ "MARC21" ],
-        "score" : [ "0.29287168" ],
-        "isDedup" : false
-      },
-      "addata" : {
-        "aulast" : [ "Clark" ],
-        "aufirst" : [ "Mary Ann" ],
-        "auinit" : [ "M" ],
-        "au" : [ "Clark, Mary Ann" ],
-        "addau" : [ "Choi, Jung Ho", "Douglas, Matthew M." ],
-        "creatorfull" : [ "$$NClark, Mary Ann$$LClark$$FMary Ann$$Rauthor" ],
-        "contributorfull" : [ "$$NChoi, Jung Ho$$LChoi$$FJung Ho$$Rcontributor", "$$NDouglas, Matthew M.$$Rcontributor" ],
-        "addtitle" : [ "Biology 2e" ],
-        "date" : [ "2018" ],
-        "isbn" : [ "9781947172517", "1947172514", "1-947172-51-4" ],
-        "cop" : [ "Houston, Texas" ],
-        "pub" : [ "OpenStax" ],
-        "oclcid" : [ "(ckb)4970000000101873" ],
-        "edition" : [ "2 edition." ],
-        "format" : [ "book" ],
-        "genre" : [ "book" ],
-        "ristype" : [ "BOOK" ],
-        "btitle" : [ "Biology" ]
-      },
-      "sort" : {
-        "title" : [ "Biology /" ],
-        "author" : [ "Clark, Mary Ann, author." ],
-        "creationdate" : [ "2018" ]
-      },
-      "facets" : {
-        "frbrtype" : [ "6" ],
-        "frbrgroupid" : [ "9008760704341402339" ]
-      }
+  "enrichment" : {
+    "virtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : false,
+      "callNumber" : "",
+      "callNumberBrowseField" : ""
+    },
+    "bibVirtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : true,
+      "callNumber" : "ql\"565ǂ p74 2006",
+      "callNumberBrowseField" : "LOC_CL"
     }
-  }, {
-    "context" : "L",
-    "adaptor" : "Local Search Engine",
-    "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99335411200121",
-    "pnx" : {
-      "display" : {
-        "source" : [ "Alma" ],
-        "type" : [ "website" ],
-        "language" : [ "eng" ],
-        "title" : [ "Biology" ],
-        "subject" : [ "Biology", "Electronic books" ],
-        "format" : [ "1 online resource (1567 pages) : colour illustrations", "data file" ],
-        "identifier" : [ "$$CISBN$$V9781947172524;$$CISBN$$V1947172522;$$COCLC$$V(OCoLC)1035635685;$$COCLC$$V(OCoLC)bcotR000255" ],
-        "creationdate" : [ "2018-" ],
-        "publisher" : [ "Houston, Texas : OpenStax College, Rice University", "Original version (BIO2-2018-000(03/18)-BKB) published 28 March 2018." ],
-        "description" : [ "Biology 2e (2nd edition) is designed to cover the scope and sequence requirements of a typical two-semester biology course for science majors. The text provides comprehensive coverage of foundational research and core biology concepts through an evolutionary lens. Biology includes rich features that engage students in scientific inquiry, highlight careers in the biological sciences, and offer everyday applications. The book also includes various types of practice and homework questions that help students understand -- and apply -- key concepts. The 2nd edition has been revised to incorporate clearer, more current, and more dynamic explanations, while maintaining the same organization as the first edition. Art and illustrations have been substantially improved, and the textbook features additional assessments and related resources." ],
-        "mms" : [ "99335411200121" ],
-        "contributor" : [ "Clark, Mary Ann, author.$$QClark, Mary Ann", "Choi, Jung Ho, 1956- author.$$QChoi, Jung Ho", "Douglas, Matthew, author.$$QDouglas, Matthew", "OpenStax College, issuing body.$$QOpenStax College", "BC Open Textbook Project, distributor.$$QBC Open Textbook Project", "BCcampus.$$QBCcampus." ],
-        "edition" : [ "2e." ],
-        "frequency" : [ "Updated irregularly." ],
-        "contents" : [ "The study of life -- The chemical foundation of life -- Biological macromolecules -- Cell structure -- Structure and function of plasma membranes -- Metabolism -- Cellular respiration -- Photosynthesis -- Cell communication -- Cell reproduction -- Meiosis and sexual reproduction -- Mendel's experiments and heredity -- Modern understandings of inheritance -- DNA structure and function -- Genes and proteins -- Gene expression -- Biotechnology and genomics -- Evolution and the origin of species -- The evolution of populations -- Phylogenies and the history of life -- Viruses -- Prokaryotes : bacteria and archaea -- Protists -- Fungi -- Seedless plants -- Seed plants -- Introduction to animal diversity -- Invertebrates -- Vertebrates -- Plant form and physiology -- Soil and plant nutrition -- Plant reproduction -- The animal body : basic form and function -- Animal nutrition and the digestive system -- The nervous system -- Sensory systems -- The endocrine system -- The musculoskeletal system -- The respiratory system -- The circulatory system -- Osmotic regulation and excretion -- The immune system -- Animal reproduction and development -- Ecology and the biosphere -- Population and community ecology -- Ecosystems -- Conservation biology and biodiversity." ],
-        "genre" : [ "Textbooks." ],
-        "place" : [ "Houston, Texas :" ],
-        "version" : [ "1" ]
-      },
-      "control" : {
-        "sourcerecordid" : [ "99335411200121" ],
-        "recordid" : [ "alma99335411200121" ],
-        "sourceid" : "alma",
-        "originalsourceid" : [ "991005174197305265" ],
-        "sourcesystem" : [ "CKB" ],
-        "sourceformat" : [ "MARC21" ],
-        "score" : [ "0.29263166" ],
-        "isDedup" : false
-      },
-      "addata" : {
-        "aulast" : [ "Clark", "Choi", "Douglas" ],
-        "aufirst" : [ "Mary Ann", "Jung Ho", "Matthew" ],
-        "auinit" : [ "J", "M" ],
-        "addau" : [ "Clark, Mary Ann", "Choi, Jung Ho", "Douglas, Matthew" ],
-        "contributorfull" : [ "$$NClark, Mary Ann$$LClark$$FMary Ann$$Rcontributor", "$$NChoi, Jung Ho$$Rcontributor", "$$NDouglas, Matthew$$Rcontributor" ],
-        "date" : [ "2013", "2018-" ],
-        "isbn" : [ "9781947172524", "1947172522" ],
-        "abstract" : [ "Biology 2e (2nd edition) is designed to cover the scope and sequence requirements of a typical two-semester biology course for science majors. The text provides comprehensive coverage of foundational research and core biology concepts through an evolutionary lens. Biology includes rich features that engage students in scientific inquiry, highlight careers in the biological sciences, and offer everyday applications. The book also includes various types of practice and homework questions that help students understand -- and apply -- key concepts. The 2nd edition has been revised to incorporate clearer, more current, and more dynamic explanations, while maintaining the same organization as the first edition. Art and illustrations have been substantially improved, and the textbook features additional assessments and related resources." ],
-        "cop" : [ "Houston, Texas" ],
-        "pub" : [ "OpenStax College, Rice University" ],
-        "oclcid" : [ "(ocolc)1035635685", "(ocolc)bcotr255" ],
-        "edition" : [ "2e." ],
-        "format" : [ "book" ],
-        "genre" : [ "unknown" ],
-        "ristype" : [ "GEN" ],
-        "btitle" : [ "Biology" ]
-      },
-      "sort" : {
-        "title" : [ "Biology /" ],
-        "author" : [ "Clark, Mary Ann, author." ],
-        "creationdate" : [ "2013" ]
-      },
-      "facets" : {
-        "frbrtype" : [ "6" ],
-        "frbrgroupid" : [ "9016936552699636589" ]
-      }
+  }
+}, {
+  "context" : "L",
+  "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99179668700121",
+  "adaptor" : "Local Search Engine",
+  "pnx" : {
+    "display" : {
+      "source" : [ "Alma" ],
+      "type" : [ "newspaper" ],
+      "language" : [ "eng" ],
+      "title" : [ "Fresno bee (Fresno, Calif. : 1975)" ],
+      "subject" : [ "Fresno (Calif.)" ],
+      "format" : [ "v." ],
+      "identifier" : [ "$$CLC$$Vsn 82015293 ;$$CISSN$$V0889-6070;$$COCLC$$V(OCoLC)8822010" ],
+      "creationdate" : [ "1975-" ],
+      "publisher" : [ "Fresno, Calif. : McClatchy Newspapers", "Vol. 106, no. 19113 (Sept. 10, 1975)-" ],
+      "mms" : [ "99179668700121" ],
+      "addtitle" : [ "Issues for Sunday Sept. 14, 1975-Dec. 28, 1975 published as: Sunday morning Fresno bee" ],
+      "frequency" : [ "Daily" ],
+      "genre" : [ "Newspapers." ],
+      "unititle" : [ "Fresno bee (Fresno, Calif. : 1975)" ],
+      "place" : [ "Fresno, Calif. :" ],
+      "version" : [ "1" ]
+    },
+    "control" : {
+      "sourcerecordid" : [ "99179668700121" ],
+      "recordid" : [ "alma99179668700121" ],
+      "sourceid" : "alma",
+      "originalsourceid" : [ "1000000000499270" ],
+      "sourcesystem" : [ "CKB" ],
+      "sourceformat" : [ "MARC21" ],
+      "score" : [ "0.015625" ],
+      "isDedup" : false
+    },
+    "addata" : {
+      "addtitle" : [ "Sunday morning Fresno bee" ],
+      "date" : [ "1975", "1975-" ],
+      "issn" : [ "0889-6070" ],
+      "cop" : [ "Fresno, Calif" ],
+      "pub" : [ "McClatchy Newspapers" ],
+      "oclcid" : [ "(ocolc)8822010", "(ckb)1000000000499270", "(conser)sn 82015293" ],
+      "lccn" : [ "sn 82015293" ],
+      "btitle" : [ "Fresno bee (Fresno, Calif. : 1975)" ]
+    },
+    "sort" : {
+      "title" : [ "Fresno bee (Fresno, Calif. : 1975)" ],
+      "creationdate" : [ "1975" ]
+    },
+    "facets" : {
+      "frbrtype" : [ "6" ],
+      "frbrgroupid" : [ "9060127143165244677" ]
     }
-  }, {
-    "context" : "L",
-    "adaptor" : "Local Search Engine",
-    "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99248788000191",
-    "pnx" : {
-      "display" : {
-        "source" : [ "Alma" ],
-        "type" : [ "book" ],
-        "language" : [ "eng" ],
-        "title" : [ "Biology" ],
-        "subject" : [ "Biology", "Electronic books" ],
-        "format" : [ "1 online resource (257 p.)" ],
-        "identifier" : [ "$$CISBN$$V0-544-18488-2;$$CISBN$$V0-471-74756-4;$$CISBN$$V0-7645-2370-8;$$COCLC$$V(OCoLC)225312016;$$CISBN$$V0-7645-6375-0" ],
-        "creationdate" : [ "c2001" ],
-        "creator" : [ "Alcamo, I. Edward.$$QAlcamo, I. Edward." ],
-        "publisher" : [ "New York, NY : Hungry Minds" ],
-        "description" : [ "CliffsQuickReview course guides cover the essentials of your toughest subjects. Get a firm grip on core concepts and key material, and test your newfound knowledge with review questions. Whether you're new to elements, atoms, and molecules or just brushing up on your knowledge of the subject, CliffsQuickReview Biology can help. This guide carries biological studies into topics such as organic compounds, cellular respiration, transgenic animals, and human reproduction. You'll also tackle other concepts, includingThe process of photosynthesisMitosis and cell reproduction" ],
-        "mms" : [ "99248788000191" ],
-        "contributor" : [ "Schweitzer, Kelly, 1970-$$QSchweitzer, Kelly" ],
-        "series" : [ "Cliffs quick review$$QCliffs quick review", "Cliffs Quick Review$$QCliffs Quick Review" ],
-        "contents" : [ "CliffsQuickReview TM Biology; About the Authors; Table of Contents; INTRODUCTION; Chapter 1 THE SCIENCE OF BIOLOGY; Chapter 2 THE CHEMICAL BASIS OF LIFE; Chapter 3 THE BIOLOGY OF CELLS; Chapter 4 CELLS AND ENERGY; Chapter 5 PHOTOSYNTHESIS; Chapter 6 CELLULAR RESPIRATION; Chapter 7 MITOSIS AND CELL REPRODUCTION; Chapter 8 MEIOSIS AND GAMETE FORMATION; Chapter 9 CLASSICAL (MENDELIAN) GENETICS; Chapter 10 GENE EXPRESSION ( MOLECULAR GENETICS); Chapter 11 RECOMBINANT DNA AND BIOTECHNOLOGY; Chapter 12 PRINCIPLES OF EVOLUTION; Chapter 13 THE ORIGIN AND EVOLUTION OF LIFE; Chapter 14 HUMAN EVOLUTION", "Chapter 15 THE UNITY AND DIVERSITY OF LIFEChapter 16 MONERA; Chapter 17 PROTISTA; Chapter 18 FUNGI; Chapter 19 PLANTS: DIVERSITY AND REPRODUCTION; Chapter 20 VASCULAR PLANTS: STRUCTURE AND FUNCTION; Chapter 21 ANIMALS: INVERTEBRATES; Chapter 22 ANIMALS: VERTEBRATES; Chapter 23 NUTRITION AND DIGESTION; Chapter 24 GAS EXCHANGE; Chapter 25 BLOOD AND CIRCULATION; Chapter 26 EXCRETION AND HOMEOSTASIS; Chapter 27 SUPPORT AND MOVEMENT; Chapter 28 CHEMICAL COORDINATION; Chapter 29 NERVOUS COORDINATION; Chapter 30 REPRODUCTION; Chapter 31 ECOLOGY; CQR REVIEW; CQR RESOURCE CENTER; GLOSSARY; Index" ],
-        "genre" : [ "Outlines, syllabi, etc." ],
-        "relation" : [ "$$Cform$$VLink to related record$$QLink to related record" ],
-        "place" : [ "New York, NY :" ],
-        "version" : [ "1" ]
-      },
-      "control" : {
-        "sourcerecordid" : [ "99248788000191" ],
-        "recordid" : [ "alma99248788000191" ],
-        "sourceid" : "alma",
-        "originalsourceid" : [ "111056486561962" ],
-        "sourcesystem" : [ "EBC" ],
-        "sourceformat" : [ "MARC21" ],
-        "score" : [ "0.2339465" ],
-        "isDedup" : false
-      },
-      "addata" : {
-        "aulast" : [ "Alcamo" ],
-        "aufirst" : [ "I. Edward." ],
-        "auinit" : [ "I" ],
-        "au" : [ "Alcamo, I. Edward." ],
-        "addau" : [ "Schweitzer, Kelly" ],
-        "creatorfull" : [ "$$NAlcamo, I. Edward.$$LAlcamo$$FI. Edward.$$Rauthor" ],
-        "contributorfull" : [ "$$NSchweitzer, Kelly$$LSchweitzer$$FKelly$$Rcontributor" ],
-        "date" : [ "2001", "c2001" ],
-        "isbn" : [ "0-544-18488-2", "0-471-74756-4", "0-7645-2370-8", "0-7645-6375-0" ],
-        "notes" : [ "Includes bibliographical references (p. [209]-210) and index." ],
-        "abstract" : [ "CliffsQuickReview course guides cover the essentials of your toughest subjects. Get a firm grip on core concepts and key material, and test your newfound knowledge with review questions. Whether you're new to elements, atoms, and molecules or just brushing up on your knowledge of the subject, CliffsQuickReview Biology can help. This guide carries biological studies into topics such as organic compounds, cellular respiration, transgenic animals, and human reproduction. You'll also tackle other concepts, includingThe process of photosynthesisMitosis and cell reproduction" ],
-        "cop" : [ "New York, NY" ],
-        "pub" : [ "Hungry Minds" ],
-        "oclcid" : [ "(ckb)111056486561962", "(ebl)128116", "(ocolc)225312016", "(ssid)ssj329961", "(pqkbmanifestationid)12116804", "(pqkbtitlecode)tc329961", "(pqkbworkid)10317714", "(pqkb)11078036", "(miaapq)ebc3304888" ],
-        "lccn" : [ "2001016953" ],
-        "seriestitle" : [ "Cliffs quick review" ],
-        "format" : [ "book" ],
-        "genre" : [ "book" ],
-        "ristype" : [ "BOOK" ],
-        "btitle" : [ "Biology" ]
-      },
-      "sort" : {
-        "title" : [ "Biology [electronic resource] /" ],
-        "author" : [ "Alcamo, I. Edward." ],
-        "creationdate" : [ "2001" ]
-      },
-      "facets" : {
-        "frbrtype" : [ "6" ],
-        "frbrgroupid" : [ "9031030908347829640" ]
-      }
-    }
-  }, {
-    "context" : "L",
-    "adaptor" : "Local Search Engine",
-    "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99268004900191",
-    "pnx" : {
-      "display" : {
-        "source" : [ "Alma" ],
-        "type" : [ "book" ],
-        "language" : [ "eng" ],
-        "title" : [ "Biology" ],
-        "subject" : [ "Biology", "Electronic books" ],
-        "format" : [ "1 online resource (385 p.)" ],
-        "identifier" : [ "$$CISBN$$V1-280-35051-2;$$CISBN$$V9786610350513;$$CISBN$$V0-7645-7492-2;$$COCLC$$V(OCoLC)55897683;$$CISBN$$V0-7645-5842-0" ],
-        "creationdate" : [ "2004" ],
-        "creator" : [ "Rechtman, Max, 1947-$$QRechtman, Max" ],
-        "publisher" : [ "Hoboken, NJ : Wiley" ],
-        "description" : [ "The CliffsStudySolver workbooks combine 20 percent review material with 80 percent practice problems (and the answers!) to help make your lessons stick. CliffsStudySolver Biology is for students who want to reinforce their knowledge with a learn-by-doing approach. Inside, you'll get the practice you need to master biology with problem-solving tools such asClear, concise reviews of every topicPractice problems in every chapter - with explanations and solutionsA diagnostic pretest to assess your current skillsA full-length exam that adapts to your skill level" ],
-        "mms" : [ "99268004900191" ],
-        "edition" : [ "1st ed." ],
-        "series" : [ "CliffsStudySolver$$QCliffsStudySolver", "CliffsStudySolver.$$QCliffsStudySolver." ],
-        "contents" : [ "CliffsStudySolver Biology; About the Author; Dedication; Table of Contents; Pretest; Pretest Problems; Pretest Answers; Chapter 1: Introduction to Biology; Life Functions; Tools of the Biologist; The Scientific Method; Chapter Problems and Answers; Supplemental Chapter Problems; Chapter 2: The Unity of Life; The Cell Theory; Cell Structure and Function; The Animal Cell As Seen with an Electron Microscope; Molecular Transport; Chapter Problems and Answers; Supplemental Chapter Problems; Chapter 3: The Diversity of Life; Classification; Viruses; Domain Bacteria; Domain Archaea; Domain Eukarya", "Chapter Problems and AnswersSupplemental Chapter Problems; Chapter 4: The Chemical Basis of Life; Chemistry Review; Chapter Problems and Answers; Supplemental Chapter Problems; Chapter 5: Plant Biology; Plant Structure and Function; Leaf Structure and Function; The Photosynthetic Process; Stem Structure and Function; Root Structure and Function; Chapter Problems and Answers; Supplemental Chapter Problems; Chapter 6: Human Biology; Nutrition and Digestion; Circulation; Respiration; Excretion; Locomotion; Regulation; Chapter Problems and Answers; Supplemental Chapter Problems", "Chapter 7: Animal BiologyAnimal-Like Protists; Phylum Cnidaria; Phylum Annelida; Phylum Arthropoda; Chapter Problems and Answers; Supplemental Chapter Problems; Chapter 8: Patterns of Reproduction; Asexual Reproduction; Sexual Reproduction; Chapter Problems and Answers; Supplemental Chapter Problems; Chapter 9: Human Reproduction; The Male Reproductive System; The Female Reproductive System; The Menstrual Cycle; Embryological Development; Fetal Development; Chapter Problems and Answers; Supplemental Chapter Problems; Chapter 10: Plant Reproduction; Vegetative Propagation", "Artificial PropagationPlant Sexual Reproduction; Pollination and Fertilization; Seed Structure and Function; Seed Dispersal and Germination; Chapter Problems and Answers; Supplemental Chapter Problems; Chapter 11: Mendelian Genetics; Genetic Vocabulary; The Punnett Square and Probability; The Test Cross; Incomplete Dominance; Codominance; Chapter Problems and Answers; Supplemental Chapter Problems; Chapter 12: Patterns of Inheritance; Sex Determination; Blood Types and Multiple Alleles; Sex Linkage; Pedigree Charts; The Influence of Environment on Heredity; Chapter Problems and Answers", "Supplemental Chapter ProblemsChapter 13: Modern Genetics; Molecular Genetics; Protein Synthesis; Mutations; Genetic Diseases; Biotechnology; Chapter Problems and Answers; Supplemental Chapter Problems; Chapter 14: Evolution; Evolution Defined; Fossil Evidence for Evolution; Dating of Fossils; Additional Evidence of Evolution; Theories of Evolution; The Hardy-Weinberg Law; The Origin of Life on Earth; Chapter Problems and Answers; Supplemental Chapter Problems; Chapter 15: Ecology; Abiotic Factors; Biotic Factors; The Flow of Energy Through an Ecosystem; Material Cycles; Ecological Succession", "World Biomes" ],
-        "genre" : [ "Outlines, syllabi, etc.", "Problems, exercises, etc." ],
-        "relation" : [ "$$Cform$$VLink to related record$$QLink to related record" ],
-        "place" : [ "Hoboken, NJ :" ],
-        "version" : [ "1" ]
-      },
-      "control" : {
-        "sourcerecordid" : [ "99268004900191" ],
-        "recordid" : [ "alma99268004900191" ],
-        "sourceid" : "alma",
-        "originalsourceid" : [ "1000000000349137" ],
-        "sourcesystem" : [ "EBC" ],
-        "sourceformat" : [ "MARC21" ],
-        "score" : [ "0.23393288" ],
-        "isDedup" : false
-      },
-      "addata" : {
-        "aulast" : [ "Rechtman" ],
-        "aufirst" : [ "Max" ],
-        "auinit" : [ "M" ],
-        "au" : [ "Rechtman, Max" ],
-        "creatorfull" : [ "$$NRechtman, Max$$LRechtman$$FMax$$Rauthor" ],
-        "date" : [ "2004" ],
-        "isbn" : [ "1-280-35051-2", "9786610350513", "0-7645-7492-2", "0-7645-5842-0" ],
-        "abstract" : [ "The CliffsStudySolver workbooks combine 20 percent review material with 80 percent practice problems (and the answers!) to help make your lessons stick. CliffsStudySolver Biology is for students who want to reinforce their knowledge with a learn-by-doing approach. Inside, you'll get the practice you need to master biology with problem-solving tools such asClear, concise reviews of every topicPractice problems in every chapter - with explanations and solutionsA diagnostic pretest to assess your current skillsA full-length exam that adapts to your skill level" ],
-        "cop" : [ "Hoboken, NJ" ],
-        "pub" : [ "Wiley" ],
-        "oclcid" : [ "(ckb)1000000000349137", "(ebl)190721", "(ocolc)55897683", "(ssid)ssj291772", "(pqkbmanifestationid)12064559", "(pqkbtitlecode)tc291772", "(pqkbworkid)10254759", "(pqkb)11222946", "(miaapq)ebc190721" ],
-        "lccn" : [ "2004006763" ],
-        "edition" : [ "1st ed." ],
-        "seriestitle" : [ "CliffsStudySolver" ],
-        "format" : [ "book" ],
-        "genre" : [ "book" ],
-        "ristype" : [ "BOOK" ],
-        "btitle" : [ "Biology" ]
-      },
-      "sort" : {
-        "title" : [ "Biology [electronic resource] /" ],
-        "author" : [ "Rechtman, Max, 1947-" ],
-        "creationdate" : [ "2004" ]
-      },
-      "facets" : {
-        "frbrtype" : [ "6" ],
-        "frbrgroupid" : [ "9036806620849276636" ]
-      }
-    }
-  }, {
-    "context" : "L",
-    "adaptor" : "Local Search Engine",
-    "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99231526300121",
-    "pnx" : {
-      "display" : {
-        "source" : [ "Alma" ],
-        "type" : [ "book" ],
-        "language" : [ "eng" ],
-        "title" : [ "Biology" ],
-        "subject" : [ "Biology", "Electronic books" ],
-        "format" : [ "vi, 234 p. : ill." ],
-        "identifier" : [ "$$CISBN$$V1-283-10159-9;$$CISBN$$V9786613101594;$$CISBN$$V0-07-174697-8;$$CISBN$$V0-07-174551-3" ],
-        "creationdate" : [ "2011" ],
-        "creator" : [ "Vivion, Nichole.$$QVivion, Nichole." ],
-        "publisher" : [ "Chicago, Ill. : McGraw-Hill" ],
-        "mms" : [ "99231526300121" ],
-        "edition" : [ "1st ed." ],
-        "series" : [ "Practice makes perfect$$QPractice makes perfect", "Practice makes perfect.$$QPractice makes perfect." ],
-        "relation" : [ "$$Cform$$VLink to related record$$QLink to related record" ],
-        "place" : [ "Chicago, Ill. :" ],
-        "version" : [ "1" ]
-      },
-      "control" : {
-        "sourcerecordid" : [ "99231526300121" ],
-        "recordid" : [ "alma99231526300121" ],
-        "sourceid" : "alma",
-        "originalsourceid" : [ "2670000000083226" ],
-        "sourcesystem" : [ "EBC" ],
-        "sourceformat" : [ "MARC21" ],
-        "score" : [ "0.17556523" ],
-        "isDedup" : false
-      },
-      "addata" : {
-        "aulast" : [ "Vivion" ],
-        "aufirst" : [ "Nichole." ],
-        "auinit" : [ "N" ],
-        "au" : [ "Vivion, Nichole." ],
-        "creatorfull" : [ "$$NVivion, Nichole.$$LVivion$$FNichole.$$Rauthor" ],
-        "date" : [ "2011" ],
-        "isbn" : [ "1-283-10159-9", "9786613101594", "0-07-174697-8", "0-07-174551-3" ],
-        "cop" : [ "Chicago, Ill" ],
-        "pub" : [ "McGraw-Hill" ],
-        "oclcid" : [ "(ckb)2670000000083226", "(ssid)ssj540268", "(pqkbmanifestationid)12188958", "(pqkbtitlecode)tc540268", "(pqkbworkid)10586175", "(pqkb)11692673", "(miaapq)ebc4658496" ],
-        "lccn" : [ "2010941607" ],
-        "edition" : [ "1st ed." ],
-        "seriestitle" : [ "Practice makes perfect" ],
-        "format" : [ "book" ],
-        "genre" : [ "book" ],
-        "ristype" : [ "BOOK" ],
-        "btitle" : [ "Biology" ]
-      },
-      "sort" : {
-        "title" : [ "Biology [electronic resource] /" ],
-        "author" : [ "Vivion, Nichole." ],
-        "creationdate" : [ "2011" ]
-      },
-      "facets" : {
-        "frbrtype" : [ "6" ],
-        "frbrgroupid" : [ "9007488198781987337" ]
-      }
-    }
-  }, {
-    "context" : "L",
-    "adaptor" : "Local Search Engine",
-    "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99129509600121",
-    "pnx" : {
-      "display" : {
-        "source" : [ "Alma" ],
-        "type" : [ "book" ],
-        "language" : [ "eng" ],
-        "title" : [ "Biology" ],
-        "subject" : [ "Biology", "Health & Biological Sciences", "Biology - General" ],
-        "identifier" : [ "$$CISBN$$V0-02-865886-8;$$CISBN$$V0-02-865551-6" ],
-        "creationdate" : [ "2003" ],
-        "creator" : [ "Robinson, Richard Author$$QRobinson, Richard" ],
-        "publisher" : [ "Place of publication not identified Macmillan Reference USA Imprint" ],
-        "mms" : [ "99129509600121" ],
-        "contributor" : [ "Robinson, Richard Contributor$$QRobinson, Richard" ],
-        "relation" : [ "$$Cform$$VLink to related record$$QLink to related record" ],
-        "place" : [ "Place of publication not identified]" ],
-        "version" : [ "1" ]
-      },
-      "control" : {
-        "sourcerecordid" : [ "99129509600121" ],
-        "recordid" : [ "alma99129509600121" ],
-        "sourceid" : "alma",
-        "originalsourceid" : [ "111056485244162" ],
-        "sourcesystem" : [ "CKB" ],
-        "sourceformat" : [ "MARC21" ],
-        "score" : [ "0.17555982" ],
-        "isDedup" : false
-      },
-      "addata" : {
-        "au" : [ "Robinson, Richard" ],
-        "addau" : [ "Robinson, Richard" ],
-        "creatorfull" : [ "$$NRobinson, Richard$$Rauthor" ],
-        "contributorfull" : [ "$$NRobinson, Richard$$Rcontributor" ],
-        "date" : [ "2001", "2003" ],
-        "isbn" : [ "0-02-865886-8", "0-02-865551-6" ],
-        "cop" : [ "Place of publication not identified" ],
-        "pub" : [ "Macmillan Reference USA Imprint" ],
-        "oclcid" : [ "(ckb)111056485244162", "(ssid)ssj112011", "(pqkbmanifestationid)12034533", "(pqkbtitlecode)tc112011", "(pqkbworkid)10080377", "(pqkb)10013910", "(ssid)ssj80599", "(pqkbmanifestationid)11120652", "(pqkbtitlecode)tc80599", "(pqkbworkid)10095969", "(pqkb)11472408" ],
-        "format" : [ "book" ],
-        "genre" : [ "book" ],
-        "ristype" : [ "BOOK" ],
-        "btitle" : [ "Biology" ]
-      },
-      "sort" : {
-        "title" : [ "Biology" ],
-        "author" : [ "Robinson, Richard Author" ],
-        "creationdate" : [ "2001" ]
-      },
-      "facets" : {
-        "frbrtype" : [ "6" ],
-        "frbrgroupid" : [ "9001163237098173189" ]
-      }
-    }
-  }, {
-    "context" : "L",
-    "adaptor" : "Local Search Engine",
-    "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99317285400121",
-    "pnx" : {
-      "display" : {
-        "source" : [ "Alma" ],
-        "type" : [ "book" ],
-        "language" : [ "eng" ],
-        "title" : [ "Biology." ],
-        "subject" : [ "Biology" ],
-        "format" : [ "1 online resource (6 pages)." ],
-        "identifier" : [ "$$CISBN$$V1-4232-1966-X;$$CISBN$$V1-4232-1953-8" ],
-        "creationdate" : [ "2012" ],
-        "publisher" : [ "Place of publication not identified : BarCharts, Inc." ],
-        "mms" : [ "99317285400121" ],
-        "series" : [ "Quick Study Academic$$QQuick Study Academic", "QuickStudy academic.$$QQuickStudy academic." ],
-        "genre" : [ "Outlines, syllabi, etc.", "Terminology.", "Electronic books" ],
-        "place" : [ "Place of publication not identified] :" ],
-        "version" : [ "1" ]
-      },
-      "control" : {
-        "sourcerecordid" : [ "99317285400121" ],
-        "recordid" : [ "alma99317285400121" ],
-        "sourceid" : "alma",
-        "originalsourceid" : [ "(CKB)3710000001404190" ],
-        "sourcesystem" : [ "EBC" ],
-        "sourceformat" : [ "MARC21" ],
-        "score" : [ "0.17555982" ],
-        "isDedup" : false
-      },
-      "addata" : {
-        "date" : [ "2012" ],
-        "isbn" : [ "1-4232-1966-X", "1-4232-1953-8" ],
-        "cop" : [ "Place of publication not identified" ],
-        "pub" : [ "BarCharts, Inc." ],
-        "oclcid" : [ "(ckb)3710000001404190", "(miaapq)ebc4877127" ],
-        "seriestitle" : [ "Quick Study Academic" ],
-        "format" : [ "book" ],
-        "genre" : [ "book" ],
-        "ristype" : [ "BOOK" ],
-        "btitle" : [ "Biology." ]
-      },
-      "sort" : {
-        "title" : [ "Biology." ],
-        "creationdate" : [ "2012" ]
-      },
-      "facets" : {
-        "frbrtype" : [ "6" ],
-        "frbrgroupid" : [ "9000957611601244057" ]
-      }
-    }
-  }, {
-    "context" : "L",
-    "adaptor" : "Local Search Engine",
-    "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99314513700121",
-    "pnx" : {
-      "display" : {
-        "source" : [ "Alma" ],
-        "type" : [ "book" ],
-        "language" : [ "eng" ],
-        "title" : [ "Biology" ],
-        "subject" : [ "Biology", "Electronic books" ],
-        "format" : [ "1 online resource (x, 281 pages) : illustrations." ],
-        "identifier" : [ "$$CISBN$$V0-7386-8405-8;$$CISBN$$V0-7386-1121-2" ],
-        "creationdate" : [ "2014" ],
-        "publisher" : [ "Piscataway, New Jersey : Research & Education Association" ],
-        "mms" : [ "99314513700121" ],
-        "contributor" : [ "Research & Education Association Content Provider$$QResearch & Education Association" ],
-        "edition" : [ "Second edition." ],
-        "series" : [ "Super review$$QSuper review", "Super review.$$QSuper review." ],
-        "genre" : [ "Outlines, syllabi, etc.", "Problems, exercises, etc." ],
-        "relation" : [ "$$Cform$$VLink to related record$$QLink to related record" ],
-        "place" : [ "Piscataway, New Jersey :" ],
-        "version" : [ "1" ]
-      },
-      "control" : {
-        "sourcerecordid" : [ "99314513700121" ],
-        "recordid" : [ "alma99314513700121" ],
-        "sourceid" : "alma",
-        "originalsourceid" : [ "(CKB)3710000000653997" ],
-        "sourcesystem" : [ "EBC" ],
-        "sourceformat" : [ "MARC21" ],
-        "score" : [ "0.17554867" ],
-        "isDedup" : false
-      },
-      "addata" : {
-        "date" : [ "2014" ],
-        "isbn" : [ "0-7386-8405-8", "0-7386-1121-2" ],
-        "cop" : [ "Piscataway, New Jersey" ],
-        "pub" : [ "Research & Education Association" ],
-        "oclcid" : [ "(ckb)3710000000653997", "(ssid)ssj1663565", "(pqkbmanifestationid)16448898", "(pqkbtitlecode)tc1663565", "(pqkbworkid)14995002", "(pqkb)10669183", "(miaapq)ebc4873638" ],
-        "edition" : [ "Second edition." ],
-        "seriestitle" : [ "Super review" ],
-        "format" : [ "book" ],
-        "genre" : [ "book" ],
-        "ristype" : [ "BOOK" ],
-        "btitle" : [ "Biology" ]
-      },
-      "sort" : {
-        "title" : [ "Biology /" ],
-        "author" : [ "Research & Education Association Content Provider" ],
-        "creationdate" : [ "2014" ]
-      },
-      "facets" : {
-        "frbrtype" : [ "6" ],
-        "frbrgroupid" : [ "9084423192101439502" ]
-      }
-    }
-  }, {
-    "context" : "L",
-    "adaptor" : "Local Search Engine",
-    "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99214736000191",
-    "pnx" : {
-      "display" : {
-        "source" : [ "Alma" ],
-        "type" : [ "book" ],
-        "language" : [ "eng" ],
-        "title" : [ "Biology" ],
-        "subject" : [ "Biology", "Biology - General", "Health & Biological Sciences" ],
-        "identifier" : [ "$$CISBN$$V1-281-96934-6;$$CISBN$$V9786611969349;$$CISBN$$V0-07-160921-0;$$CISBN$$V0-07-160920-2" ],
-        "creationdate" : [ "2009" ],
-        "creator" : [ "Zinn, Stephanie Author$$QZinn, Stephanie" ],
-        "publisher" : [ "Place of publication not identified McGraw Hill Companies The" ],
-        "mms" : [ "99214736000191" ],
-        "contributor" : [ "Zinn, Stephanie M.$$QZinn, Stephanie M." ],
-        "relation" : [ "$$Cform$$VLink to related record$$QLink to related record" ],
-        "place" : [ "Place of publication not identified]" ],
-        "version" : [ "1" ]
-      },
-      "control" : {
-        "sourcerecordid" : [ "99214736000191" ],
-        "recordid" : [ "alma99214736000191" ],
-        "sourceid" : "alma",
-        "originalsourceid" : [ "1000000000707196" ],
-        "sourcesystem" : [ "PQNKB" ],
-        "sourceformat" : [ "MARC21" ],
-        "score" : [ "0.17549008" ],
-        "isDedup" : false
-      },
-      "addata" : {
-        "aulast" : [ "Zinn" ],
-        "aufirst" : [ "Stephanie M." ],
-        "auinit" : [ "S" ],
-        "au" : [ "Zinn, Stephanie" ],
-        "addau" : [ "Zinn, Stephanie M." ],
-        "creatorfull" : [ "$$NZinn, Stephanie$$Rauthor" ],
-        "contributorfull" : [ "$$NZinn, Stephanie M.$$LZinn$$FStephanie M.$$Rcontributor" ],
-        "stitle" : [ "MCGRAW-HILL'S SAT SUBJECT TEST", "BIOLOGY E/M" ],
-        "date" : [ "2009" ],
-        "isbn" : [ "1-281-96934-6", "9786611969349", "0-07-160921-0", "0-07-160920-2" ],
-        "cop" : [ "Place of publication not identified" ],
-        "pub" : [ "McGraw Hill Companies The" ],
-        "oclcid" : [ "(ckb)1000000000707196", "(ssid)ssj388814", "(pqkbmanifestationid)11268930", "(pqkbtitlecode)tc388814", "(pqkbworkid)10424626", "(pqkb)11613740" ],
-        "format" : [ "book" ],
-        "genre" : [ "book" ],
-        "ristype" : [ "BOOK" ],
-        "btitle" : [ "Biology" ]
-      },
-      "sort" : {
-        "title" : [ "Biology" ],
-        "author" : [ "Zinn, Stephanie Author" ],
-        "creationdate" : [ "2009" ]
-      },
-      "facets" : {
-        "frbrtype" : [ "6" ],
-        "frbrgroupid" : [ "9012185639688520835" ]
-      }
-    }
-  }, {
-    "context" : "L",
-    "adaptor" : "Local Search Engine",
-    "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99269712800191",
-    "pnx" : {
-      "display" : {
-        "source" : [ "Alma" ],
-        "type" : [ "book" ],
-        "language" : [ "eng" ],
-        "title" : [ "Biology" ],
-        "subject" : [ "Biology -- Examinations", "Universities and colleges -- United States -- Entrance examinations", "Advanced placement programs (Education)", "Electronic books" ],
-        "format" : [ "1 online resource (419 p.)" ],
-        "identifier" : [ "$$CISBN$$V0-7645-1700-7;$$COCLC$$V(OCoLC)52955990;$$CISBN$$V0-7645-8682-3" ],
-        "creationdate" : [ "2001" ],
-        "creator" : [ "Pack, Phillip E., author.$$QPack, Phillip E." ],
-        "publisher" : [ "New York, New York : Hungry Minds" ],
-        "description" : [ "A comprehensive review guide to help you refresh your study. This guide is particularly useful for midterms and final exams, condensing a semester's worth of information into one concise volume." ],
-        "mms" : [ "99269712800191" ],
-        "edition" : [ "2nd ed." ],
-        "series" : [ "CliffsAP$$QCliffsAP", "CliffsAP.$$QCliffsAP." ],
-        "contents" : [ "CliffsAP™ Biology, 2nd Edition; Table of Contents; PART I: INTRODUCTION; Introduction; PART II: SUBJECT AREA REVIEWS WITH SAMPLE QUESTIONS AND ANSWERS; Chemistry; Cells; Photosynthesis; Respiration; Cell Division; Heredity; Molecular Genetics; Evolution; A Five-Kingdom Survey; Plants; Animal Structure and Function; Animal Reproduction and Development; Animal Behavior; Ecology; PART III: LABORATORY REVIEW; Laboratory Review; PART IV: AP BIOLOGY PRACTICE TEST; Answer Sheet for the Practice Test; AP Biology Practice Test;" ],
-        "genre" : [ "Study guides." ],
-        "relation" : [ "$$Cform$$VLink to related record$$QLink to related record" ],
-        "place" : [ "New York, New York :" ],
-        "version" : [ "1" ]
-      },
-      "control" : {
-        "sourcerecordid" : [ "99269712800191" ],
-        "recordid" : [ "alma99269712800191" ],
-        "sourceid" : "alma",
-        "originalsourceid" : [ "111056486565186" ],
-        "sourcesystem" : [ "EBC" ],
-        "sourceformat" : [ "MARC21" ],
-        "score" : [ "0.17539957" ],
-        "isDedup" : false
-      },
-      "addata" : {
-        "aulast" : [ "Pack" ],
-        "aufirst" : [ "Phillip E." ],
-        "auinit" : [ "P" ],
-        "au" : [ "Pack, Phillip E." ],
-        "creatorfull" : [ "$$NPack, Phillip E.$$LPack$$FPhillip E.$$Rauthor" ],
-        "date" : [ "2001 - 2001", "2001" ],
-        "isbn" : [ "0-7645-1700-7", "0-7645-8682-3" ],
-        "abstract" : [ "A comprehensive review guide to help you refresh your study. This guide is particularly useful for midterms and final exams, condensing a semester's worth of information into one concise volume." ],
-        "cop" : [ "New York, New York" ],
-        "pub" : [ "Hungry Minds" ],
-        "oclcid" : [ "(ckb)111056486565186", "(ebl)128456", "(ocolc)52955990", "(ssid)ssj123267", "(pqkbmanifestationid)11991745", "(pqkbtitlecode)tc123267", "(pqkbworkid)10008672", "(pqkb)10545212", "(miaapq)ebc128456" ],
-        "edition" : [ "2nd ed." ],
-        "seriestitle" : [ "CliffsAP" ],
-        "format" : [ "book" ],
-        "genre" : [ "book" ],
-        "ristype" : [ "BOOK" ],
-        "btitle" : [ "Biology" ]
-      },
-      "sort" : {
-        "title" : [ "Biology /" ],
-        "author" : [ "Pack, Phillip E., author." ],
-        "creationdate" : [ "2001" ]
-      },
-      "facets" : {
-        "frbrtype" : [ "6" ],
-        "frbrgroupid" : [ "9033546060691482892" ]
-      }
-    }
-  } ],
-  "timelog" : {
-    "BUILD_RESULTS_RETRIVE_FROM_DB" : "1462",
-    "CALL_SOLR_GET_IDS_LIST" : "245",
-    "RETRIVE_FROM_DB_COURSE_INFO" : "6",
-    "RETRIVE_FROM_DB_RECORDS" : "996",
-    "RETRIVE_FROM_DB_RELATIONS" : "56",
-    "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "926",
-    "PRIMA_LOCAL_SEARCH_TOTAL" : "2645",
-    "BUILD_BLEND_AND_CACHE_RESULTS" : 1,
-    "BUILD_COMBINED_RESULTS_MAP" : 2703,
-    "COMBINED_SEARCH_TIME" : 2709,
-    "PROCESS_COMBINED_RESULTS" : 2001,
-    "FEATURED_SEARCH_TIME" : 2
   },
-  "facets" : [ {
-    "name" : "lang",
-    "values" : [ {
-      "value" : "eng",
-      "count" : "37996"
-    }, {
-      "value" : "ger",
-      "count" : "1611"
-    }, {
-      "value" : "fre",
-      "count" : "205"
-    }, {
-      "value" : "spa",
-      "count" : "152"
-    }, {
-      "value" : "por",
-      "count" : "40"
-    }, {
-      "value" : "rus",
-      "count" : "24"
-    }, {
-      "value" : "ita",
-      "count" : "20"
-    }, {
-      "value" : "kor",
-      "count" : "10"
-    }, {
-      "value" : "jpn",
-      "count" : "9"
-    }, {
-      "value" : "chi",
-      "count" : "8"
-    }, {
-      "value" : "cze",
-      "count" : "8"
-    }, {
-      "value" : "pol",
-      "count" : "8"
-    }, {
-      "value" : "dut",
-      "count" : "7"
-    }, {
-      "value" : "tur",
-      "count" : "7"
-    }, {
-      "value" : "ara",
-      "count" : "6"
-    }, {
-      "value" : "rum",
-      "count" : "5"
-    }, {
-      "value" : "und",
-      "count" : "5"
-    }, {
-      "value" : "heb",
-      "count" : "4"
-    }, {
-      "value" : "dan",
-      "count" : "3"
-    }, {
-      "value" : "hrv",
-      "count" : "3"
-    } ]
-  }, {
-    "name" : "creationdate",
-    "values" : [ {
-      "value" : "1067",
-      "count" : "1"
-    }, {
-      "value" : "2023",
-      "count" : "1"
-    } ]
-  }, {
-    "name" : "rtype",
-    "values" : [ {
-      "value" : "books",
-      "count" : "36734"
-    }, {
-      "value" : "journals",
-      "count" : "1599"
-    }, {
-      "value" : "conference_proceedings",
-      "count" : "870"
-    }, {
-      "value" : "articles",
-      "count" : "249"
-    }, {
-      "value" : "videos",
-      "count" : "215"
-    }, {
-      "value" : "book_chapters",
-      "count" : "29"
-    }, {
-      "value" : "dissertations",
-      "count" : "20"
-    }, {
-      "value" : "other",
-      "count" : "10"
-    }, {
-      "value" : "conferencepresentation",
-      "count" : "7"
-    }, {
-      "value" : "datasets",
-      "count" : "7"
-    }, {
-      "value" : "reviews",
-      "count" : "7"
-    }, {
-      "value" : "websites",
-      "count" : "7"
-    }, {
-      "value" : "encyclopediaentry",
-      "count" : "2"
-    }, {
-      "value" : "newspapers",
-      "count" : "2"
-    }, {
-      "value" : "reports",
-      "count" : "2"
-    }, {
-      "value" : "teaching_learning",
-      "count" : "2"
-    }, {
-      "value" : "archival_materials",
-      "count" : "1"
-    }, {
-      "value" : "conferenceposter",
-      "count" : "1"
-    }, {
-      "value" : "maps",
-      "count" : "1"
-    }, {
-      "value" : "podcast",
-      "count" : "1"
-    } ]
-  }, {
-    "name" : "topic",
-    "values" : [ {
-      "value" : "Electronic Books",
-      "count" : "21412"
-    }, {
-      "value" : "Biochemistry",
-      "count" : "2685"
-    }, {
-      "value" : "Cell Biology",
-      "count" : "2391"
-    }, {
-      "value" : "Botany",
-      "count" : "2151"
-    }, {
-      "value" : "Ecology",
-      "count" : "2118"
-    }, {
-      "value" : "Microbiology",
-      "count" : "1991"
-    }, {
-      "value" : "Biochemistry General",
-      "count" : "1865"
-    }, {
-      "value" : "Plant Sciences",
-      "count" : "1853"
-    }, {
-      "value" : "Cytology",
-      "count" : "1733"
-    }, {
-      "value" : "Medicine",
-      "count" : "1483"
-    }, {
-      "value" : "Periodicals",
-      "count" : "1361"
-    }, {
-      "value" : "Ecology ",
-      "count" : "1326"
-    }, {
-      "value" : "Biology",
-      "count" : "1270"
-    }, {
-      "value" : "Plant Science",
-      "count" : "1234"
-    }, {
-      "value" : "Molecular Biology",
-      "count" : "1161"
-    }, {
-      "value" : "Bioinformatics",
-      "count" : "1141"
-    }, {
-      "value" : "Oncology",
-      "count" : "1105"
-    }, {
-      "value" : "Electronic Journals",
-      "count" : "1093"
-    }, {
-      "value" : "Agriculture",
-      "count" : "1042"
-    }, {
-      "value" : "Immunology",
-      "count" : "1024"
-    } ]
-  }, {
-    "name" : "creator",
-    "values" : [ {
-      "value" : "Jeon Kwang W",
-      "count" : "211"
-    }, {
-      "value" : "Bourne Geoffrey H",
-      "count" : "114"
-    }, {
-      "value" : "Danielli J F",
-      "count" : "99"
-    }, {
-      "value" : "Berhardt Leon V",
-      "count" : "86"
-    }, {
-      "value" : "Acton Q Ashton",
-      "count" : "55"
-    }, {
-      "value" : "Cohn Waldo E",
-      "count" : "53"
-    }, {
-      "value" : "Varma Ajit",
-      "count" : "53"
-    }, {
-      "value" : "Moldave Kivie",
-      "count" : "48"
-    }, {
-      "value" : "Fay Richard R",
-      "count" : "47"
-    }, {
-      "value" : "Turksen Kursad",
-      "count" : "47"
-    }, {
-      "value" : "Meister Alton",
-      "count" : "41"
-    }, {
-      "value" : "North Atlantic Treaty Organization Scientific Affairs Division",
-      "count" : "41"
-    }, {
-      "value" : "Laskin Allen I",
-      "count" : "40"
-    }, {
-      "value" : "Maramorosch Karl",
-      "count" : "40"
-    }, {
-      "value" : "Royal Society Of Chemistry Great Britain",
-      "count" : "38"
-    }, {
-      "value" : "Popper Arthur N",
-      "count" : "37"
-    }, {
-      "value" : "Birbrair Alexander",
-      "count" : "35"
-    }, {
-      "value" : "Gadd Geoffrey M",
-      "count" : "35"
-    }, {
-      "value" : "Huang De Shuang",
-      "count" : "35"
-    }, {
-      "value" : "Lichtfouse Eric",
-      "count" : "35"
-    } ]
-  }, {
-    "name" : "newrecords",
-    "values" : [ {
-      "value" : "90 days back",
-      "count" : "29"
-    }, {
-      "value" : "30 days back",
-      "count" : "12"
-    }, {
-      "value" : "07 days back",
-      "count" : "7"
-    } ]
-  }, {
-    "name" : "library",
-    "values" : [ {
-      "value" : "121–5867020000121",
-      "count" : "185"
-    }, {
-      "value" : "121–5867350000121",
-      "count" : "12"
-    }, {
-      "value" : "121–5867240000121",
-      "count" : "10"
-    }, {
-      "value" : "121–5868070000121",
-      "count" : "2"
-    }, {
-      "value" : "121–5867460000121",
-      "count" : "1"
-    } ]
-  }, {
-    "name" : "location_code",
-    "values" : [ {
-      "value" : "121–5867020000121–gen",
-      "count" : "181"
-    }, {
-      "value" : "121–5867350000121–ref",
-      "count" : "12"
-    }, {
-      "value" : "121–5867240000121–mus",
-      "count" : "9"
-    }, {
-      "value" : "121–5868070000121–gen",
-      "count" : "2"
-    }, {
-      "value" : "121–5867020000121–asian",
-      "count" : "1"
-    }, {
-      "value" : "121–5867020000121–new",
-      "count" : "1"
-    }, {
-      "value" : "121–5867020000121–ref",
-      "count" : "1"
-    }, {
-      "value" : "121–5867020000121–resv",
-      "count" : "1"
-    }, {
-      "value" : "121–5867240000121–gen",
-      "count" : "1"
-    }, {
-      "value" : "121–5867460000121–gen",
-      "count" : "1"
-    } ]
-  }, {
-    "name" : "tlevel",
-    "values" : [ {
-      "value" : "available_p",
-      "count" : "199"
-    }, {
-      "value" : "open_access",
-      "count" : "453"
-    }, {
-      "value" : "peer_reviewed",
-      "count" : "1288"
-    }, {
-      "value" : "online_resources",
-      "count" : "40445"
-    } ]
-  }, {
-    "name" : "institution",
-    "values" : [ {
-      "value" : "121",
-      "count" : "189"
-    }, {
-      "value" : "153",
-      "count" : "2"
-    }, {
-      "value" : "193",
-      "count" : "1"
-    } ]
-  }, {
-    "name" : "lds06",
-    "values" : [ {
-      "value" : "Provenance Gift Of Jay I Kislak Foundation",
-      "count" : "1"
-    } ]
-  }, {
-    "name" : "lds04",
-    "values" : [ {
-      "value" : "Kids",
-      "count" : "1"
-    }, {
-      "value" : "Researchers",
-      "count" : "1"
-    } ]
-  }, {
-    "name" : "lds40",
-    "values" : [ {
-      "value" : "International review of cytology",
-      "count" : "251"
-    }, {
-      "value" : "Advances in applied microbiology",
-      "count" : "84"
-    }, {
-      "value" : "Progress in nucleic acid research and molecular biology",
-      "count" : "70"
-    }, {
-      "value" : "Advances in marine biology",
-      "count" : "63"
-    }, {
-      "value" : "International review of cell and molecular biology",
-      "count" : "57"
-    }, {
-      "value" : "Methods in cell biology",
-      "count" : "51"
-    }, {
-      "value" : "Advances in immunology",
-      "count" : "50"
-    }, {
-      "value" : "Advances in microbial physiology",
-      "count" : "50"
-    }, {
-      "value" : "Current topics in developmental biology",
-      "count" : "50"
-    }, {
-      "value" : "Advances in botanical research",
-      "count" : "49"
-    }, {
-      "value" : "Advances in cancer research",
-      "count" : "44"
-    }, {
-      "value" : "Advances in enzymology and related areas of molecular biology",
-      "count" : "41"
-    }, {
-      "value" : "Advances in virus research",
-      "count" : "39"
-    }, {
-      "value" : "Annual reports in medicinal chemistry",
-      "count" : "39"
-    }, {
-      "value" : "Advances in parasitology",
-      "count" : "38"
-    }, {
-      "value" : "Advances in ecological research",
-      "count" : "35"
-    }, {
-      "value" : "Photochemistry",
-      "count" : "35"
-    }, {
-      "value" : "Progress in inorganic chemistry",
-      "count" : "29"
-    }, {
-      "value" : "Nuclear magnetic resonance",
-      "count" : "27"
-    }, {
-      "value" : "Carbohydrate chemistry",
-      "count" : "25"
-    } ]
-  } ]
-}
+  "delivery" : {
+    "bestlocation" : null,
+    "holding" : null,
+    "electronicServices" : null,
+    "additionalElectronicServices" : null,
+    "filteredByGroupServices" : null,
+    "quickAccessService" : null,
+    "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+    "serviceMode" : [ "howovp", "Viewit" ],
+    "availability" : [ "not_restricted", "no_inventory" ],
+    "availabilityLinks" : null,
+    "availabilityLinksUrl" : null,
+    "displayedAvailability" : "Not available",
+    "displayLocation" : null,
+    "additionalLocations" : null,
+    "physicalItemTextCodes" : null,
+    "feDisplayOtherLocations" : null,
+    "almaInstitutionsList" : [ ],
+    "recordInstitutionCode" : null,
+    "recordOwner" : "EXLDEMO2_INST",
+    "hasFilteredServices" : null,
+    "digitalAuxiliaryMode" : false,
+    "hideResourceSharing" : false,
+    "sharedDigitalCandidates" : null,
+    "consolidatedCoverage" : null,
+    "electronicContextObjectId" : null,
+    "GetIt1" : [ {
+      "category" : "Alma-P",
+      "links" : [ {
+        "isLinktoOnline" : false,
+        "getItTabText" : "service_howtogetit",
+        "adaptorid" : "ALMA_01",
+        "ilsApiId" : "",
+        "link" : "HowToGetIt",
+        "inst4opac" : "",
+        "displayText" : null,
+        "@id" : "_:0"
+      } ]
+    } ],
+    "physicalServiceId" : null,
+    "link" : [ {
+      "@id" : ":_0",
+      "linkType" : "thumbnail",
+      "linkURL" : "https://i.natgeofe.com/n/9b9f17c3-008d-4cd1-a6c3-ffa3cf6e5dc0/Bumblebee_4x3.jpg",
+      "displayLabel" : "thumbnail"
+    } ],
+    "hasD" : null
+  },
+  "enrichment" : {
+    "virtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : false,
+      "callNumber" : "",
+      "callNumberBrowseField" : ""
+    },
+    "bibVirtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : true,
+      "callNumber" : "newspaper 0",
+      "callNumberBrowseField" : "LOC_CL"
+    }
+  }
+}, {
+  "context" : "L",
+  "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99223916500191",
+  "adaptor" : "Local Search Engine",
+  "pnx" : {
+    "display" : {
+      "source" : [ "Alma" ],
+      "type" : [ "book" ],
+      "language" : [ "eng" ],
+      "title" : [ "The Bee A Natural History" ],
+      "subject" : [ "Bee culture", "Bees -- Behavior", "Bees", "Electronic books" ],
+      "format" : [ "1 online resource (364 p.)" ],
+      "identifier" : [ "$$CISBN$$V1-78240-186-5;$$CISBN$$V1-78240-107-5" ],
+      "creationdate" : [ "2014" ],
+      "creator" : [ "Rich, Noah Wilson.$$QRich, Noah Wilson." ],
+      "publisher" : [ "London : Ilex Press/ Ivy Press" ],
+      "description" : [ "Eyes with more than 6,000 separate lenses; bodies so hairy that they attract pollen by static; the ability to communicate by dancing... bee stats are endlessly engrossing. And the bee is as important to the production of human food as any machine; without the bees to pollinate them, most of our crops would be dead in the field. So how did this furry little workaholic come to be so crucial to the planet?   The Bee: A Natural History answers that question and many more, looking at bee development from 65 million years ago to today, when over 20,000 bee species have been identified and beekeepin" ],
+      "mms" : [ "99223916500191" ],
+      "addtitle" : [ "Bee" ],
+      "contents" : [ "Cover Page; Title Page; Contents; Introducing the Bee; CHAPTER 1: Evolution & Development; The Evolution of Bees; Honey Hunting & Beekeeping; The Different Bee Groups; The Evolution & Development of the Honey Bee; Wild Bees Worldwide; CHAPTER 2: Anatomy & Biology; What Makes Bees Different?; Anatomy of a Honey Bee; Flight & Internal Anatomy; Bee Senses; Genetics; Genomics & Informatics; Hormones-the Endocrine System; Immunology; Pests & Diseases; Reproduction; The Bee's Life Cycle; Pollination; CHAPTER 3: Society & Behavior; Sociality; Pathways to Eusociality; Reproductive Division of Labor", "SwarmingCommunication; Dance Communication; Olfaction; Navigation; Foraging Behavior; Crafting; Nesting; Circadian Rhythms; Thermoregulation; Changing Behavior Over Time: Temporal Polyethism; Defense & aggression; Parenting; Courtship; Sexual Reproduction; Mating Systems; CHAPTER 4: Bees & Humans; Ancient & Modern Knowledge; Scientific Research Today; An Economic Force; Spirituality; Islam, Judaism & Christianity; Patron Saints of Beekeeping; Political Symbolism; What if Bees Were to Disappear?; CHAPTER 5: Beekeeping; The Basics; Keeping Other Bees; Ancient Hive Designs; Langstroth Hives", "Observation HivesData Tracking; Urban Beekeeping; Harvesting; \"Natural\" Beekeeping; Swarming; Integrated Management; Arthropod Pests; Bacterial, Fungal & Viral Infections; CHAPTER 6: A Directory of Bees; Solitary Bees; Bumble Bees; Stingless Bees; Honey Bees; CHAPTER 7: The Challenges Faced by Bees; An Introduction to Bee Losses; Weather & Climate; Habitat Loss; Changes in Agriculture; Modern Farming; Agrochemicals; Pests & Diseases; Other Threats to Bees; Fear of Bees; Pollinators, the Environment & Conservation; Research Initiatives to Help Bees; How We Can Help the Bees; Useful Resources", "BibliographyIndex; Author Biographies; Acknowledgments; Copyright" ],
+      "relation" : [ "$$Cform$$VLink to related record$$QLink to related record" ],
+      "place" : [ "London :" ],
+      "version" : [ "1" ]
+    },
+    "control" : {
+      "sourcerecordid" : [ "99223916500191" ],
+      "recordid" : [ "alma99223916500191" ],
+      "sourceid" : "alma",
+      "originalsourceid" : [ "(CKB)3710000000323339" ],
+      "sourcesystem" : [ "CKB" ],
+      "sourceformat" : [ "MARC21" ],
+      "score" : [ "0.015625" ],
+      "isDedup" : false
+    },
+    "addata" : {
+      "aulast" : [ "Rich" ],
+      "aufirst" : [ "Noah Wilson." ],
+      "auinit" : [ "N" ],
+      "au" : [ "Rich, Noah Wilson." ],
+      "creatorfull" : [ "$$NRich, Noah Wilson.$$LRich$$FNoah Wilson.$$Rauthor" ],
+      "addtitle" : [ "Bee" ],
+      "date" : [ "2014" ],
+      "isbn" : [ "1-78240-186-5", "1-78240-107-5" ],
+      "abstract" : [ "Eyes with more than 6,000 separate lenses; bodies so hairy that they attract pollen by static; the ability to communicate by dancing... bee stats are endlessly engrossing. And the bee is as important to the production of human food as any machine; without the bees to pollinate them, most of our crops would be dead in the field. So how did this furry little workaholic come to be so crucial to the planet?   The Bee: A Natural History answers that question and many more, looking at bee development from 65 million years ago to today, when over 20,000 bee species have been identified and beekeepin" ],
+      "cop" : [ "London" ],
+      "pub" : [ "Ilex Press/ Ivy Press" ],
+      "oclcid" : [ "(ckb)3710000000323339", "(ebl)1899594" ],
+      "format" : [ "book" ],
+      "genre" : [ "book" ],
+      "ristype" : [ "BOOK" ],
+      "btitle" : [ "The Bee A Natural History" ]
+    },
+    "sort" : {
+      "title" : [ "Bee [electronic resource] : A Natural History" ],
+      "author" : [ "Rich, Noah Wilson." ],
+      "creationdate" : [ "2014" ]
+    },
+    "facets" : {
+      "frbrtype" : [ "6" ],
+      "frbrgroupid" : [ "9026729537955145033" ]
+    }
+  },
+  "delivery" : {
+    "bestlocation" : null,
+    "holding" : null,
+    "electronicServices" : null,
+    "additionalElectronicServices" : null,
+    "filteredByGroupServices" : null,
+    "quickAccessService" : null,
+    "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+    "serviceMode" : [ "howovp", "Viewit" ],
+    "availability" : [ "not_restricted", "no_inventory" ],
+    "availabilityLinks" : null,
+    "availabilityLinksUrl" : null,
+    "displayedAvailability" : "Not available",
+    "displayLocation" : null,
+    "additionalLocations" : null,
+    "physicalItemTextCodes" : null,
+    "feDisplayOtherLocations" : null,
+    "almaInstitutionsList" : [ {
+      "getitLink" : [ {
+        "displayText" : "Alma-E",
+        "linkRecordId" : "99223916500191"
+      } ],
+      "instCode" : "EXLDEMO3_INST",
+      "instName" : "Open University",
+      "instId" : "193",
+      "availabilityStatus" : "available_online",
+      "envURL" : ""
+    } ],
+    "recordInstitutionCode" : "EXLDEMO2_INST",
+    "recordOwner" : "EXLDEMO2_INST",
+    "hasFilteredServices" : null,
+    "digitalAuxiliaryMode" : false,
+    "hideResourceSharing" : false,
+    "sharedDigitalCandidates" : null,
+    "consolidatedCoverage" : null,
+    "electronicContextObjectId" : null,
+    "GetIt1" : [ {
+      "category" : "Alma-P",
+      "links" : [ {
+        "isLinktoOnline" : false,
+        "getItTabText" : "service_howtogetit",
+        "adaptorid" : "ALMA_01",
+        "ilsApiId" : "",
+        "link" : "HowToGetIt",
+        "inst4opac" : "",
+        "displayText" : null,
+        "@id" : "_:0"
+      } ]
+    } ],
+    "physicalServiceId" : null,
+    "link" : [ {
+      "@id" : ":_0",
+      "linkType" : "thumbnail",
+      "linkURL" : "https://beekeepinginsider.com/wp-content/uploads/2022/09/is-it-illegal-to-kill-honey-bees.jpg",
+      "displayLabel" : "thumbnail"
+    } ],
+    "hasD" : null
+  },
+  "enrichment" : {
+    "virtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : false,
+      "callNumber" : "",
+      "callNumberBrowseField" : ""
+    }
+  }
+}, {
+  "context" : "L",
+  "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99179232100121",
+  "adaptor" : "Local Search Engine",
+  "pnx" : {
+    "display" : {
+      "source" : [ "Alma" ],
+      "type" : [ "newspaper" ],
+      "language" : [ "eng" ],
+      "title" : [ "The Modesto bee." ],
+      "subject" : [ "Modesto (Calif.)" ],
+      "format" : [ "v." ],
+      "identifier" : [ "$$CLC$$Vsn 93051577 ;$$COCLC$$V(OCoLC)28464207" ],
+      "creationdate" : [ "1975-" ],
+      "publisher" : [ "Modesto, Calif. : McClatchy Newspapers", "Vol. 98, no. 250 (Oct. 19, 1975)-" ],
+      "mms" : [ "99179232100121" ],
+      "addtitle" : [ "Modesto Bee", "Modesto bee online." ],
+      "frequency" : [ "Daily" ],
+      "genre" : [ "Newspapers." ],
+      "place" : [ "Modesto, Calif. :" ],
+      "version" : [ "1" ]
+    },
+    "control" : {
+      "sourcerecordid" : [ "99179232100121" ],
+      "recordid" : [ "alma99179232100121" ],
+      "sourceid" : "alma",
+      "originalsourceid" : [ "1000000000222579" ],
+      "sourcesystem" : [ "CKB" ],
+      "sourceformat" : [ "MARC21" ],
+      "score" : [ "0.015625" ],
+      "isDedup" : false
+    },
+    "addata" : {
+      "stitle" : [ "MODESTO BEE, THE", "MODESTO BEE" ],
+      "addtitle" : [ "Modesto Bee" ],
+      "date" : [ "1975", "1975-" ],
+      "cop" : [ "Modesto, Calif" ],
+      "pub" : [ "McClatchy Newspapers" ],
+      "oclcid" : [ "(ocolc)28464207", "(ckb)1000000000222579", "(conser)sn 93051577" ],
+      "lccn" : [ "sn 93051577" ],
+      "btitle" : [ "The Modesto bee." ]
+    },
+    "sort" : {
+      "title" : [ "Modesto bee." ],
+      "creationdate" : [ "1975" ]
+    },
+    "facets" : {
+      "frbrtype" : [ "6" ],
+      "frbrgroupid" : [ "9048782281245807865" ]
+    }
+  },
+  "delivery" : {
+    "bestlocation" : null,
+    "holding" : null,
+    "electronicServices" : null,
+    "additionalElectronicServices" : null,
+    "filteredByGroupServices" : null,
+    "quickAccessService" : null,
+    "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+    "serviceMode" : [ "howovp", "Viewit" ],
+    "availability" : [ "not_restricted", "no_inventory" ],
+    "availabilityLinks" : null,
+    "availabilityLinksUrl" : null,
+    "displayedAvailability" : "Not available",
+    "displayLocation" : null,
+    "additionalLocations" : null,
+    "physicalItemTextCodes" : null,
+    "feDisplayOtherLocations" : null,
+    "almaInstitutionsList" : [ {
+      "getitLink" : [ {
+        "displayText" : "Alma-E",
+        "linkRecordId" : "996652130000191"
+      } ],
+      "instCode" : "EXLDEMO1_INST",
+      "instName" : "University of Knowledge",
+      "instId" : "153",
+      "availabilityStatus" : "available_online",
+      "envURL" : ""
+    } ],
+    "recordInstitutionCode" : null,
+    "recordOwner" : "EXLDEMO2_INST",
+    "hasFilteredServices" : null,
+    "digitalAuxiliaryMode" : false,
+    "hideResourceSharing" : false,
+    "sharedDigitalCandidates" : null,
+    "consolidatedCoverage" : null,
+    "electronicContextObjectId" : null,
+    "GetIt1" : [ {
+      "category" : "Alma-P",
+      "links" : [ {
+        "isLinktoOnline" : false,
+        "getItTabText" : "service_howtogetit",
+        "adaptorid" : "ALMA_01",
+        "ilsApiId" : "",
+        "link" : "HowToGetIt",
+        "inst4opac" : "",
+        "displayText" : null,
+        "@id" : "_:0"
+      } ]
+    } ],
+    "physicalServiceId" : null,
+    "link" : [ {
+      "@id" : ":_0",
+      "linkType" : "thumbnail",
+      "linkURL" : "https://www.vetmed.ucdavis.edu/sites/g/files/dgvnsk491/files/styles/sf_landscape_16x9/public/media/images/vetbees.jpg?h=7ff06b9b&itok=lTvG1uop",
+      "displayLabel" : "thumbnail"
+    } ],
+    "hasD" : null
+  },
+  "enrichment" : {
+    "virtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : false,
+      "callNumber" : "",
+      "callNumberBrowseField" : ""
+    },
+    "bibVirtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : true,
+      "callNumber" : "newspaper 0",
+      "callNumberBrowseField" : "LOC_CL"
+    }
+  }
+}, {
+  "context" : "L",
+  "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99213731400191",
+  "adaptor" : "Local Search Engine",
+  "pnx" : {
+    "display" : {
+      "source" : [ "Alma" ],
+      "type" : [ "book" ],
+      "language" : [ "eng" ],
+      "title" : [ "William Bee's wonderful world of trucks " ],
+      "subject" : [ "Trucks" ],
+      "format" : [ "1 online resource (30 pages) : color illustrations" ],
+      "identifier" : [ "$$CISBN$$V1-84365-325-7;$$CISBN$$V1-84365-357-5" ],
+      "creationdate" : [ "2017" ],
+      "creator" : [ "Bee, William,$$QBee, William" ],
+      "publisher" : [ "London, England : Pavilion Children's Books" ],
+      "mms" : [ "99213731400191" ],
+      "genre" : [ "Juvenile fiction.", "Electronic books" ],
+      "place" : [ "London, England] :" ],
+      "version" : [ "1" ]
+    },
+    "control" : {
+      "sourcerecordid" : [ "99213731400191" ],
+      "recordid" : [ "alma99213731400191" ],
+      "sourceid" : "alma",
+      "originalsourceid" : [ "(CKB)3710000001100266" ],
+      "sourcesystem" : [ "EBC" ],
+      "sourceformat" : [ "MARC21" ],
+      "score" : [ "0.015625" ],
+      "isDedup" : false
+    },
+    "addata" : {
+      "aulast" : [ "Bee" ],
+      "aufirst" : [ "William" ],
+      "auinit" : [ "W" ],
+      "au" : [ "Bee, William" ],
+      "creatorfull" : [ "$$NBee, William$$LBee$$FWilliam$$Rauthor" ],
+      "date" : [ "2017 - 2017", "2017" ],
+      "isbn" : [ "1-84365-325-7", "1-84365-357-5" ],
+      "cop" : [ "London, [England" ],
+      "pub" : [ "Pavilion Children's Books" ],
+      "oclcid" : [ "(ckb)3710000001100266", "(miaapq)ebc4825629" ],
+      "format" : [ "book" ],
+      "genre" : [ "book" ],
+      "ristype" : [ "BOOK" ],
+      "btitle" : [ "William Bee's wonderful world of trucks" ]
+    },
+    "sort" : {
+      "title" : [ "William Bee's wonderful world of trucks /" ],
+      "author" : [ "Bee, William, author." ],
+      "creationdate" : [ "2017" ]
+    },
+    "facets" : {
+      "frbrtype" : [ "6" ],
+      "frbrgroupid" : [ "9019276284484538031" ]
+    }
+  },
+  "delivery" : {
+    "bestlocation" : null,
+    "holding" : null,
+    "electronicServices" : null,
+    "additionalElectronicServices" : null,
+    "filteredByGroupServices" : null,
+    "quickAccessService" : null,
+    "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+    "serviceMode" : [ "howovp", "Viewit" ],
+    "availability" : [ "not_restricted", "no_inventory" ],
+    "availabilityLinks" : null,
+    "availabilityLinksUrl" : null,
+    "displayedAvailability" : "Not available",
+    "displayLocation" : null,
+    "additionalLocations" : null,
+    "physicalItemTextCodes" : null,
+    "feDisplayOtherLocations" : null,
+    "almaInstitutionsList" : [ {
+      "getitLink" : [ {
+        "displayText" : "Alma-E",
+        "linkRecordId" : "99213731400191"
+      } ],
+      "instCode" : "EXLDEMO3_INST",
+      "instName" : "Open University",
+      "instId" : "193",
+      "availabilityStatus" : "available_online",
+      "envURL" : ""
+    } ],
+    "recordInstitutionCode" : "EXLDEMO2_INST",
+    "recordOwner" : "EXLDEMO2_INST",
+    "hasFilteredServices" : null,
+    "digitalAuxiliaryMode" : false,
+    "hideResourceSharing" : false,
+    "sharedDigitalCandidates" : null,
+    "consolidatedCoverage" : null,
+    "electronicContextObjectId" : null,
+    "GetIt1" : [ {
+      "category" : "Alma-P",
+      "links" : [ {
+        "isLinktoOnline" : false,
+        "getItTabText" : "service_howtogetit",
+        "adaptorid" : "ALMA_01",
+        "ilsApiId" : "",
+        "link" : "HowToGetIt",
+        "inst4opac" : "",
+        "displayText" : null,
+        "@id" : "_:0"
+      } ]
+    } ],
+    "physicalServiceId" : null,
+    "link" : [ {
+      "@id" : ":_0",
+      "linkType" : "thumbnail",
+      "linkURL" : "https://www.beeculture.com/wp-content/uploads/2020/05/Buzz-1-2.jpg",
+      "displayLabel" : "thumbnail"
+    } ],
+    "hasD" : null
+  },
+  "enrichment" : {
+    "virtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : false,
+      "callNumber" : "",
+      "callNumberBrowseField" : ""
+    }
+  }
+}, {
+  "context" : "L",
+  "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99137811100121",
+  "adaptor" : "Local Search Engine",
+  "pnx" : {
+    "display" : {
+      "source" : [ "Alma" ],
+      "type" : [ "journal" ],
+      "language" : [ "eng" ],
+      "title" : [ "American bee journal." ],
+      "subject" : [ "Apiculture", "Bee culture", "Periodicals" ],
+      "format" : [ "volumes illustrations (including portraits) diags. 23-35 cm" ],
+      "identifier" : [ "$$CLC$$V   08014012;$$CISSN$$V0002-7626;$$COCLC$$V(OCoLC)ocm01479576" ],
+      "creationdate" : [ "1861" ],
+      "lds01" : [ "SERBIB/SERLOC merged record" ],
+      "publisher" : [ "Hamilton, Ill., etc., Dadant & Sons", "v. 1- Jan. 1861-" ],
+      "description" : [ "Includes summarized reports of many bee-keeper associations." ],
+      "mms" : [ "99137811100121" ],
+      "addtitle" : [ "Proceedings of the American Bee Research Conference [abstracts]." ],
+      "frequency" : [ "Monthly, 1861-80, July 1907-" ],
+      "genre" : [ "Periodicals.", "Périodiques." ],
+      "relation" : [ "$$Cform$$VOnline version: American bee journal$$QAmerican bee journal", "$$Cearlier_title$$VNational bee journal Aug. 1874$$QNational bee journal" ],
+      "place" : [ "Hamilton, Ill., etc.]," ],
+      "version" : [ "1" ]
+    },
+    "control" : {
+      "sourcerecordid" : [ "99137811100121" ],
+      "recordid" : [ "alma99137811100121" ],
+      "sourceid" : "alma",
+      "originalsourceid" : [ "11134951" ],
+      "sourcesystem" : [ "Library of Congress " ],
+      "sourceformat" : [ "MARC21" ],
+      "score" : [ "0.015625" ],
+      "isDedup" : false
+    },
+    "addata" : {
+      "stitle" : [ "Am. bee j." ],
+      "date" : [ "1861" ],
+      "issn" : [ "0002-7626" ],
+      "coden" : [ "ABJOAS" ],
+      "abstract" : [ "Includes summarized reports of many bee-keeper associations." ],
+      "cop" : [ "Hamilton, Ill., etc" ],
+      "pub" : [ "[Dadant & Sons]" ],
+      "oclcid" : [ "(ocolc)1479576" ],
+      "lccn" : [ "08014012" ],
+      "format" : [ "journal" ],
+      "genre" : [ "journal" ],
+      "ristype" : [ "JOUR" ],
+      "jtitle" : [ "American bee journal." ]
+    },
+    "sort" : {
+      "title" : [ "American bee journal." ],
+      "creationdate" : [ "1861" ]
+    },
+    "facets" : {
+      "frbrtype" : [ "6" ],
+      "frbrgroupid" : [ "9029481433051596373" ]
+    }
+  },
+  "delivery" : {
+    "bestlocation" : {
+      "isValidUser" : true,
+      "organization" : "EXLDEV1_INST",
+      "libraryCode" : "ULINC",
+      "availabilityStatus" : "available",
+      "subLocation" : "General",
+      "subLocationCode" : "GEN",
+      "mainLocation" : "Main Library",
+      "callNumber" : "SF521 .A5",
+      "callNumberType" : "0",
+      "holdingURL" : "OVP",
+      "adaptorid" : "ALMA_01",
+      "ilsApiId" : "99137811100121",
+      "holdId" : "2234379980000121",
+      "holKey" : "HoldingResultKey [mid=2234379980000121, libraryId=5867020000121, locationCode=GEN, callNumber=SF521 .A5]",
+      "matchForHoldings" : [ {
+        "matchOn" : "MainLocation",
+        "holdingRecord" : "852##b"
+      } ],
+      "stackMapUrl" : "http://almauniversity.stackmap.com/view/?callno=SF521+.A5&location=GEN&library=Alma%20University%20Library",
+      "relatedTitle" : null,
+      "yearFilter" : null,
+      "volumeFilter" : null,
+      "singleUnavailableItemProcessType" : null,
+      "boundWith" : false,
+      "@id" : "_:0"
+    },
+    "holding" : [ {
+      "isValidUser" : true,
+      "organization" : "EXLDEV1_INST",
+      "libraryCode" : "ULINC",
+      "availabilityStatus" : "available",
+      "subLocation" : "General",
+      "subLocationCode" : "GEN",
+      "mainLocation" : "Main Library",
+      "callNumber" : "SF521 .A5",
+      "callNumberType" : "0",
+      "holdingURL" : "OVP",
+      "adaptorid" : "ALMA_01",
+      "ilsApiId" : "99137811100121",
+      "holdId" : "2234379980000121",
+      "holKey" : "HoldingResultKey [mid=2234379980000121, libraryId=5867020000121, locationCode=GEN, callNumber=SF521 .A5]",
+      "matchForHoldings" : [ {
+        "matchOn" : "MainLocation",
+        "holdingRecord" : "852##b"
+      } ],
+      "stackMapUrl" : "http://almauniversity.stackmap.com/view/?callno=SF521+.A5&location=GEN&library=Alma%20University%20Library",
+      "relatedTitle" : null,
+      "yearFilter" : null,
+      "volumeFilter" : null,
+      "singleUnavailableItemProcessType" : null,
+      "boundWith" : false,
+      "@id" : "_:0"
+    }, {
+      "isValidUser" : true,
+      "organization" : "EXLDEV1_INST",
+      "libraryCode" : "ULINC",
+      "availabilityStatus" : "unavailable",
+      "subLocation" : "Serials",
+      "subLocationCode" : "SER",
+      "mainLocation" : "Main Library",
+      "callNumber" : "SF521 .A5",
+      "callNumberType" : "0",
+      "holdingURL" : "OVP",
+      "adaptorid" : "ALMA_01",
+      "ilsApiId" : "99137811100121",
+      "holdId" : "2237249950000121",
+      "holKey" : "HoldingResultKey [mid=2237249950000121, libraryId=5867020000121, locationCode=SER, callNumber=SF521 .A5]",
+      "matchForHoldings" : [ {
+        "matchOn" : "MainLocation",
+        "holdingRecord" : "852##b"
+      } ],
+      "stackMapUrl" : "http://almauniversity.stackmap.com/view/?callno=SF521+.A5&location=SER&library=Alma%20University%20Library",
+      "relatedTitle" : null,
+      "yearFilter" : null,
+      "volumeFilter" : null,
+      "singleUnavailableItemProcessType" : null,
+      "boundWith" : false,
+      "@id" : "_:1"
+    } ],
+    "electronicServices" : null,
+    "additionalElectronicServices" : null,
+    "filteredByGroupServices" : null,
+    "quickAccessService" : null,
+    "deliveryCategory" : [ "Alma-P" ],
+    "serviceMode" : [ "ovp" ],
+    "availability" : [ "available_in_library" ],
+    "availabilityLinks" : [ "detailsgetit1" ],
+    "availabilityLinksUrl" : [ ],
+    "displayedAvailability" : null,
+    "displayLocation" : true,
+    "additionalLocations" : true,
+    "physicalItemTextCodes" : null,
+    "feDisplayOtherLocations" : true,
+    "almaInstitutionsList" : [ ],
+    "recordInstitutionCode" : null,
+    "recordOwner" : "EXLDEV1_INST",
+    "hasFilteredServices" : null,
+    "digitalAuxiliaryMode" : false,
+    "hideResourceSharing" : false,
+    "sharedDigitalCandidates" : null,
+    "consolidatedCoverage" : null,
+    "electronicContextObjectId" : null,
+    "GetIt1" : [ {
+      "category" : "Alma-P",
+      "links" : [ {
+        "isLinktoOnline" : false,
+        "getItTabText" : "service_getit",
+        "adaptorid" : "ALMA_01",
+        "ilsApiId" : "99137811100121",
+        "link" : "OVP",
+        "inst4opac" : "EXLDEV1_INST",
+        "displayText" : null,
+        "@id" : "_:0"
+      }, {
+        "isLinktoOnline" : false,
+        "getItTabText" : "service_getit",
+        "adaptorid" : "ALMA_01",
+        "ilsApiId" : "99137811100121",
+        "link" : "OVP",
+        "inst4opac" : "EXLDEV1_INST",
+        "displayText" : null,
+        "@id" : "_:1"
+      } ]
+    } ],
+    "physicalServiceId" : null,
+    "link" : [ {
+      "@id" : ":_0",
+      "linkType" : "thumbnail",
+      "linkURL" : "https://hbrc.ca/wp-content/uploads/2022/10/image-5-1024x737.png",
+      "displayLabel" : "thumbnail"
+    } ],
+    "hasD" : null
+  },
+  "enrichment" : {
+    "virtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : true,
+      "callNumber" : "SF521 .A5",
+      "callNumberBrowseField" : "0"
+    },
+    "bibVirtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : true,
+      "callNumber" : "sf\"521ǂ a5",
+      "callNumberBrowseField" : "LOC_CL"
+    }
+  }
+}, {
+  "context" : "L",
+  "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99252011100191",
+  "adaptor" : "Local Search Engine",
+  "pnx" : {
+    "display" : {
+      "source" : [ "Alma" ],
+      "type" : [ "book" ],
+      "language" : [ "eng" ],
+      "title" : [ "The Bee Garden How to Create or Adapt a Garden to Attract and Nurture Bees" ],
+      "subject" : [ "Electronic books", "Gardening to attract wildlife", "Honeybee", "Honey plants", "Zoology", "Health & Biological Sciences", "Zoology - General" ],
+      "format" : [ "1 online resource (399 p.)" ],
+      "identifier" : [ "$$CISBN$$V1-84803-573-X;$$COCLC$$V(OCoLC)792685483;$$CISBN$$V1-905862-59-8" ],
+      "creationdate" : [ "2011" ],
+      "creator" : [ "Little, Maureen.$$QLittle, Maureen." ],
+      "publisher" : [ "New York : How To Books" ],
+      "description" : [ "Bees play a vital and irreplaceable role in pollinating our flowers, fruits and vegetables. The more bees in your garden the healthier, more productive and more pleasant a place it will be. Yet bees are declining rapidly and many people, even if they do not wish to keep bees themselves, are asking what can be done on an individual basis to help the bee. This book is a response to that request. It will demonstrate in one accessible volume how each of us can play our part in providing a bee-friendly environment, no matter how much gardening space and/or time we may have. It includes: * How" ],
+      "mms" : [ "99252011100191" ],
+      "addtitle" : [ "Bee Garden" ],
+      "contents" : [ "Cover; Title Page; Table of Contents; Introduction; Acknowledgements; 1 : Bees and Their Needs; 2 : Creating and Maintaining a Bee-Friendly Garden; 3 : Plants and Gardening Jobs Season by Season; 4 : Other Flying Insects; 5 : Gazetteer of Plants Attractive to Bees; 6 : Planting Plans; Appendix 1 : Annuals and Biennials of Value to Bees; Appendix 2 : Perennials and Bulbs of Value to Bees; Appendix 3 : Shrubs and Climbers of Value to Bees; Appendix 4 : Trees of Value to Bees; Appendix 5 : Edible Plants of Value to Bees; Appendix 6 : Herbs of Value to Bees", "Appendix 7 : Wild Flowers of Value to BeesFurther Reading; Useful Addresses and Websites; Glossary; Index of Common Names of Plants and their Latin Equivalents; Plant Index; Index; Copyright" ],
+      "relation" : [ "$$Cform$$VLink to related record$$QLink to related record" ],
+      "place" : [ "New York :" ],
+      "version" : [ "1" ]
+    },
+    "control" : {
+      "sourcerecordid" : [ "99252011100191" ],
+      "recordid" : [ "alma99252011100191" ],
+      "sourceid" : "alma",
+      "originalsourceid" : [ "2670000000179230" ],
+      "sourcesystem" : [ "PQNKB" ],
+      "sourceformat" : [ "MARC21" ],
+      "score" : [ "0.015625" ],
+      "isDedup" : false
+    },
+    "addata" : {
+      "aulast" : [ "Little" ],
+      "aufirst" : [ "Maureen." ],
+      "auinit" : [ "M" ],
+      "au" : [ "Little, Maureen." ],
+      "creatorfull" : [ "$$NLittle, Maureen.$$LLittle$$FMaureen.$$Rauthor" ],
+      "addtitle" : [ "Bee Garden" ],
+      "date" : [ "2011" ],
+      "isbn" : [ "1-84803-573-X", "1-905862-59-8" ],
+      "abstract" : [ "Bees play a vital and irreplaceable role in pollinating our flowers, fruits and vegetables. The more bees in your garden the healthier, more productive and more pleasant a place it will be. Yet bees are declining rapidly and many people, even if they do not wish to keep bees themselves, are asking what can be done on an individual basis to help the bee. This book is a response to that request. It will demonstrate in one accessible volume how each of us can play our part in providing a bee-friendly environment, no matter how much gardening space and/or time we may have. It includes: * How" ],
+      "cop" : [ "New York" ],
+      "pub" : [ "How To Books" ],
+      "oclcid" : [ "(ckb)2670000000179230", "(ebl)897082", "(ocolc)792685483", "(ssid)ssj632477", "(pqkbmanifestationid)11451886", "(pqkbtitlecode)tc632477", "(pqkbworkid)10609728", "(pqkb)10572280" ],
+      "format" : [ "book" ],
+      "genre" : [ "book" ],
+      "ristype" : [ "BOOK" ],
+      "btitle" : [ "The Bee Garden How to Create or Adapt a Garden to Attract and Nurture Bees" ]
+    },
+    "sort" : {
+      "title" : [ "Bee Garden [electronic resource] : How to Create or Adapt a Garden to Attract and Nurture Bees" ],
+      "author" : [ "Little, Maureen." ],
+      "creationdate" : [ "2011" ]
+    },
+    "facets" : {
+      "frbrtype" : [ "6" ],
+      "frbrgroupid" : [ "9037218055918829747" ]
+    }
+  },
+  "delivery" : {
+    "bestlocation" : null,
+    "holding" : null,
+    "electronicServices" : null,
+    "additionalElectronicServices" : null,
+    "filteredByGroupServices" : null,
+    "quickAccessService" : null,
+    "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+    "serviceMode" : [ "howovp", "Viewit" ],
+    "availability" : [ "not_restricted", "no_inventory" ],
+    "availabilityLinks" : null,
+    "availabilityLinksUrl" : null,
+    "displayedAvailability" : "Not available",
+    "displayLocation" : null,
+    "additionalLocations" : null,
+    "physicalItemTextCodes" : null,
+    "feDisplayOtherLocations" : null,
+    "almaInstitutionsList" : [ {
+      "getitLink" : [ {
+        "displayText" : "Alma-E",
+        "linkRecordId" : "99252011100191"
+      } ],
+      "instCode" : "EXLDEMO3_INST",
+      "instName" : "Open University",
+      "instId" : "193",
+      "availabilityStatus" : "available_online",
+      "envURL" : ""
+    } ],
+    "recordInstitutionCode" : "EXLDEMO2_INST",
+    "recordOwner" : "EXLDEMO2_INST",
+    "hasFilteredServices" : null,
+    "digitalAuxiliaryMode" : false,
+    "hideResourceSharing" : false,
+    "sharedDigitalCandidates" : null,
+    "consolidatedCoverage" : null,
+    "electronicContextObjectId" : null,
+    "GetIt1" : [ {
+      "category" : "Alma-P",
+      "links" : [ {
+        "isLinktoOnline" : false,
+        "getItTabText" : "service_howtogetit",
+        "adaptorid" : "ALMA_01",
+        "ilsApiId" : "",
+        "link" : "HowToGetIt",
+        "inst4opac" : "",
+        "displayText" : null,
+        "@id" : "_:0"
+      } ]
+    } ],
+    "physicalServiceId" : null,
+    "link" : [ {
+      "@id" : ":_0",
+      "linkType" : "thumbnail",
+      "linkURL" : "https://i.pinimg.com/736x/1f/d9/77/1fd977a64c457ee05321a19d7884e324.jpg",
+      "displayLabel" : "thumbnail"
+    } ],
+    "hasD" : null
+  },
+  "enrichment" : {
+    "virtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : false,
+      "callNumber" : "",
+      "callNumberBrowseField" : ""
+    }
+  }
+}, {
+  "context" : "L",
+  "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99430722800121",
+  "adaptor" : "Local Search Engine",
+  "pnx" : {
+    "display" : {
+      "source" : [ "Alma" ],
+      "type" : [ "book" ],
+      "language" : [ "eng" ],
+      "title" : [ "Bee genetics and breeding" ],
+      "subject" : [ "Honeybee -- Breeding", "Honeybee -- Genetics", "Electronic books" ],
+      "format" : [ "1 online resource (443 p.)" ],
+      "identifier" : [ "$$CISBN$$V1-4832-7003-3;$$CISBN$$V1-322-25525-3;$$CISBN$$V0-12-588920-8" ],
+      "creationdate" : [ "1986" ],
+      "publisher" : [ "Orlando : Academic Press" ],
+      "description" : [ "Bee Genetics and Breeding provides an overview of the state of knowledge in bee genetics and breeding. The book is organized into two parts. Part I deals with the scholarly issues of bee genetics. It is intended as a reference source for students of both bees and genetics. It could also serve as a text for university courses in bee genetics. Topics discussed include the evolution of eusocial insects; geographical variability and classification of honey bees; and behavioral and biochemical genetics of honey bees. Part II deals more specifically with the practical issues of bee breeding. The dis" ],
+      "mms" : [ "99430722800121" ],
+      "contributor" : [ "Rinderer, Thomas E., editor.$$QRinderer, Thomas E." ],
+      "contents" : [ "Front Cover; Bee Genetics and Breeding; Copyright Page; Dedication; Table of Contents; Contributors; Preface; Part I:Genetics; CHAPTER 1. Evolution; I. INTRODUCTION; II. PATHWAYS TO EUSOCIALITY; III. THEORIES OF INDIVIDUAL SELECTION; IV. GEOLOGICAL HISTORY OF BEES; V. THE RISE OF HONEY BEES; REFERENCES; CHAPTER 2. Geographical Variability and Classification; I. INTRODUCTION; II. TAXONOMY OF THE GENUS APIS; III. METHODS OF MORPHOMETRIC ANALYSIS; IV. SURVEY OF THE GENUS APIS; V. THE GEOGRAPHIC RACES OF APIS MELLIFERA; REFERENCES; CHAPTER 3. Visible Mutants; I. ANALYSIS OF VISIBLE MUTANTS", "II. THE VISIBLE MUTANTSIII. FUNCTIONAL CAPABILITIES OF MUTANTS; REFERENCES; CHAPTER 4. Sex Determination; I. HISTORY; II. UNUSUAL BEES; III. SEX DETERMINATION HYPOTHESES; IV. UNEQUAL ADDITIVITY AMONG SEX ALLELES; V. GENE DOSAGE; VI. SEX ALLELES, MATING, AND BROOD SURVIVAL; VII. APICULTURAL CONSEQUENCES OF SEX ALLELES; REFERENCES; CHAPTER 5. Genetics of Bees Other than Apis mellifera; I. INTRODUCTION; II. THE BUMBLE BEES (BOMBINI); III. THE STINGLESS BEES (MELIPONINI); IV. NON-MELLIFERA (APIS); V. OTHER SOCIAL AND SOLITARY BEES; REFERENCES; CHAPTER 6. Behavioral Genetics; I. INTRODUCTION", "II. THEORETICAL CONSIDERATIONSIII. CONTROL OF UNDESIRABLE GENETIC VARIATION; IV. APPLICATIONS OF BEHAVIORAL GENETIC TECHNIQUES; ACKNOWLEDGMENT; REFERENCES; CHAPTER 7. Biochemical Genetics; I. INTRODUCTION; II. VARIABILITY IN HYMENOPTERA; III. KNOWN VARIABLE LOCI IN APIS; IV. USES OF VARIATION; V. OTHER KNOWN ENZYME SYSTEMS; VI. DEVELOPMENTAL VARIATION IN ENZYMES AND PROTEINS IN APIS; VII. SAMPLING, ANALYSIS, AND INTERPRETATION; ACKNOWLEDGMENTS; REFERENCES; CHAPTER 8. Cytology and Cytogenetics; I. INTRODUCTION; II. CHROMOSOMES; III. MOLECULAR CYTOGENETICS; IV. MEIOSIS; V. MITOSIS", "VI. CYTOGENETIC ANOMALIESVII. DEVELOPMENTAL CYTOGENETICS; REFERENCES; CHAPTER 9. Population Genetics; L INTRODUCTION; II. GENETIC VARIABILITY; III. GENETIC STRUCTURE; IV. INBREEDING; V. POPULATION GENETICS OF SEX ALLELES; VI. CONCLUSION; REFERENCES; CHAPTER 10. Reproduction and Mating Behavior; I. INTRODUCTION; II. THE PREMATING PERIOD; III. MATING BEHAVIOR; IV. SPERM MOVEMENT IN THE QUEEN; V. EGG MATURATION; VI. OVIPOSITION; REFERENCES; Part II: Breeding; CHAPTER 11. Quantitative Genetics; I. INTRODUCTION; II. APPROACHING QUANTITATIVE CHARACTERS; III. RESEMBLANCE-WHY SISTERS ARE ALIKE", "IV. VARIATION-WHY COLONIES DIFFERV. MORE ON RESEMBLANCE; VI. HERITABILITY; VII. EFFECTS OF SELECTION; VIII. CORRELATIONS; ACKNOWLEDGMENT; REFERENCES; CHAPTER 12. Selection; I. INTRODUCTION; II. BEE IMPROVEMENT TOOLS; III. DEFINING IMPROVEMENT; IV. BREEDING FOR CONFORMATION; V. BREEDING FOR IMPROVEMENT; ACKNOWLEDGMENTS; REFERENCES; CHAPTER 13. Mating Designs; I. COMPLEXITIES OF HONEY-BEE BREEDING; II. POSSIBLE MATINGS IN HONEY BEES AND THEIR GENETIC CONSEQUENCES; III. INBRED-HYBRID BREEDING; IV. CLOSED-POPULATION BREEDING; V. GENETIC COMPOSITION AND EXPERIMENTAL COLONIES; VI. CONCLUSION", "REFERENCES" ],
+      "relation" : [ "$$Cform$$VLink to related record$$QLink to related record", "$$Cform$$VLink to related record$$QLink to related record" ],
+      "place" : [ "Orlando :" ],
+      "version" : [ "1" ]
+    },
+    "control" : {
+      "sourcerecordid" : [ "99430722800121" ],
+      "recordid" : [ "alma99430722800121" ],
+      "sourceid" : "alma",
+      "originalsourceid" : [ "(CKB)3710000000026785" ],
+      "sourcesystem" : [ "EBC" ],
+      "sourceformat" : [ "MARC21" ],
+      "score" : [ "0.015625" ],
+      "isDedup" : false
+    },
+    "addata" : {
+      "aulast" : [ "Rinderer" ],
+      "aufirst" : [ "Thomas E." ],
+      "auinit" : [ "T" ],
+      "addau" : [ "Rinderer, Thomas E." ],
+      "contributorfull" : [ "$$NRinderer, Thomas E.$$LRinderer$$FThomas E.$$Reditor" ],
+      "date" : [ "1986" ],
+      "isbn" : [ "1-4832-7003-3", "1-322-25525-3", "0-12-588920-8" ],
+      "notes" : [ "Includes bibliographies and index." ],
+      "abstract" : [ "Bee Genetics and Breeding provides an overview of the state of knowledge in bee genetics and breeding. The book is organized into two parts. Part I deals with the scholarly issues of bee genetics. It is intended as a reference source for students of both bees and genetics. It could also serve as a text for university courses in bee genetics. Topics discussed include the evolution of eusocial insects; geographical variability and classification of honey bees; and behavioral and biochemical genetics of honey bees. Part II deals more specifically with the practical issues of bee breeding. The dis" ],
+      "cop" : [ "Orlando" ],
+      "pub" : [ "Academic Press" ],
+      "oclcid" : [ "(ckb)3710000000026785", "(ebl)1820218", "(ssid)ssj1063125", "(pqkbmanifestationid)12392356", "(pqkbtitlecode)tc1063125", "(pqkbworkid)11026735", "(pqkb)10861531", "(miaapq)ebc1820218" ],
+      "format" : [ "book" ],
+      "genre" : [ "book" ],
+      "ristype" : [ "BOOK" ],
+      "btitle" : [ "Bee genetics and breeding" ]
+    },
+    "sort" : {
+      "title" : [ "Bee genetics and breeding /" ],
+      "author" : [ "Rinderer, Thomas E., editor." ],
+      "creationdate" : [ "1986" ]
+    },
+    "facets" : {
+      "frbrtype" : [ "6" ],
+      "frbrgroupid" : [ "9066830183756646028" ]
+    }
+  },
+  "delivery" : {
+    "bestlocation" : null,
+    "holding" : null,
+    "electronicServices" : null,
+    "additionalElectronicServices" : null,
+    "filteredByGroupServices" : null,
+    "quickAccessService" : null,
+    "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+    "serviceMode" : [ "howovp", "Viewit" ],
+    "availability" : [ "not_restricted", "no_inventory" ],
+    "availabilityLinks" : null,
+    "availabilityLinksUrl" : null,
+    "displayedAvailability" : "Not available",
+    "displayLocation" : null,
+    "additionalLocations" : null,
+    "physicalItemTextCodes" : null,
+    "feDisplayOtherLocations" : null,
+    "almaInstitutionsList" : [ {
+      "getitLink" : [ {
+        "displayText" : "Alma-E",
+        "linkRecordId" : "9980328900191"
+      } ],
+      "instCode" : "EXLDEMO3_INST",
+      "instName" : "Open University",
+      "instId" : "193",
+      "availabilityStatus" : "available_online",
+      "envURL" : ""
+    } ],
+    "recordInstitutionCode" : null,
+    "recordOwner" : "EXLDEMO2_INST",
+    "hasFilteredServices" : null,
+    "digitalAuxiliaryMode" : false,
+    "hideResourceSharing" : false,
+    "sharedDigitalCandidates" : null,
+    "consolidatedCoverage" : null,
+    "electronicContextObjectId" : null,
+    "GetIt1" : [ {
+      "category" : "Alma-P",
+      "links" : [ {
+        "isLinktoOnline" : false,
+        "getItTabText" : "service_howtogetit",
+        "adaptorid" : "ALMA_01",
+        "ilsApiId" : "",
+        "link" : "HowToGetIt",
+        "inst4opac" : "",
+        "displayText" : null,
+        "@id" : "_:0"
+      } ]
+    } ],
+    "physicalServiceId" : null,
+    "link" : [ {
+      "@id" : ":_0",
+      "linkType" : "thumbnail",
+      "linkURL" : "https://www.greenpeace.org/usa/wp-content/uploads/2015/06/GP0STOZQJ_press-e1435344800286.jpg",
+      "displayLabel" : "thumbnail"
+    } ],
+    "hasD" : null
+  },
+  "enrichment" : {
+    "virtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : false,
+      "callNumber" : "",
+      "callNumberBrowseField" : ""
+    },
+    "bibVirtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : true,
+      "callNumber" : "sf\"531.5ǂ b44 1986",
+      "callNumberBrowseField" : "LOC_CL"
+    }
+  }
+}, {
+  "context" : "L",
+  "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9946876300121",
+  "adaptor" : "Local Search Engine",
+  "pnx" : {
+    "display" : {
+      "source" : [ "Alma" ],
+      "type" : [ "journal" ],
+      "language" : [ "eng" ],
+      "title" : [ "Bee culture." ],
+      "subject" : [ "Bee culture -- United States", "Bee culture", "United States" ],
+      "format" : [ "1 online resource" ],
+      "identifier" : [ "$$CLC$$V   00220011;$$CISSN$$V1931-4000;$$COCLC$$V(OCoLC)43313723;$$CISSN$$V1071-3190" ],
+      "creationdate" : [ "1993" ],
+      "publisher" : [ "Medina, Ohio : A.I. Root Co.", "Print began 1993." ],
+      "description" : [ "Feature articles on American beekeeping." ],
+      "mms" : [ "9946876300121" ],
+      "frequency" : [ "Monthly" ],
+      "genre" : [ "Periodicals.", "Electronic journals", "Periodicals" ],
+      "relation" : [ "$$Cearlier_title$$VGleanings in bee culture$$QGleanings in bee culture" ],
+      "place" : [ "Medina, Ohio] :" ],
+      "version" : [ "1" ]
+    },
+    "control" : {
+      "sourcerecordid" : [ "9946876300121" ],
+      "recordid" : [ "alma9946876300121" ],
+      "sourceid" : "alma",
+      "originalsourceid" : [ "110978977287240" ],
+      "sourcesystem" : [ "CKB" ],
+      "sourceformat" : [ "MARC21" ],
+      "score" : [ "0.015625" ],
+      "isDedup" : false
+    },
+    "addata" : {
+      "date" : [ "1993" ],
+      "issn" : [ "1931-4000", "1071-3190" ],
+      "abstract" : [ "Feature articles on American beekeeping." ],
+      "cop" : [ "Medina, Ohio" ],
+      "pub" : [ "A.I. Root Co." ],
+      "oclcid" : [ "(ocolc)43313723", "(ckb)110978977287240", "(conser)---00220011-" ],
+      "lccn" : [ "00220011", "sn 00220011" ],
+      "format" : [ "journal" ],
+      "genre" : [ "journal" ],
+      "ristype" : [ "JOUR" ],
+      "jtitle" : [ "Bee culture." ]
+    },
+    "sort" : {
+      "title" : [ "Bee culture." ],
+      "creationdate" : [ "1993" ]
+    },
+    "facets" : {
+      "frbrtype" : [ "6" ],
+      "frbrgroupid" : [ "9052682400143516185" ]
+    }
+  },
+  "delivery" : {
+    "bestlocation" : null,
+    "holding" : null,
+    "electronicServices" : null,
+    "additionalElectronicServices" : null,
+    "filteredByGroupServices" : null,
+    "quickAccessService" : null,
+    "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+    "serviceMode" : [ "howovp", "Viewit" ],
+    "availability" : [ "not_restricted", "no_inventory" ],
+    "availabilityLinks" : null,
+    "availabilityLinksUrl" : null,
+    "displayedAvailability" : "Not available",
+    "displayLocation" : null,
+    "additionalLocations" : null,
+    "physicalItemTextCodes" : null,
+    "feDisplayOtherLocations" : null,
+    "almaInstitutionsList" : [ {
+      "getitLink" : [ {
+        "displayText" : "Alma-E",
+        "linkRecordId" : "996747730000191"
+      } ],
+      "instCode" : "EXLDEMO1_INST",
+      "instName" : "University of Knowledge",
+      "instId" : "153",
+      "availabilityStatus" : "available_online",
+      "envURL" : ""
+    }, {
+      "getitLink" : [ {
+        "displayText" : "Alma-E",
+        "linkRecordId" : "996747730000191"
+      } ],
+      "instCode" : "EXLDEMO3_INST",
+      "instName" : "Open University",
+      "instId" : "193",
+      "availabilityStatus" : "available_online",
+      "envURL" : ""
+    } ],
+    "recordInstitutionCode" : null,
+    "recordOwner" : "EXLDEMO2_INST",
+    "hasFilteredServices" : null,
+    "digitalAuxiliaryMode" : false,
+    "hideResourceSharing" : false,
+    "sharedDigitalCandidates" : null,
+    "consolidatedCoverage" : null,
+    "electronicContextObjectId" : null,
+    "GetIt1" : [ {
+      "category" : "Alma-P",
+      "links" : [ {
+        "isLinktoOnline" : false,
+        "getItTabText" : "service_howtogetit",
+        "adaptorid" : "ALMA_01",
+        "ilsApiId" : "",
+        "link" : "HowToGetIt",
+        "inst4opac" : "",
+        "displayText" : null,
+        "@id" : "_:0"
+      } ]
+    } ],
+    "physicalServiceId" : null,
+    "link" : [ {
+      "@id" : ":_0",
+      "linkType" : "thumbnail",
+      "linkURL" : "https://images.squarespace-cdn.com/content/v1/5d3cbf70d8a40e00011d021a/1585274592031-IKPGVG34X3UA3K6M3JWC/Bee-Diversity-Header-1500px.jpg",
+      "displayLabel" : "thumbnail"
+    } ],
+    "hasD" : null
+  },
+  "enrichment" : {
+    "virtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : false,
+      "callNumber" : "",
+      "callNumberBrowseField" : ""
+    },
+    "bibVirtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : true,
+      "callNumber" : "issn record 0",
+      "callNumberBrowseField" : "LOC_CL"
+    }
+  }
+}, {
+  "context" : "L",
+  "@id" : "https://na02.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99317241200121",
+  "adaptor" : "Local Search Engine",
+  "pnx" : {
+    "display" : {
+      "source" : [ "Alma" ],
+      "type" : [ "book" ],
+      "language" : [ "swe" ],
+      "title" : [ "Little Bee" ],
+      "subject" : [ "Fiction", "Electronic books" ],
+      "format" : [ "154 s." ],
+      "identifier" : [ "$$CISBN$$V91-7337-408-3;$$CISBN$$V91-7337-384-2" ],
+      "creationdate" : [ "2012" ],
+      "creator" : [ "Cleave, Chris.$$QCleave, Chris." ],
+      "publisher" : [ "Stockholm : Brombergs" ],
+      "mms" : [ "99317241200121" ],
+      "relation" : [ "$$Cform$$VLink to related record$$QLink to related record" ],
+      "unititle" : [ "Little Bee. Svenska" ],
+      "includes" : [ "Cleave, Chris. Little Bee. Svenska$$QCleave, Chris. Little Bee. Svenska" ],
+      "place" : [ "Stockholm :" ],
+      "version" : [ "1" ]
+    },
+    "control" : {
+      "sourcerecordid" : [ "99317241200121" ],
+      "recordid" : [ "alma99317241200121" ],
+      "sourceid" : "alma",
+      "originalsourceid" : [ "3170000000047639" ],
+      "sourcesystem" : [ "EBC" ],
+      "sourceformat" : [ "MARC21" ],
+      "score" : [ "0.015625" ],
+      "isDedup" : false
+    },
+    "addata" : {
+      "aulast" : [ "Cleave" ],
+      "aufirst" : [ "Chris." ],
+      "auinit" : [ "C" ],
+      "au" : [ "Cleave, Chris." ],
+      "creatorfull" : [ "$$NCleave, Chris.$$LCleave$$FChris.$$Rauthor" ],
+      "date" : [ "2012" ],
+      "isbn" : [ "91-7337-408-3", "91-7337-384-2" ],
+      "notes" : [ "Innehåller bibliografiska referenser." ],
+      "cop" : [ "Stockholm" ],
+      "pub" : [ "Brombergs" ],
+      "oclcid" : [ "(ckb)3170000000047639", "(ssid)ssj883706", "(pqkbmanifestationid)11480874", "(pqkbtitlecode)tc883706", "(pqkbworkid)10943475", "(pqkb)10864439", "(miaapq)ebc3125932" ],
+      "format" : [ "book" ],
+      "genre" : [ "book" ],
+      "ristype" : [ "BOOK" ],
+      "btitle" : [ "Little Bee" ]
+    },
+    "sort" : {
+      "title" : [ "Little Bee [electronic resource] /" ],
+      "author" : [ "Cleave, Chris." ],
+      "creationdate" : [ "2012" ]
+    },
+    "facets" : {
+      "frbrtype" : [ "6" ],
+      "frbrgroupid" : [ "9001487245926017402" ]
+    }
+  },
+  "delivery" : {
+    "bestlocation" : null,
+    "holding" : null,
+    "electronicServices" : null,
+    "additionalElectronicServices" : null,
+    "filteredByGroupServices" : null,
+    "quickAccessService" : null,
+    "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+    "serviceMode" : [ "howovp", "Viewit" ],
+    "availability" : [ "not_restricted", "no_inventory" ],
+    "availabilityLinks" : null,
+    "availabilityLinksUrl" : null,
+    "displayedAvailability" : "Not available",
+    "displayLocation" : null,
+    "additionalLocations" : null,
+    "physicalItemTextCodes" : null,
+    "feDisplayOtherLocations" : null,
+    "almaInstitutionsList" : [ ],
+    "recordInstitutionCode" : null,
+    "recordOwner" : "EXLDEMO2_INST",
+    "hasFilteredServices" : null,
+    "digitalAuxiliaryMode" : false,
+    "hideResourceSharing" : false,
+    "sharedDigitalCandidates" : null,
+    "consolidatedCoverage" : null,
+    "electronicContextObjectId" : null,
+    "GetIt1" : [ {
+      "category" : "Alma-P",
+      "links" : [ {
+        "isLinktoOnline" : false,
+        "getItTabText" : "service_howtogetit",
+        "adaptorid" : "ALMA_01",
+        "ilsApiId" : "",
+        "link" : "HowToGetIt",
+        "inst4opac" : "",
+        "displayText" : null,
+        "@id" : "_:0"
+      } ]
+    } ],
+    "physicalServiceId" : null,
+    "link" : [ {
+      "@id" : ":_0",
+      "linkType" : "thumbnail",
+      "linkURL" : "https://thebeeconservancy.org/wp-content/uploads/2020/09/cellophane-bee-Colletes-compactus.jpg",
+      "displayLabel" : "thumbnail"
+    } ],
+    "hasD" : null
+  },
+  "enrichment" : {
+    "virtualBrowseObject" : {
+      "isVirtualBrowseEnabled" : false,
+      "callNumber" : "",
+      "callNumberBrowseField" : ""
+    }
+  }
+} ]
