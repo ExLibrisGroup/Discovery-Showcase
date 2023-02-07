@@ -19,14 +19,20 @@ export class MotionCarousel extends LitElement {
 
     private left = 0;
     private selectedInternal = 0;
-
     get maxSelected() {
         return this.childElementCount - 1;
+    }
+
+    override connectedCallback() {
+        super.connectedCallback();
+        this.changeInterval = setInterval(()=> this.clickHandler(), 2000)
     }
 
     hasValidSelected() {
         return this.selected >= 0 && this.selected <= this.maxSelected;
     }
+
+
 
     override render() {
         const p = this.selectedInternal;
@@ -86,8 +92,8 @@ export class MotionCarousel extends LitElement {
         this.children[this.selected]?.setAttribute('slot', 'selected');
     }
 
-    private clickHandler(e: MouseEvent) {
-        const i = this.selected + (Number(!e.shiftKey) || -1);
+    private clickHandler(e?: MouseEvent) {
+        const i = this.selected + (Number(!e?.shiftKey) || -1);
         this.selected = i > this.maxSelected ? 0 : i < 0 ? this.maxSelected : i;
         const change = new CustomEvent('change',
             {detail: this.selected, bubbles: true, composed: true});
