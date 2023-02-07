@@ -41,6 +41,7 @@
   "author": "Google LLC",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "@lit-labs/motion": "^1.0.3",
     "lit": "^2.2.4"
   },
   "devDependencies": {
