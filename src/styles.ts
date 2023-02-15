@@ -2,7 +2,9 @@ import {css} from 'lit';
 
 export const styles = css`
   :host {
-    display: inline-block;
+    margin: auto;
+    font-size: 14px!important;
+    display: block;
     overflow: hidden;
     position: relative;
     /* Defaults */
@@ -42,10 +44,16 @@ export const styles = css`
 
   .indicator {
     position: relative;
-    display: inline-block;
+    //display: inline-block;
     height: 100%;
     width: 8px;
     border-radius: 8px;
     background: #eee;
-  }`;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
 
