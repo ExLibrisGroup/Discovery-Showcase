@@ -42,7 +42,8 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "@lit-labs/motion": "^1.0.3",
-    "lit": "^2.2.4"
+    "lit": "^2.2.4",
+    "swiper": "^9.1.1"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
