@@ -12,6 +12,10 @@ export class SearchCarousel extends LitElement {
 
     @state()
     private data: any;
+    private viewId: any;
+    private language: any;
+    private scope: any;
+    private tab: any;
 
     constructor() {
         super();
@@ -40,13 +44,20 @@ export class SearchCarousel extends LitElement {
     protected override createRenderRoot() {
         return this;
     }
-
+    
 
     override render() {
         if(!this.data) {
             return html`loading data....`;
         }
-        const docsPromise = this.data.then(data => data.docs.map((doc:any) => html`<swiper-slide><pnx-card .doc="${doc}"></pnx-card></swiper-slide>`)
+        const parsedUrl = new URL(this.searchUrl);
+        this.viewId = parsedUrl.searchParams.get("vid");
+        this.language = parsedUrl.searchParams.get("lang")
+        this.scope = parsedUrl.searchParams.get("scope")
+        this.tab = parsedUrl.searchParams.get("tab")
+
+
+        const docsPromise = this.data.then(data => data.docs.map((doc:any) => html`<swiper-slide><pnx-card .doc="${doc}" .vid="${this.viewId}" .language="${this.language}" .scope="${this.scope}" .tab="${this.tab}"></pnx-card></swiper-slide>`)
 
         return html`
             
