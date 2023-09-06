@@ -4,6 +4,8 @@ export const styles = css`
   a {
     text-decoration: none;
     color: black;
+    display: flex;
+    flex-direction: column;
   }
   .record-details {
     text-align: center;
