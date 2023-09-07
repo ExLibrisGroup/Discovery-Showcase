@@ -183,11 +183,33 @@ export class SearchCarousel extends LitElement {
                         background-color: transparent;
                         border: none;
                         top: 50%;
+                        padding: 0;
+                    }
+                    
+                    @media only screen and (max-width: 360px) {
+                        .gallery-container .swiper-button-next {
+                            margin-inline-end: -13px;
+                        }
+                        .gallery-container .swiper-button-prev {
+                            margin-inline-start: -13px;
+                        }
+                        /*.swiper-button-prev:focus:not(:active), .swiper-button-next:focus:not(:active) {
+                        box-shadow: 0 0 0 2px black;
+                        }*/
                     }
                     
                     /*.swiper-button-prev:focus, .swiper-button-next:focus {
-                        box-shadow: 0 0 0 2px black;
+                        // box-shadow: 0 0 0 2px black;
                     }*/
+                    
+                    .swiper-button-prev, .swiper-button-next {
+                        &:hover,&:focus {
+                            background-color: black;
+                            &:after {
+                            color: white;
+                            }
+                        }
+                    }
                     
                     .swiper-pagination .swiper-pagination-bullet-active {
                         background-color: black;
