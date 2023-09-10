@@ -21,11 +21,9 @@ export class PnxCard extends LitElement {
     @property()
     tab: any;
 
-
     override render() {
-        // const docsPromise = this.data.then(data => data.docs.map((doc:any) => html`<swiper-slide><pnx-card .doc="${doc}" .vid="${this.viewId}" .language="${this.language}" .scope="${this.scope}" .tab="${this.tab}"></pnx-card></swiper-slide>`)
-        const momo = this.getThumbnailLinks();
-        const imgPromise = momo.then(url => {
+        const img = this.getThumbnailLinks();
+        const imgPromise = img.then(url => {
             console.log(`getImageUrl returned ${url}`)
             return html`<img src=${url}>`
         })
@@ -53,12 +51,8 @@ export class PnxCard extends LitElement {
         const recordId = this.doc.pnx.control.recordid;
         const context = this.doc.context;
 
-        console.log(this.doc);
-        console.log(this.doc["@id"]);
 
         deeplink = protocol + host + primoMapping + state + "&docid=" + recordId + "&context=" + context + "&vid=" + this.vid + "&lang=" + this.language + "&search_scope=" + this.scope + "&tab=" + this.tab;
-
-        console.log(deeplink);
 
         return deeplink;
     }
@@ -237,7 +231,7 @@ export class PnxCard extends LitElement {
         // const found = Promise.any(promiseArray);
         // try {
         //     const ret = await found;
-        //     return ret;
+        //     return retg;
         // } catch (e) {
         //     return ''
         // }
