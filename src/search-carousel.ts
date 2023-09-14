@@ -1,7 +1,7 @@
 import {html, LitElement} from "lit";
 import {until} from 'lit-html/directives/until.js';
-import { customElement, property, state } from "lit/decorators.js";
-import { register } from 'swiper/element/bundle';
+import {customElement, property, state} from "lit/decorators.js";
+import {register} from 'swiper/element/bundle';
 import {PnxCard} from "./pnx-card";
 
 register();
@@ -30,11 +30,10 @@ export class SearchCarousel extends LitElement {
     }
 
     async performQuery() {
-        try{
+        try {
             const response = await fetch(this.searchUrl);
             this.data = response.json();
-        }
-        catch (error){
+        } catch (error) {
         }
 
 
@@ -44,10 +43,10 @@ export class SearchCarousel extends LitElement {
     protected override createRenderRoot() {
         return this;
     }
-    
+
 
     override render() {
-        if(!this.data) {
+        if (!this.data) {
             return html`loading data....`;
         }
         const parsedUrl = new URL(this.searchUrl);
@@ -57,12 +56,12 @@ export class SearchCarousel extends LitElement {
         this.tab = parsedUrl.searchParams.get("tab")
 
 
-        const docsPromise = this.data.then(data => data.docs.map((doc:any) => html`<swiper-slide><pnx-card .doc="${doc}" .vid="${this.viewId}" .language="${this.language}" .scope="${this.scope}" .tab="${this.tab}"></pnx-card></swiper-slide>`)
+        const docsPromise = this.data.then(data => data.docs.map((doc: any) => html`<swiper-slide><pnx-card .doc="${doc}" .vid="${this.viewId}" .language="${this.language}" .scope="${this.scope}" .tab="${this.tab}"></pnx-card></swiper-slide>`)
 
         return html`
             
             <div class="gallery-container">
-                <swiper-container init="false">
+                <swiper-container init="false" class="swiper">
                          ${until(docsPromise, ``)}
                 </swiper-container>
                 <!-- Navigation buttons -->
@@ -80,20 +79,10 @@ export class SearchCarousel extends LitElement {
         }
         const params = {
             // inject same style to shadow DOM
-
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true
-            },
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
             effect: "coverflow",
             grabCursor: true,
             centeredSlides: true,
-            slidesPerView: "3",
+            // slidesPerView: "4",
             spaceBetween: 70,
             slidesPerView: "auto",
             // loop: true,
@@ -103,6 +92,10 @@ export class SearchCarousel extends LitElement {
                 depth: 100,
                 modifier: 1,
                 slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
             },
             // Responsive breakpoints
             breakpoints: {
@@ -123,6 +116,11 @@ export class SearchCarousel extends LitElement {
                     spaceBetween: 70,
                 },
             },
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
             // Accessibility
             a11y: {
                 prevSlideMessage: 'Previous slide',
@@ -132,11 +130,23 @@ export class SearchCarousel extends LitElement {
             },
             injectStyles: [
                 `
+                     search-carousel {
+                        position: relative;
+                        height: 100%;
+                        display: block;
+                        font-size: 14px;
+                        color: #000;
+                        padding: 0;
+                        max-width: 930px;
+                        margin: 0 auto;
+                     }
                     .gallery-container {
                         padding: 20px;
-                        max-width: 930px;
-                        padding-top: 25px;
-                        padding-bottom: 50px;
+                    }
+                    
+                    .gallery-container a {
+                        text-decoration: none;
+                        color: black;
                     }
                     
                     .gallery-container a:hover, .gallery-container a:focus {
@@ -147,18 +157,15 @@ export class SearchCarousel extends LitElement {
                         text-align: center;
                     }
                     
-                    
-                    .swiper-wrapper {
+                    .swiper {
                         max-width: 930px;
                         padding-top: 25px;
-                        padding-bottom: 50px;
                     }
                     
                     swiper-slide {
                         background-position: center;
                         background-size: cover;
                         width: 160px;
-                        /*height: 227px;*/
                         text-decoration: none;
                     }
                     
@@ -168,22 +175,41 @@ export class SearchCarousel extends LitElement {
                     
                     .swiper-slide img {
                         display: block;
-                        max-width: 100%;
-                        height: auto;
-                        /*width: 100%;*/
                     }
                     
                     
-                    .swiper-button-prev, .swiper-button-next {
+                    .gallery-container .swiper-button-prev, .gallery-container .swiper-button-next {
                         color: black;
-                        background: transparent;
+                        background-color: transparent;
                         border: none;
+                        top: 50%;
+                        padding: 0;
+                    }
+                    
+                    @media only screen and (max-width: 360px) {
+                        .gallery-container .swiper-button-next {
+                            margin-inline-end: -13px;
+                        }
+                        .gallery-container .swiper-button-prev {
+                            margin-inline-start: -13px;
+                        }
+                        /*.swiper-button-prev:focus:not(:active), .swiper-button-next:focus:not(:active) {
+                        box-shadow: 0 0 0 2px black;
+                        }*/
                     }
                     
                     /*.swiper-button-prev:focus, .swiper-button-next:focus {
-                        border: 2px solid black;
-                        !*box-shadow: 0 0 0 2px black;*!
+                        // box-shadow: 0 0 0 2px black;
                     }*/
+                    
+                    .swiper-button-prev, .swiper-button-next {
+                        &:hover,&:focus {
+                            background-color: black;
+                            &:after {
+                            color: white;
+                            }
+                        }
+                    }
                     
                     .swiper-pagination .swiper-pagination-bullet-active {
                         background-color: black;
