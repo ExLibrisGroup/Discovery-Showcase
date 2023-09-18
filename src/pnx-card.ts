@@ -81,32 +81,29 @@ export class PnxCard extends LitElement {
             const defaultThumbnail = this.defineDefaultThumbnail(type);
             let thumbnailLinks = linksArray.filter((e: any) => e.displayLabel === 'thumbnail')
 
+            // const almaD = await this.getThumbnailFromAlmaD(item, isVirtualBrowse, virtualBrowseItem);
+            // if (almaD) {
+            //   return almaD;
+            // }
 
-            if (!this.isCDI()) {
-                // const almaD = await this.getThumbnailFromAlmaD(item, isVirtualBrowse, virtualBrowseItem);
-                // if (almaD) {
-                //   return almaD;
-                // }
+            let other = await this.getThumbnailFromOther(thumbnailLinks);
+            if (other) {
+                return other;
+            }
 
-                let other = await this.getThumbnailFromOther(thumbnailLinks);
-                if (other) {
-                  return other;
-                }
+            const syndeticsEXL = await this.getThumbnailFromSyndeticsEXL(thumbnailLinks);
+            if (syndeticsEXL) {
+                return syndeticsEXL;
+            }
 
-                const syndeticsEXL = await this.getThumbnailFromSyndeticsEXL(thumbnailLinks);
-                if (syndeticsEXL) {
-                    return syndeticsEXL;
-                }
+            const syndetics = await this.getThumbnailFromSyndetics(thumbnailLinks);
+            if (syndetics) {
+                return syndetics;
+            }
 
-                const syndetics = await this.getThumbnailFromSyndetics(thumbnailLinks);
-                if (syndetics) {
-                    return syndetics;
-                }
-
-                const google = await this.getThumbnailFromGoogle(thumbnailLinks);
-                if (google) {
-                    return google;
-                }
+            const google = await this.getThumbnailFromGoogle(thumbnailLinks);
+            if (google) {
+                return google;
             }
             return defaultThumbnail.linkURL;
 
