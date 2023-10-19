@@ -22,10 +22,11 @@ export const styles = css`
     color: #5a5a5a;
   }
    img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    /*width: 100%;*/
+     display: block;
+     // max-width: 100%;
+     // height: auto;
+     width: 160px;
+     height: 210px;
   }
 `;
 
