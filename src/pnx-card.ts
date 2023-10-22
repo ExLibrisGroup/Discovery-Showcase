@@ -320,24 +320,24 @@ export class PnxCard extends LitElement {
         };
     }
 
-    private isCDI() {
-        const recordId = this.doc?.pnx?.control?.recordid[0];
-        const context = this.doc?.context;
-        const adaptor = this.doc?.adaptor;
-        return context === 'PC' || (recordId && recordId.startsWith('TN_')) || adaptor === 'Primo Central';
-    }
+    // private isCDI() {
+    //     const recordId = this.doc?.pnx?.control?.recordid[0];
+    //     const context = this.doc?.context;
+    //     const adaptor = this.doc?.adaptor;
+    //     return context === 'PC' || (recordId && recordId.startsWith('TN_')) || adaptor === 'Primo Central';
+    // }
 
-    private isAlmaD() {
-        if (this.isPrimo()) {
-            return false;
-        }
-        if (this.doc.context === 'SP' && this.doc?.pnx?.control?.sourceid === 'alma' && this.doc.delivery?.electronicServices) {
-            return (this.doc.delivery.electronicServices.filter(
-                (svc: any) => svc.serviceType === 'DIGITAL').length > 0);
-        } else {
-            return this.doc.delivery['hasD'] === true || this.doc.delivery['digitalAuxiliaryMode'] === true;
-        }
-    }
+    // private isAlmaD() {
+    //     if (this.isPrimo()) {
+    //         return false;
+    //     }
+    //     if (this.doc.context === 'SP' && this.doc?.pnx?.control?.sourceid === 'alma' && this.doc.delivery?.electronicServices) {
+    //         return (this.doc.delivery.electronicServices.filter(
+    //             (svc: any) => svc.serviceType === 'DIGITAL').length > 0);
+    //     } else {
+    //         return this.doc.delivery['hasD'] === true || this.doc.delivery['digitalAuxiliaryMode'] === true;
+    //     }
+    // }
 
     // private async getAlmaDigitalThumbnailForPnx(): Promise<string> {
     //     const mmsId = this.doc?.pnx?.control?.sourcerecordid?.[0];
@@ -362,16 +362,16 @@ export class PnxCard extends LitElement {
     //     return thumbnailUrl;
     // }
 
-    private isEsploroRecord() {
-        return this.doc.pnx.control.sourceformat?.[0] === 'ESPLORO' || false;
-    }
-    private getAlmaDigitalThumbnailUrl(mmsId: any) {
-        return "/view/delivery/thumbnail/" + this.vid + "/" + mmsId;
-    }
+    // private isEsploroRecord() {
+    //     return this.doc.pnx.control.sourceformat?.[0] === 'ESPLORO' || false;
+    // }
+    // private getAlmaDigitalThumbnailUrl(mmsId: any) {
+    //     return "/view/delivery/thumbnail/" + this.vid + "/" + mmsId;
+    // }
 
-    private resolveAlmaDigitalImage(thumbnailUrl: any) {
-        return this.getImageLink(thumbnailUrl);
-    }
+    // private resolveAlmaDigitalImage(thumbnailUrl: any) {
+    //     return this.getImageLink(thumbnailUrl);
+    // }
 
     private createLinkObj(url: any) {
         return {

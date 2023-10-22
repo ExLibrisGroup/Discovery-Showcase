@@ -56,7 +56,11 @@ export class SearchCarousel extends LitElement {
         this.tab = parsedUrl.searchParams.get("tab")
 
 
-        const docsPromise = this.data.then(data => data.docs.map((doc: any) => html`<swiper-slide><pnx-card .doc="${doc}" .vid="${this.viewId}" .language="${this.language}" .scope="${this.scope}" .tab="${this.tab}"></pnx-card></swiper-slide>`)
+        const docsPromise = this.data.then((data: any) => data.docs.map((doc: any) =>
+            html`<swiper-slide>
+                <pnx-card .doc="${doc}" .vid="${this.viewId}" .language="${this.language}" .scope="${this.scope}" .tab="${this.tab}">
+                </pnx-card>
+            </swiper-slide>`))
 
         return html`
             
@@ -219,6 +223,7 @@ export class SearchCarousel extends LitElement {
 
         }
         Object.assign(swiperEl, params);
+        // @ts-ignore
         swiperEl.initialize();
     }
 
