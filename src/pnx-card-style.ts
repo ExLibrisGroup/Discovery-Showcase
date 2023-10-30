@@ -21,7 +21,7 @@ export const styles = css`
     font-weight: 400;
     color: #5a5a5a;
   }
-   img {
+   img, .image-place-holder {
      display: block;
      // max-width: 100%;
      // height: auto;

@@ -23,16 +23,15 @@ export class PnxCard extends LitElement {
 
     override render() {
         const img = this.getThumbnailLinks();
+        const imagePlaceHolder= html`<div style="background-color: ${this.getRandomColor()}" 
+                                          class="image-place-holder"></div>`;
         const imgPromise = img.then(url => {
             console.log(`getImageUrl returned ${url}`)
             return html`<img src=${url}>`
-        })
-
+        }).catch(() => imagePlaceHolder); //on error or no thumbnail render the image placeholder
         return html`
-            
             <a  href="${this.getDeeplink()}" target="_blank" aria-label="">
-                ${until(imgPromise, `no image yet`)}
-
+                ${until(imgPromise, imagePlaceHolder)}
                 <div class="record-details">
                     <h2>${this?.doc?.pnx?.display?.title?.[0] ?? ''}</h2>
                     <span>${this?.doc?.pnx?.display?.publisher?.[0] ?? ''}</span>
@@ -40,6 +39,15 @@ export class PnxCard extends LitElement {
             </a>
             
         `
+    }
+
+    private getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
     }
     private getDeeplink() {
         let deeplink = "";
@@ -76,9 +84,9 @@ export class PnxCard extends LitElement {
 
         try {
             let linksArray = this.doc.delivery.link || [];
-            let type = this.getType(false, this.doc);
+            // let type = this.getType(false, this.doc);
 
-            const defaultThumbnail = this.defineDefaultThumbnail(type);
+            // const defaultThumbnail = this.defineDefaultThumbnail(type);
             let thumbnailLinks = linksArray.filter((e: any) => e.displayLabel === 'thumbnail')
 
             // const almaD = await this.getThumbnailFromAlmaD(item, isVirtualBrowse, virtualBrowseItem);
@@ -105,10 +113,9 @@ export class PnxCard extends LitElement {
             if (google) {
                 return google;
             }
-            return defaultThumbnail.linkURL;
+            throw 'no thumbnail';
 
         } catch (error) {
-            console.error('Error in getThumbnailLinks:', error);
             throw error; // Rethrow the error for higher-level error handling
         }
     }
@@ -143,7 +150,7 @@ export class PnxCard extends LitElement {
                 const result = await Promise.race(promiseArray);
                 return result || '';
             } catch (error) {
-                console.error('Error fetching images:', error);
+                // console.error('Error fetching images:', error);
                 return '';
             }
         } else {
@@ -303,22 +310,22 @@ export class PnxCard extends LitElement {
             thumbnailLink.linkURL = linkUrl.substr(0, linkUrl.indexOf('$$L')).trim();
         }
     }
-    private getType(featuredResult: any, doc: any) {
-        if (featuredResult) {
-            return 'book'
-        }
-        else {
-            return doc && doc.pnx.display.type ? doc.pnx.display.type[0] : []
-        }
-    }
+    // private getType(featuredResult: any, doc: any) {
+    //     if (featuredResult) {
+    //         return 'book'
+    //     }
+    //     else {
+    //         return doc && doc.pnx.display.type ? doc.pnx.display.type[0] : []
+    //     }
+    // }
 
-    private defineDefaultThumbnail(type: any) {
-        return {
-            displayLabel: 'thumbnail',
-            linkType: 'http://purl.org/pnx/linkType/thumbnail',
-            linkURL: type.length > 0 ? 'img/icon_' + type + '.png' : undefined
-        };
-    }
+    // private defineDefaultThumbnail(type: any) {
+    //     return {
+    //         displayLabel: 'thumbnail',
+    //         linkType: 'http://purl.org/pnx/linkType/thumbnail',
+    //         linkURL: type.length > 0 ? 'img/icon_' + type + '.png' : undefined
+    //     };
+    // }
 
     // private isCDI() {
     //     const recordId = this.doc?.pnx?.control?.recordid[0];

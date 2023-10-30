@@ -9,6 +9,8 @@ register();
 @customElement('search-carousel')
 export class SearchCarousel extends LitElement {
     @property() searchUrl: string = '';
+    @property() titleText: string | undefined;
+    @property() titleLink: string | undefined;
 
     @state()
     private data: any;
@@ -55,6 +57,8 @@ export class SearchCarousel extends LitElement {
         this.scope = parsedUrl.searchParams.get("scope")
         this.tab = parsedUrl.searchParams.get("tab")
 
+        const titleHtml = this.getTitleHtml();
+
 
         const docsPromise = this.data.then((data: any) => data.docs.map((doc: any) =>
             html`<swiper-slide>
@@ -65,6 +69,7 @@ export class SearchCarousel extends LitElement {
         return html`
             
             <div class="gallery-container">
+                ${titleHtml}
                 <swiper-container init="false" class="swiper">
                          ${until(docsPromise, ``)}
                 </swiper-container>
@@ -227,4 +232,10 @@ export class SearchCarousel extends LitElement {
         swiperEl.initialize();
     }
 
+    private getTitleHtml() {
+        if (this.titleText) {
+            return this.titleLink ? html`<h1><a target="_blank" href="${this.titleLink}">${this.titleText}</a></h1>` : html`<h1>${this.titleText}</h1>`
+        }
+        return html``;
+    }
 }
