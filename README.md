@@ -126,7 +126,9 @@ The site will usually be served at http://localhost:8000.
 ## Bundling and minification
 
 Run this command in order to create a minified and bundled file:
+```bash
 npx webpack --config webpack.config.js
+```
 It will create a bundled js fiel called discovery-showcase.js inside the dist folder
 
 ## More information
