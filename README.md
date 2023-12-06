@@ -125,9 +125,11 @@ The site will usually be served at http://localhost:8000.
 
 ## Bundling and minification
 
-This starter project doesn't include any build-time optimizations like bundling or minification. We recommend publishing components as unoptimized JavaScript modules, and performing build-time optimizations at the application level. This gives build tools the best chance to deduplicate code, remove dead code, and so on.
-
-For information on building application projects that include LitElement components, see [Build for production](https://lit.dev/docs/tools/production/) on the Lit site.
+Run this command in order to create a minified and bundled file:
+```bash
+rollup -c
+```
+It will create a bundled js file called discovery-showcase.js inside the dist folder
 
 ## More information
 
