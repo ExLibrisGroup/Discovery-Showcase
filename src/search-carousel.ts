@@ -14,10 +14,11 @@ export class SearchCarousel extends LitElement {
 
     @state()
     private data: any;
-    private viewId: any;
-    private language: any;
-    private scope: any;
-    private tab: any;
+    private viewId!: string | null;
+    private language!: string | null;
+    private scope!: string | null;
+    private tab!: string | null;
+    private institution!: string | null;
 
     constructor() {
         super();
@@ -56,13 +57,14 @@ export class SearchCarousel extends LitElement {
         this.language = parsedUrl.searchParams.get("lang")
         this.scope = parsedUrl.searchParams.get("scope")
         this.tab = parsedUrl.searchParams.get("tab")
+        this.institution = parsedUrl.searchParams.get("inst")
 
         const titleHtml = this.getTitleHtml();
 
 
         const docsPromise = this.data.then((data: any) => data.docs.map((doc: any) =>
             html`<swiper-slide>
-                <pnx-card .doc="${doc}" .vid="${this.viewId}" .language="${this.language}" .scope="${this.scope}" .tab="${this.tab}">
+                <pnx-card .doc="${doc}" .institution="${this.institution}" .vid="${this.viewId}" .language="${this.language}" .scope="${this.scope}" .tab="${this.tab}">
                 </pnx-card>
             </swiper-slide>`))
 

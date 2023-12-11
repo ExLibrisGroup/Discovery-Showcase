@@ -4,7 +4,6 @@ import { styles } from './pnx-card-style';
 import { until } from 'lit-html/directives/until.js';
 
 
-
 @customElement('pnx-card')
 export class PnxCard extends LitElement {
 
@@ -13,15 +12,19 @@ export class PnxCard extends LitElement {
     @property()
     doc: any;
     @property()
-    vid: any;
+    institution!: string;
     @property()
-    language: any;
+    vid!: string;
     @property()
-    scope: any;
+    language!: string;
     @property()
-    tab: any;
+    scope!: string;
+    @property()
+    tab!: string;
+    private almaDThumbnailBaseURL!: string;
 
     override render() {
+        this.almaDThumbnailBaseURL = this.getAlmaDThumbnailBaseUrl()
         const img = this.getThumbnailLinks();
         const imagePlaceHolder= html`<div style="background-color: ${this.getRandomColor()}" 
                                           class="image-place-holder"></div>`;
@@ -39,6 +42,11 @@ export class PnxCard extends LitElement {
             </a>
             
         `
+    }
+
+    getAlmaDThumbnailBaseUrl() {
+        const parsedUrl = new URL(this.doc["@id"]);
+        return `${parsedUrl.origin}/view/delivery/thumbnail`
     }
 
     private getRandomColor() {
@@ -89,10 +97,10 @@ export class PnxCard extends LitElement {
             // const defaultThumbnail = this.defineDefaultThumbnail(type);
             let thumbnailLinks = linksArray.filter((e: any) => e.displayLabel === 'thumbnail')
 
-            // const almaD = await this.getThumbnailFromAlmaD(item, isVirtualBrowse, virtualBrowseItem);
-            // if (almaD) {
-            //   return almaD;
-            // }
+            const almaD = await this.getThumbnailFromAlmaD();
+            if (almaD) {
+              return almaD;
+            }
 
             let other = await this.getThumbnailFromOther(thumbnailLinks);
             if (other) {
@@ -113,6 +121,12 @@ export class PnxCard extends LitElement {
             if (google) {
                 return google;
             }
+
+            const syndeticsEXLWithUnbound = await this.getThumbnailFromSyndeticsEXL(thumbnailLinks, true);
+            if (syndeticsEXLWithUnbound) {
+                return syndeticsEXLWithUnbound;
+            }
+
             throw 'no thumbnail';
 
         } catch (error) {
@@ -120,19 +134,19 @@ export class PnxCard extends LitElement {
         }
     }
 
-    // private async getThumbnailFromAlmaD() {
-    //     try {
-    //         if (this.isAlmaD()) {
-    //             const thumbnailLink = await this.getAlmaDigitalThumbnailForPnx();
-    //             return await this.resolveAlmaDigitalImage(thumbnailLink);
-    //         } else {
-    //             return '';
-    //         }
-    //     } catch (error) {
-    //         console.error('Error in getThumbnailFromAlmaD:', error);
-    //         return '';
-    //     }
-    // }
+    private async getThumbnailFromAlmaD() {
+        try {
+            if (this.isAlmaD()) {
+                const thumbnailLink = await this.getAlmaDigitalThumbnailForPnx();
+                return await this.resolveAlmaDigitalImage(thumbnailLink);
+            } else {
+                return '';
+            }
+        } catch (error) {
+            console.error('Error in getThumbnailFromAlmaD:', error);
+            return '';
+        }
+    }
 
     private async getThumbnailFromOther(thumbnailLinks: any) {
 
@@ -172,7 +186,7 @@ export class PnxCard extends LitElement {
         return linkURL.linkURL.indexOf(linkIdentifier) === -1;
     }
 
-    private async getThumbnailFromSyndeticsEXL(thumbnailLinks: any) {
+    private async getThumbnailFromSyndeticsEXL(thumbnailLinks: any, useUnbound?: boolean) {
         const syndeticsLinks = thumbnailLinks.filter((link: any) => this.getSpecificLink(link, 'syndetics.com') || this.getSpecificLink(link, 'primo'));
 
         if (syndeticsLinks.length > 0 || !this.isPrimo()) {
@@ -180,7 +194,7 @@ export class PnxCard extends LitElement {
             const issns = [...new Set((this.doc?.pnx?.addata?.issn || []).concat(this.doc?.pnx?.addata?.eissn || []))];
             const upc = this.doc?.pnx?.addata?.upcid || [];
 
-            const syntetixBaseUrl = "https://syndetics.com/index.php?client=primo&";
+            const syntetixBaseUrl = `https://syndetics.com/index.php?client=primo&${useUnbound? 'type=unbound&' : ''}`;
 
             for (const isbn of isbns) {
                 syndeticsLinks.push(this.createLinkObj(`${syntetixBaseUrl}isbn=${isbn}/sc.jpg`));
@@ -232,15 +246,7 @@ export class PnxCard extends LitElement {
             const imageUrl = link.linkURL.replace('https://syndetics.com/index.php?client=', syndeticsProxy);
             return this.getImageLink(imageUrl);
         })
-        // const found = Promise.any(promiseArray);
-        // try {
-        //     const ret = await found;
-        //     return retg;
-        // } catch (e) {
-        //     return ''
-        // }
-        const ret = await this.createPromiseOnlyFailOnAllFailedResolveFirstSuccess(promiseArray);
-        return ret;
+        return await this.createPromiseOnlyFailOnAllFailedResolveFirstSuccess(promiseArray);
     }
 
     private async getThumbnailFromGoogle(thumbnailLinks: any) {
@@ -310,75 +316,52 @@ export class PnxCard extends LitElement {
             thumbnailLink.linkURL = linkUrl.substr(0, linkUrl.indexOf('$$L')).trim();
         }
     }
-    // private getType(featuredResult: any, doc: any) {
-    //     if (featuredResult) {
-    //         return 'book'
-    //     }
-    //     else {
-    //         return doc && doc.pnx.display.type ? doc.pnx.display.type[0] : []
-    //     }
-    // }
 
-    // private defineDefaultThumbnail(type: any) {
-    //     return {
-    //         displayLabel: 'thumbnail',
-    //         linkType: 'http://purl.org/pnx/linkType/thumbnail',
-    //         linkURL: type.length > 0 ? 'img/icon_' + type + '.png' : undefined
-    //     };
-    // }
+    private isAlmaD() {
+        if (this.isPrimo()) {
+            return false;
+        }
+        if (this.doc.context === 'SP' && this.doc?.pnx?.control?.sourceid === 'alma' && this.doc.delivery?.electronicServices) {
+            return (this.doc.delivery.electronicServices.filter(
+                (svc: any) => svc.serviceType === 'DIGITAL').length > 0);
+        } else {
+            return this.doc.delivery['hasD'] === true || this.doc.delivery['digitalAuxiliaryMode'] === true;
+        }
+    }
 
-    // private isCDI() {
-    //     const recordId = this.doc?.pnx?.control?.recordid[0];
-    //     const context = this.doc?.context;
-    //     const adaptor = this.doc?.adaptor;
-    //     return context === 'PC' || (recordId && recordId.startsWith('TN_')) || adaptor === 'Primo Central';
-    // }
+    private async getAlmaDigitalThumbnailForPnx(): Promise<string> {
+        const mmsId = this.doc?.pnx?.control?.sourcerecordid?.[0];
+        const institutionCode = this.doc?.delivery?.recordInstitutionCode || this.institution;
+        let thumbnailUrl = this.getAlmaDigitalThumbnailUrl(mmsId);
 
-    // private isAlmaD() {
-    //     if (this.isPrimo()) {
-    //         return false;
-    //     }
-    //     if (this.doc.context === 'SP' && this.doc?.pnx?.control?.sourceid === 'alma' && this.doc.delivery?.electronicServices) {
-    //         return (this.doc.delivery.electronicServices.filter(
-    //             (svc: any) => svc.serviceType === 'DIGITAL').length > 0);
-    //     } else {
-    //         return this.doc.delivery['hasD'] === true || this.doc.delivery['digitalAuxiliaryMode'] === true;
-    //     }
-    // }
+        // For shared D - find the correct link to the thumbnail
+        if (this.doc?.delivery?.sharedDigitalCandidates && this.doc.delivery.sharedDigitalCandidates.length > 0) {
+            const response = await fetch(`${this.almaDThumbnailBaseURL}/${institutionCode}/${mmsId}?vid=${this.vid}`, {method: 'POST', body: JSON.stringify(this.doc?.delivery?.sharedDigitalCandidates)});
+            thumbnailUrl = (await response.json()).data as string;
+        } else if (this.doc?.pnx?.control?.isDedup) {
+            const response = await fetch(`${this.almaDThumbnailBaseURL}/${mmsId}?vid=${this.vid}`);
+            if (!(await response.json())?.data?.hasDigitalInventory) {
+                return '';
+            }
+        }
 
-    // private async getAlmaDigitalThumbnailForPnx(): Promise<string> {
-    //     const mmsId = this.doc?.pnx?.control?.sourcerecordid?.[0];
-    //     const institutionCode = this.doc?.delivery?.recordInstitutionCode;
-    //     let thumbnailUrl = this.getAlmaDigitalThumbnailUrl(mmsId);
+        if (this.isEsploroRecord()) {
+            thumbnailUrl += '?calculateAccessRights=true';
+        }
 
-    //     // For shared D - find the correct link to the thumbnail
-    //     if (this.doc?.delivery?.sharedDigitalCandidates && this.doc.delivery.sharedDigitalCandidates.length > 0) {
-    //         const response = await this.$http.post(`${this.restBaseURLs.getThumbnail}/${institutionCode}/${mmsId}?vid=${this.vid()}`, _get(this.doc, 'delivery.sharedDigitalCandidates'));
-    //         thumbnailUrl = response.data as string;
-    //     } else if (this.doc?.pnx?.control?.isDedup) {
-    //         const response = await this.$http.get(`${this.restBaseURLs.getThumbnail}/${mmsId}?vid=${this.vid()}`);
-    //         if (!response?.data?.hasDigitalInventory) {
-    //             return '';
-    //         }
-    //     }
+        return thumbnailUrl;
+    }
 
-    //     if (this.isEsploroRecord()) {
-    //         thumbnailUrl += '?calculateAccessRights=true';
-    //     }
+    private isEsploroRecord() {
+        return this.doc.pnx.control.sourceformat?.[0] === 'ESPLORO' || false;
+    }
+    private getAlmaDigitalThumbnailUrl(mmsId: any) {
+        return `${this.almaDThumbnailBaseURL}/${this.institution}/${mmsId}`
+    }
 
-    //     return thumbnailUrl;
-    // }
-
-    // private isEsploroRecord() {
-    //     return this.doc.pnx.control.sourceformat?.[0] === 'ESPLORO' || false;
-    // }
-    // private getAlmaDigitalThumbnailUrl(mmsId: any) {
-    //     return "/view/delivery/thumbnail/" + this.vid + "/" + mmsId;
-    // }
-
-    // private resolveAlmaDigitalImage(thumbnailUrl: any) {
-    //     return this.getImageLink(thumbnailUrl);
-    // }
+    private resolveAlmaDigitalImage(thumbnailUrl: any) {
+        return this.getImageLink(thumbnailUrl);
+    }
 
     private createLinkObj(url: any) {
         return {
