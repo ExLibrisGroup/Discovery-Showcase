@@ -21,12 +21,11 @@ export const styles = css`
     font-weight: 400;
     color: #5a5a5a;
   }
+  
    img, .image-place-holder {
      display: block;
-     // max-width: 100%;
-     // height: auto;
-     width: 160px;
-     height: 210px;
+     max-height: 210px;
+     object-fit: contain;
   }
 `;
 

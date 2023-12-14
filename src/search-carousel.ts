@@ -148,7 +148,8 @@ export class SearchCarousel extends LitElement {
                         font-size: 14px;
                         color: #000;
                         padding: 0;
-                        max-width: 930px;
+                        --width-param: 930px;
+                        max-width: var(--width-param);
                         margin: 0 auto;
                      }
                     .gallery-container {
@@ -169,14 +170,14 @@ export class SearchCarousel extends LitElement {
                     }
                     
                     .swiper {
-                        max-width: 930px;
+                        max-width: var(--width-param);
                         padding-top: 25px;
                     }
                     
                     swiper-slide {
                         background-position: center;
                         background-size: cover;
-                        width: 160px;
+                        width: calc(0.2 * var(--width-param));
                         text-decoration: none;
                     }
                     
