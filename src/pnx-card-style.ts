@@ -1,6 +1,17 @@
 import {css} from 'lit';
 
 export const styles = css`
+  :host {
+    --title-font-color: inherit;
+    --title-font-weight: 700;
+    --title-font-size: 13px;
+
+    --description-font-color: inherit;
+    --description-font-weight: 400;
+    --description-font-size: 12px;
+    
+    --image-height: 210px;
+  }
   a {
     text-decoration: none;
     color: black;
@@ -13,18 +24,19 @@ export const styles = css`
     margin-top: .5em;
   }
   .record-details h2 {
-    font-size: 13px;
-    font-weight: 700;
+    color: var(--title-font-color);
+    font-size: var(--title-font-size);
+    font-weight: var(--title-font-weight);
   }
   .record-details span {
-    font-size: 12px;
-    font-weight: 400;
-    color: #5a5a5a;
+    font-size: var(--description-font-size);
+    font-weight: var(--description-font-weight);
+    color: var(--description-font-color);
   }
   
    img, .image-place-holder {
+     height: var(--image-height);
      display: block;
-     max-height: 210px;
      object-fit: contain;
   }
 `;
