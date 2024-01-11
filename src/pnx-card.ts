@@ -21,6 +21,8 @@ export class PnxCard extends LitElement {
     scope!: string;
     @property()
     tab!: string;
+    @property()
+    defaultThumbnailUrl: string | undefined;
     private almaDThumbnailBaseURL!: string;
 
     override render() {
@@ -122,9 +124,8 @@ export class PnxCard extends LitElement {
                 return google;
             }
 
-            const syndeticsEXLWithUnbound = await this.getThumbnailFromSyndeticsEXL(thumbnailLinks, true);
-            if (syndeticsEXLWithUnbound) {
-                return syndeticsEXLWithUnbound;
+            if (this.defaultThumbnailUrl) {
+                return this.defaultThumbnailUrl
             }
 
             throw 'no thumbnail';

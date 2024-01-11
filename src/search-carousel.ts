@@ -11,6 +11,7 @@ export class SearchCarousel extends LitElement {
     @property() searchUrl: string = '';
     @property() titleText: string | undefined;
     @property() titleLink: string | undefined;
+    @property() defaultThumbnailUrl: string | undefined;
 
     @state()
     private data: any;
@@ -50,7 +51,7 @@ export class SearchCarousel extends LitElement {
 
     override render() {
         if (!this.data) {
-            return html`loading data....`;
+            return html``;
         }
         const parsedUrl = new URL(this.searchUrl);
         this.viewId = parsedUrl.searchParams.get("vid");
@@ -64,7 +65,9 @@ export class SearchCarousel extends LitElement {
 
         const docsPromise = this.data.then((data: any) => data.docs.map((doc: any) =>
             html`<swiper-slide>
-                <pnx-card .doc="${doc}" .institution="${this.institution}" .vid="${this.viewId}" .language="${this.language}" .scope="${this.scope}" .tab="${this.tab}">
+                <pnx-card .doc="${doc}" .institution="${this.institution}" .vid="${this.viewId}" 
+                          .language="${this.language}" .scope="${this.scope}" 
+                          .tab="${this.tab}" .defaultThumbnailUrl="${this.defaultThumbnailUrl}">
                 </pnx-card>
             </swiper-slide>`))
 
