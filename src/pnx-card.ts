@@ -12,6 +12,8 @@ export class PnxCard extends LitElement {
     @property()
     doc: any;
     @property()
+    host!: string;
+    @property()
     institution!: string;
     @property()
     vid!: string;
@@ -63,23 +65,18 @@ export class PnxCard extends LitElement {
         let deeplink = "";
         const parsedUrl = new URL(this.doc["@id"]);
         const protocol = this.getProtocol(parsedUrl);
-        const host = this.getHost(parsedUrl);
         const primoMapping = this.isPrimo() ? "/primo-explore" : "/discovery";
         const state = this.getState();
         const recordId = this.doc.pnx.control.recordid;
         const context = this.doc.context;
 
 
-        deeplink = protocol + host + primoMapping + state + "&docid=" + recordId + "&context=" + context + "&vid=" + this.vid + "&lang=" + this.language + "&search_scope=" + this.scope + "&tab=" + this.tab;
+        deeplink = protocol + this.host + primoMapping + state + "&docid=" + recordId + "&context=" + context + "&vid=" + this.vid + "&lang=" + this.language + "&search_scope=" + this.scope + "&tab=" + this.tab;
 
         return deeplink;
     }
     private getProtocol(url: URL) {
         return url.protocol + "//";
-    }
-
-    private getHost(url: URL) {
-        return url.host;
     }
 
     private isPrimo() {

@@ -20,6 +20,7 @@ export class SearchCarousel extends LitElement {
     private scope!: string | null;
     private tab!: string | null;
     private institution!: string | null;
+    private host!: string | null;
 
     constructor() {
         super();
@@ -54,6 +55,7 @@ export class SearchCarousel extends LitElement {
             return html``;
         }
         const parsedUrl = new URL(this.searchUrl);
+        this.host = parsedUrl.host;
         this.viewId = parsedUrl.searchParams.get("vid");
         this.language = parsedUrl.searchParams.get("lang")
         this.scope = parsedUrl.searchParams.get("scope")
@@ -65,7 +67,7 @@ export class SearchCarousel extends LitElement {
 
         const docsPromise = this.data.then((data: any) => data.docs.map((doc: any) =>
             html`<swiper-slide>
-                <pnx-card .doc="${doc}" .institution="${this.institution}" .vid="${this.viewId}" 
+                <pnx-card .doc="${doc}" .host="${this.host}" .institution="${this.institution}" .vid="${this.viewId}" 
                           .language="${this.language}" .scope="${this.scope}" 
                           .tab="${this.tab}" .defaultThumbnailUrl="${this.defaultThumbnailUrl}">
                 </pnx-card>
@@ -244,4 +246,5 @@ export class SearchCarousel extends LitElement {
         }
         return html``;
     }
+
 }
