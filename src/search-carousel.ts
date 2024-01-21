@@ -153,7 +153,7 @@ export class SearchCarousel extends LitElement {
                         font-size: 14px;
                         color: #000;
                         padding: 0;
-                        --width-param: 930px;
+                        --width-param: 700px;
                         max-width: var(--width-param);
                         margin: 0 auto;
                      }
@@ -176,7 +176,7 @@ export class SearchCarousel extends LitElement {
                     
                     .swiper {
                         max-width: var(--width-param);
-                        padding-top: 25px;
+                        margin-block-end: 1em;
                     }
                     
                     swiper-slide {
@@ -202,7 +202,13 @@ export class SearchCarousel extends LitElement {
                         top: 50%;
                         padding: 0;
                     }
-                    
+                    .gallery-container .swiper-button-next {
+                        margin-right: -2.5em;
+                    }
+
+                    .gallery-container .swiper-button-prev {
+                        margin-left: -2.5em;
+                    }
                     @media only screen and (max-width: 360px) {
                         .gallery-container .swiper-button-next {
                             margin-inline-end: -13px;
