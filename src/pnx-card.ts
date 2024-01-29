@@ -195,15 +195,15 @@ export class PnxCard extends LitElement {
             const syntetixBaseUrl = `https://syndetics.com/index.php?client=primo&${useUnbound? 'type=unbound&' : ''}`;
 
             for (const isbn of isbns) {
-                syndeticsLinks.push(this.createLinkObj(`${syntetixBaseUrl}isbn=${isbn}/sc.jpg`));
+                syndeticsLinks.push(this.createLinkObj(`${syntetixBaseUrl}isbn=${isbn}/lc.jpg`));
             }
 
             for (const issn of issns) {
-                syndeticsLinks.push(this.createLinkObj(`${syntetixBaseUrl}issn=${issn}/sc.jpg`));
+                syndeticsLinks.push(this.createLinkObj(`${syntetixBaseUrl}issn=${issn}/lc.jpg`));
             }
 
             for (const code of upc) {
-                syndeticsLinks.push(this.createLinkObj(`${syntetixBaseUrl}upc=${code}/sc.jpg`));
+                syndeticsLinks.push(this.createLinkObj(`${syntetixBaseUrl}upc=${code}/lc.jpg`));
             }
 
             if (syndeticsLinks.length > 0) {
