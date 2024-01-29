@@ -90,6 +90,9 @@ export class SearchCarousel extends LitElement {
 
     protected override updated() {
         const swiperEl = this.renderRoot.querySelector('swiper-container');
+        const nextEl = this.renderRoot.querySelector('.swiper-button-next');
+        const prevEl = this.renderRoot.querySelector('.swiper-button-prev');
+        const paginationEl = this.renderRoot.querySelector('.swiper-pagination');
         if (!swiperEl) {
             return;
         }
@@ -110,7 +113,7 @@ export class SearchCarousel extends LitElement {
                 slideShadows: false,
             },
             pagination: {
-                el: ".swiper-pagination",
+                el: paginationEl,
                 clickable: true
             },
             // Responsive breakpoints
@@ -134,8 +137,8 @@ export class SearchCarousel extends LitElement {
             },
             // Navigation arrows
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: nextEl,
+                prevEl: prevEl,
             },
             // Accessibility
             a11y: {
