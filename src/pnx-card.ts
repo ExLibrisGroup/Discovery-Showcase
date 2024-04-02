@@ -148,9 +148,9 @@ export class PnxCard extends LitElement {
 
     private async getThumbnailFromOther(thumbnailLinks: any) {
 
-        let otherThumbnailLinks = thumbnailLinks.filter(this.getAllButSpecificLink, 'amazon');
-        otherThumbnailLinks = otherThumbnailLinks.filter(this.getAllButSpecificLink, 'syndetics.com');
-        otherThumbnailLinks = otherThumbnailLinks.filter(this.getAllButSpecificLink, 'google.com');
+        let otherThumbnailLinks = thumbnailLinks.filter(this.getAllButSpecificLinkFilterFactory('amazon'));
+        otherThumbnailLinks = otherThumbnailLinks.filter(this.getAllButSpecificLinkFilterFactory('syndetics.com'));
+        otherThumbnailLinks = otherThumbnailLinks.filter(this.getAllButSpecificLinkFilterFactory('google.com'));
 
         if (otherThumbnailLinks.length) {
             const promiseArray = otherThumbnailLinks.map((link: any) => {
@@ -169,19 +169,20 @@ export class PnxCard extends LitElement {
             return '';
         }
     }
-    private getAllButSpecificLink(thumbnailLink : any, linkIdentifier:string) {
-        // const linkIdentifier = this;
-        if (typeof thumbnailLink === 'string') {//todo change
-            return thumbnailLink.indexOf(linkIdentifier) === -1
+    private getAllButSpecificLinkFilterFactory( linkIdentifier:string) {
+        return (thumbnailLink : any) => {
+            if (typeof thumbnailLink === 'string') {
+                return thumbnailLink.indexOf(linkIdentifier) === -1
+            }
+            let linkURL = thumbnailLink?.linkURL;
+            if(!linkURL) {
+                return false;
+            }
+            if (typeof linkURL === 'string') {
+                return linkURL.indexOf(linkIdentifier) === -1;
+            }
+            return linkURL.linkURL.indexOf(linkIdentifier) === -1;
         }
-        let linkURL = thumbnailLink?.linkURL;
-        if(!linkURL) {
-            return false;
-        }
-        if (typeof linkURL === 'string') {//todo change
-            return linkURL.indexOf(linkIdentifier) === -1;
-        }
-        return linkURL.linkURL.indexOf(linkIdentifier) === -1;
     }
 
     private async getThumbnailFromSyndeticsEXL(thumbnailLinks: any, useUnbound?: boolean) {
@@ -396,7 +397,7 @@ export class PnxCard extends LitElement {
     private handleLink(link: string) {
         let newLink = link;
         if (window.location.protocol === 'https:') {
-            newLink = link.replace('http://', 'https');
+            newLink = link.replace('http://', 'https://');
         }
         return newLink;
     }
