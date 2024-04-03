@@ -77,12 +77,12 @@ export class SearchCarousel extends LitElement {
             
             <div class="gallery-container">
                 ${titleHtml}
+                <button class="swiper-button-prev"></button>
                 <swiper-container init="false" class="swiper">
                          ${until(docsPromise, ``)}
                 </swiper-container>
                 <!-- Navigation buttons -->
                 <button class="swiper-button-next"></button>
-                <button class="swiper-button-prev"></button>
                 <div class="swiper-pagination"></div>
             </div>
         `;
@@ -173,7 +173,7 @@ export class SearchCarousel extends LitElement {
                         text-decoration: underline;
                     }
                     
-                    .gallery-container h1 {
+                    .gallery-container h2 {
                         text-align: center;
                     }
                     
@@ -240,6 +240,10 @@ export class SearchCarousel extends LitElement {
                     .swiper-pagination .swiper-pagination-bullet-active {
                         background-color: black;
                     }
+                    
+                    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+                        --swiper-pagination-bullet-horizontal-gap: 8px;
+                    }
             `,
             ],
 
@@ -251,7 +255,7 @@ export class SearchCarousel extends LitElement {
 
     private getTitleHtml() {
         if (this.titleText) {
-            return this.titleLink ? html`<h1><a target="_blank" href="${this.titleLink}">${this.titleText}</a></h1>` : html`<h1>${this.titleText}</h1>`
+            return this.titleLink ? html`<h2><a target="_blank" href="${this.titleLink}">${this.titleText}</a></h2>` : html`<h2>${this.titleText}</h2>`
         }
         return html``;
     }

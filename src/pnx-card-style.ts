@@ -23,7 +23,7 @@ export const styles = css`
     color: black;
     margin-top: .5em;
   }
-  .record-details h2 {
+  .record-details h3 {
     color: var(--title-font-color);
     font-size: var(--title-font-size);
     font-weight: var(--title-font-weight);

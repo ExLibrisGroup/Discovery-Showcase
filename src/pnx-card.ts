@@ -34,13 +34,13 @@ export class PnxCard extends LitElement {
                                           class="image-place-holder"></div>`;
         const imgPromise = img.then(url => {
             console.log(`getImageUrl returned ${url}`)
-            return html`<img src=${url}>`
+            return html`<img src=${url} alt="">`
         }).catch(() => imagePlaceHolder); //on error or no thumbnail render the image placeholder
         return html`
             <a  href="${this.getDeeplink()}" target="_blank" aria-label="">
                 ${until(imgPromise, imagePlaceHolder)}
                 <div class="record-details">
-                    <h2>${this?.doc?.pnx?.display?.title?.[0] ?? ''}</h2>
+                    <h3>${this?.doc?.pnx?.display?.title?.[0] ?? ''}</h3>
                     <span>${this?.doc?.pnx?.display?.publisher?.[0] ?? ''}</span>
                 </div>
             </a>
