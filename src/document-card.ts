@@ -1,11 +1,11 @@
-import { html, LitElement } from "lit";
-import { customElement, property } from "lit/decorators.js";
-import { styles } from './pnx-card-style';
-import { until } from 'lit-html/directives/until.js';
+import {html, LitElement} from "lit";
+import {customElement, property} from "lit/decorators.js";
+import {styles} from './document-card-style';
+import {until} from 'lit-html/directives/until.js';
 
 
-@customElement('pnx-card')
-export class PnxCard extends LitElement {
+@customElement('document-card')
+export class DocumentCard extends LitElement {
 
 
     static override styles = styles;
@@ -30,21 +30,22 @@ export class PnxCard extends LitElement {
     override render() {
         this.almaDThumbnailBaseURL = this.getAlmaDThumbnailBaseUrl()
         const img = this.getThumbnailLinks();
-        const imagePlaceHolder= html`<div style="background-color: ${this.getRandomColor()}" 
-                                          class="image-place-holder"></div>`;
+        const imagePlaceHolder = html`
+            <div style="background-color: ${this.getRandomColor()}"
+                 class="image-place-holder"></div>`;
         const imgPromise = img.then(url => {
             console.log(`getImageUrl returned ${url}`)
             return html`<img src=${url} alt="">`
         }).catch(() => imagePlaceHolder); //on error or no thumbnail render the image placeholder
         return html`
-            <a  href="${this.getDeeplink()}" target="_blank" aria-label="">
+            <a href="${this.getDeeplink()}" target="_blank" aria-label="">
                 ${until(imgPromise, imagePlaceHolder)}
                 <div class="record-details">
                     <h3>${this?.doc?.pnx?.display?.title?.[0] ?? ''}</h3>
                     <span>${this?.doc?.pnx?.display?.publisher?.[0] ?? ''}</span>
                 </div>
             </a>
-            
+
         `
     }
 
@@ -61,6 +62,7 @@ export class PnxCard extends LitElement {
         }
         return color;
     }
+
     private getDeeplink() {
         let deeplink = "";
         const parsedUrl = new URL(this.doc["@id"]);
@@ -75,6 +77,7 @@ export class PnxCard extends LitElement {
 
         return deeplink;
     }
+
     private getProtocol(url: URL) {
         return url.protocol + "//";
     }
@@ -83,6 +86,7 @@ export class PnxCard extends LitElement {
         return false;
         //TODO
     }
+
     private getState() {
         return "/fulldisplay?"
     }
@@ -98,7 +102,7 @@ export class PnxCard extends LitElement {
 
             const almaD = await this.getThumbnailFromAlmaD();
             if (almaD) {
-              return almaD;
+                return almaD;
             }
 
             let other = await this.getThumbnailFromOther(thumbnailLinks);
@@ -169,13 +173,14 @@ export class PnxCard extends LitElement {
             return '';
         }
     }
-    private getAllButSpecificLinkFilterFactory( linkIdentifier:string) {
-        return (thumbnailLink : any) => {
+
+    private getAllButSpecificLinkFilterFactory(linkIdentifier: string) {
+        return (thumbnailLink: any) => {
             if (typeof thumbnailLink === 'string') {
                 return thumbnailLink.indexOf(linkIdentifier) === -1
             }
             let linkURL = thumbnailLink?.linkURL;
-            if(!linkURL) {
+            if (!linkURL) {
                 return false;
             }
             if (typeof linkURL === 'string') {
@@ -193,7 +198,7 @@ export class PnxCard extends LitElement {
             const issns = [...new Set((this.doc?.pnx?.addata?.issn || []).concat(this.doc?.pnx?.addata?.eissn || []))];
             const upc = this.doc?.pnx?.addata?.upcid || [];
 
-            const syntetixBaseUrl = `https://syndetics.com/index.php?client=primo&${useUnbound? 'type=unbound&' : ''}`;
+            const syntetixBaseUrl = `https://syndetics.com/index.php?client=primo&${useUnbound ? 'type=unbound&' : ''}`;
 
             for (const isbn of isbns) {
                 syndeticsLinks.push(this.createLinkObj(`${syntetixBaseUrl}isbn=${isbn}/lc.jpg`));
@@ -265,7 +270,7 @@ export class PnxCard extends LitElement {
             const gbUrl = linkUrl.replace('&callback=updateGBSCover', '');
             const response = await fetch(gbUrl);
             const data = await response.text();
-            let jsonData = JSON.parse(data.substring(data.indexOf('{'),data.indexOf('}')+2));
+            let jsonData = JSON.parse(data.substring(data.indexOf('{'), data.indexOf('}') + 2));
             const keys = Object.keys(jsonData);
 
             if (keys.length > 0) {
@@ -300,15 +305,18 @@ export class PnxCard extends LitElement {
             return ('');
         }
     }
+
     private reflect(promise: any) {
         return promise.then(
-            (v: any) => ({ value: v, status: "resolved" }),
-            (e: any) => ({ error: e, status: "rejected" })
+            (v: any) => ({value: v, status: "resolved"}),
+            (e: any) => ({error: e, status: "rejected"})
         );
     }
+
     private showICPLicenseFooter() {
         return false;
     }
+
     private removeLabelFromLinkUrl(thumbnailLink: any) {
         let linkUrl = thumbnailLink.linkURL;
         if (linkUrl && linkUrl.includes('$$L')) {
@@ -335,7 +343,10 @@ export class PnxCard extends LitElement {
 
         // For shared D - find the correct link to the thumbnail
         if (this.doc?.delivery?.sharedDigitalCandidates && this.doc.delivery.sharedDigitalCandidates.length > 0) {
-            const response = await fetch(`${this.almaDThumbnailBaseURL}/${institutionCode}/${mmsId}?vid=${this.vid}`, {method: 'POST', body: JSON.stringify(this.doc?.delivery?.sharedDigitalCandidates)});
+            const response = await fetch(`${this.almaDThumbnailBaseURL}/${institutionCode}/${mmsId}?vid=${this.vid}`, {
+                method: 'POST',
+                body: JSON.stringify(this.doc?.delivery?.sharedDigitalCandidates)
+            });
             thumbnailUrl = (await response.json()).data as string;
         } else if (this.doc?.pnx?.control?.isDedup) {
             const response = await fetch(`${this.almaDThumbnailBaseURL}/${mmsId}?vid=${this.vid}`);
@@ -354,6 +365,7 @@ export class PnxCard extends LitElement {
     private isEsploroRecord() {
         return this.doc.pnx.control.sourceformat?.[0] === 'ESPLORO' || false;
     }
+
     private getAlmaDigitalThumbnailUrl(mmsId: any) {
         return `${this.almaDThumbnailBaseURL}/${this.institution}/${mmsId}`
     }
