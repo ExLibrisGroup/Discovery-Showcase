@@ -17,7 +17,7 @@ export class PnxService {
                 title: doc?.pnx?.display?.title?.[0] ?? '',
                 publisher: doc?.pnx?.display?.publisher?.[0] ?? '',
                 thumbnail: this.getThumbnailLinks(doc, vid, institution, this.getAlmaDThumbnailBaseUrl(doc), defaultThumbnailUrl),
-                deeplink: this.getDeeplink(doc, host, vid, language, scope, tab)
+                deepLink: this.getDeeplink(doc, host, vid, language, scope, tab)
             }
             genericDocs.push(genericDoc);
         }
