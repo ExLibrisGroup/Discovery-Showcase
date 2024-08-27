@@ -1,6 +1,6 @@
 import {html, LitElement} from "lit";
 import {until} from 'lit-html/directives/until.js';
-import {customElement, property, state} from "lit/decorators.js";
+import {customElement, property} from "lit/decorators.js";
 import {register} from 'swiper/element/bundle';
 import {DocumentCard} from "./document-card";
 
@@ -13,14 +13,6 @@ export class SearchCarousel extends LitElement {
     @property() titleText: string | undefined;
     @property() titleLink: string | undefined;
     @property() defaultThumbnailUrl: string | undefined;
-
-    @state()
-    private viewId!: string | null;
-    private language!: string | null;
-    private scope!: string | null;
-    private tab!: string | null;
-    private institution!: string | null;
-    private host!: string | null;
 
     constructor() {
         super();
@@ -43,23 +35,14 @@ export class SearchCarousel extends LitElement {
         if (!this.documents) {
             return html``;
         }
-        const parsedUrl = new URL(this.searchUrl);
-        this.host = parsedUrl.host;
-        this.viewId = parsedUrl.searchParams.get("vid");
-        this.language = parsedUrl.searchParams.get("lang")
-        this.scope = parsedUrl.searchParams.get("scope")
-        this.tab = parsedUrl.searchParams.get("tab")
-        this.institution = parsedUrl.searchParams.get("inst")
 
         const titleHtml = this.getTitleHtml();
 
         const docsPromise = this.documents.map((doc: any) =>
             html`
                 <swiper-slide>
-                    <document-card .doc="${doc}" .host="${this.host}" .institution="${this.institution}"
-                                   .vid="${this.viewId}"
-                                   .language="${this.language}" .scope="${this.scope}"
-                                   .tab="${this.tab}" .defaultThumbnailUrl="${this.defaultThumbnailUrl}">
+                    <document-card .thumbnail="${doc.thumbnail}" .docTitle="${doc.title}" 
+                                   .publisher="${doc.publisher}" .deepLink="${doc.deepLink}" >
                     </document-card>
                 </swiper-slide>`)
 

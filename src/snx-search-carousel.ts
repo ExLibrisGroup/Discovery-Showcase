@@ -2,6 +2,7 @@ import {html, LitElement} from "lit";
 import {customElement, property, state} from "lit/decorators.js";
 import {register} from 'swiper/element/bundle';
 import {SearchCarousel} from "./search-carousel";
+import { PnxService } from "./pnx-service";
 
 register();
 
@@ -10,10 +11,11 @@ export class SnxSearchCarousel extends LitElement {
     @property() searchUrl: string = '';
     @property() titleText: string | undefined;
     @property() titleLink: string | undefined;
-    @property() defaultThumbnailUrl: string | undefined;
+    @property() defaultThumbnailUrl: string = '';
 
     @state()
     private documents: any[] = [];
+    private pnxService = new PnxService();
 
     constructor() {
         super();
@@ -50,9 +52,11 @@ export class SnxSearchCarousel extends LitElement {
                 <div>Loading...</div>`;
         }
 
+        const genericDocs = this.pnxService.transformPnxToGeneric(this.documents, this.searchUrl, this.defaultThumbnailUrl);
+
         return html`
             <search-carousel
-                    .documents="${this.documents}"
+                    .documents="${genericDocs}"
                     titleText="${this.titleText}"
                     titleLink="${this.titleLink}"
                     defaultThumbnailUrl="${this.defaultThumbnailUrl}"
