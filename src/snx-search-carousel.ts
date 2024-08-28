@@ -2,7 +2,7 @@ import {html, LitElement} from "lit";
 import {customElement, property, state} from "lit/decorators.js";
 import {register} from 'swiper/element/bundle';
 import {SearchCarousel} from "./search-carousel";
-import { PnxService } from "./pnx-service";
+import {SnxService} from "./snx-service";
 
 register();
 
@@ -15,7 +15,7 @@ export class SnxSearchCarousel extends LitElement {
 
     @state()
     private documents: any[] = [];
-    private pnxService = new PnxService();
+    private snxService: SnxService = new SnxService();
 
     constructor() {
         super();
@@ -33,11 +33,11 @@ export class SnxSearchCarousel extends LitElement {
         try {
             const response = await fetch(this.searchUrl);
             const data = await response.json();  // Await the JSON parsing
-            this.documents = data.docs;
+            this.documents = data.documents;
         } catch (error) {
         }
 
-        console.log("here pnx: ", this.documents);
+        console.log("here snx: ", this.documents);
     }
 
     //disables shadow root for lit element otherwise swiper styling doesn't work properly
@@ -49,10 +49,10 @@ export class SnxSearchCarousel extends LitElement {
     override render() {
         if (!this.documents) {
             return html`
-                <div>Loading...</div>`;
+                <div>Error Loading Carousel Widget!!</div>`;
         }
 
-        const genericDocs = this.pnxService.transformPnxToGeneric(this.documents, this.searchUrl, this.defaultThumbnailUrl);
+        const genericDocs = this.snxService.transformSnxToGeneric(this.documents, this.defaultThumbnailUrl);
 
         return html`
             <search-carousel
