@@ -1,5 +1,5 @@
 import {html, LitElement} from "lit";
-import {customElement, property} from "lit/decorators.js";
+import {customElement, property, state} from "lit/decorators.js";
 import {styles} from './document-card-style';
 import {until} from 'lit-html/directives/until.js';
 
@@ -17,13 +17,21 @@ export class DocumentCard extends LitElement {
     @property()
     deepLink!: string;
 
+    @state()
+    thumbnailFallbackUrl: string = 'https://tinypng.com/static/images/george-account-page.webp';
+
     override render() {
         const imagePlaceHolder = html`
             <div style="background-color: ${this.getRandomColor()}"
                  class="image-place-holder"></div>`;
         const imgPromise = this.thumbnail.then((url: string) => {
             console.log(`getImageUrl returned ${url}`)
-            return html`<img src=${url} alt="">`
+            return html`
+                <img
+                        src=${url}
+                        @load=${this.imgOnLoad}
+                        @error=${this.imgOnError}
+                        alt="">`
         }).catch(() => imagePlaceHolder); //on error or no thumbnail render the image placeholder
 
         // Remove HTML tags, including <mark>
@@ -38,6 +46,19 @@ export class DocumentCard extends LitElement {
             </a>
 
         `
+    }
+
+    public imgOnLoad(e: any) {
+        console.log('Image loaded: ', e.target.naturalWidth, e.target.naturalHeight);
+        if (e.target.naturalWidth === 1 && e.target.naturalHeight === 1) {
+            console.log('Image dimensions are 1x1, likely a placeholder image.');
+            e.target.src = this.thumbnailFallbackUrl; // Set fallback source
+        }
+    }
+
+    public imgOnError(e: any) {
+        console.log('Image failed to load, applying fallback.', e.target.src);
+        e.target.src = this.thumbnailFallbackUrl; // Set fallback source
     }
 
     private getRandomColor() {
