@@ -9,30 +9,49 @@ import {terser} from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 
-export default {
-  input: 'search-carousel.js',
-  output: {
-    file: 'dist/discovery-showcase.bundled.js',
-    format: 'esm',
-  },
-  onwarn(warning) {
-    if (warning.code !== 'THIS_IS_UNDEFINED') {
-      console.error(`(!) ${warning.message}`);
-    }
-  },
-  plugins: [
-    replace({'Reflect.decorate': 'undefined'}),
-    resolve(),
-    terser({
-      ecma: 2017,
-      module: true,
-      warnings: true,
-      mangle: {
-        properties: {
-          regex: /^__/,
-        },
+const commonPlugins = [
+  replace({'Reflect.decorate': 'undefined'}),
+  resolve(),
+  terser({
+    ecma: 2017,
+    module: true,
+    warnings: true,
+    mangle: {
+      properties: {
+        regex: /^__/,
       },
-    }),
-    summary(),
-  ],
-};
+    },
+  }),
+  summary(),
+]
+
+export default [
+  {
+    // Configuration for pnx-search-carousel.js
+    input: 'pnx-search-carousel.js',
+    output: {
+      file: 'dist/pnx-discovery-showcase.bundled.js',
+      format: 'esm',
+    },
+    onwarn(warning) {
+      if (warning.code !== 'THIS_IS_UNDEFINED') {
+        console.error(`(!) ${warning.message}`);
+      }
+    },
+    plugins: commonPlugins,
+  },
+  {
+    // Configuration for snx-search-carousel.js
+    input: 'snx-search-carousel.js',
+    output: {
+      file: 'dist/snx-discovery-showcase.bundled.js',
+      format: 'esm',
+    },
+    onwarn(warning) {
+      if (warning.code !== 'THIS_IS_UNDEFINED') {
+        console.error(`(!) ${warning.message}`);
+      }
+    },
+    plugins: commonPlugins,
+  },
+];

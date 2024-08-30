@@ -12,7 +12,6 @@ export class SearchCarousel extends LitElement {
     @property() searchUrl: string = '';
     @property() titleText: string | undefined;
     @property() titleLink: string | undefined;
-    @property() defaultThumbnailUrl: string | undefined;
 
     constructor() {
         super();

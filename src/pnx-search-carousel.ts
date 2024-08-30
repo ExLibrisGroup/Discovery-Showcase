@@ -9,8 +9,8 @@ register();
 @customElement('pnx-search-carousel')
 export class PnxSearchCarousel extends LitElement {
     @property() searchUrl: string = '';
-    @property() titleText: string | undefined;
-    @property() titleLink: string | undefined;
+    @property() titleText: string = 'Search Results';
+    @property() titleLink: string = '';
     @property() defaultThumbnailUrl: string = '';
 
     @state()
@@ -54,7 +54,6 @@ export class PnxSearchCarousel extends LitElement {
                     .documents="${genericDocs}"
                     titleText="${this.titleText}"
                     titleLink="${this.titleLink}"
-                    defaultThumbnailUrl="${this.defaultThumbnailUrl}"
                     searchUrl="${this.searchUrl}">
             </search-carousel>`
     }
