@@ -1,80 +1,50 @@
-import { html, LitElement } from "lit";
-import { customElement, property } from "lit/decorators.js";
-import { styles } from './pnx-card-style';
-import { until } from 'lit-html/directives/until.js';
 
+export class PnxService {
 
-@customElement('pnx-card')
-export class PnxCard extends LitElement {
-
-
-    static override styles = styles;
-    @property()
-    doc: any;
-    @property()
-    host!: string;
-    @property()
-    institution!: string;
-    @property()
-    vid!: string;
-    @property()
-    language!: string;
-    @property()
-    scope!: string;
-    @property()
-    tab!: string;
-    @property()
-    defaultThumbnailUrl: string | undefined;
-    private almaDThumbnailBaseURL!: string;
-
-    override render() {
-        this.almaDThumbnailBaseURL = this.getAlmaDThumbnailBaseUrl()
-        const img = this.getThumbnailLinks();
-        const imagePlaceHolder= html`<div style="background-color: ${this.getRandomColor()}" 
-                                          class="image-place-holder"></div>`;
-        const imgPromise = img.then(url => {
-            console.log(`getImageUrl returned ${url}`)
-            return html`<img src=${url} alt="">`
-        }).catch(() => imagePlaceHolder); //on error or no thumbnail render the image placeholder
-        return html`
-            <a  href="${this.getDeeplink()}" target="_blank" aria-label="">
-                ${until(imgPromise, imagePlaceHolder)}
-                <div class="record-details">
-                    <h3>${this?.doc?.pnx?.display?.title?.[0] ?? ''}</h3>
-                    <span>${this?.doc?.pnx?.display?.publisher?.[0] ?? ''}</span>
-                </div>
-            </a>
-            
-        `
+    public transformPnxToGeneric(docs: any[], searchUrl: string, defaultThumbnailUrl: string) {
+        const genericDocs = [];
+        
+        const parsedUrl = new URL(searchUrl);
+        const host = parsedUrl.host;
+        const vid = parsedUrl.searchParams.get("vid") || "";
+        const language = parsedUrl.searchParams.get("lang") || "";
+        const scope = parsedUrl.searchParams.get("scope") || "";
+        const tab = parsedUrl.searchParams.get("tab") || "";
+        const institution = parsedUrl.searchParams.get("inst") || "";
+        
+        for (const doc of docs) {
+            const genericDoc = {
+                title: doc?.pnx?.display?.title?.[0] ?? '',
+                publisher: doc?.pnx?.display?.publisher?.[0] ?? '',
+                thumbnail: this.getThumbnailLinks(doc, vid, institution, this.getAlmaDThumbnailBaseUrl(doc), defaultThumbnailUrl),
+                deepLink: this.getDeeplink(doc, host, vid, language, scope, tab)
+            }
+            genericDocs.push(genericDoc);
+        }
+        return genericDocs;
     }
 
-    getAlmaDThumbnailBaseUrl() {
-        const parsedUrl = new URL(this.doc["@id"]);
+
+    getAlmaDThumbnailBaseUrl(doc: any) {
+        const parsedUrl = new URL(doc["@id"]);
         return `${parsedUrl.origin}/view/delivery/thumbnail`
     }
 
-    private getRandomColor() {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    }
-    private getDeeplink() {
+    private getDeeplink(doc: any, host: string, vid: string, language: string, scope: string, tab: string) {
         let deeplink = "";
-        const parsedUrl = new URL(this.doc["@id"]);
+        const parsedUrl = new URL(doc["@id"]);
         const protocol = this.getProtocol(parsedUrl);
         const primoMapping = this.isPrimo() ? "/primo-explore" : "/discovery";
         const state = this.getState();
-        const recordId = this.doc.pnx.control.recordid;
-        const context = this.doc.context;
+        const recordId = doc.pnx.control.recordid;
+        const context = doc.context;
 
 
-        deeplink = protocol + this.host + primoMapping + state + "&docid=" + recordId + "&context=" + context + "&vid=" + this.vid + "&lang=" + this.language + "&search_scope=" + this.scope + "&tab=" + this.tab;
+        deeplink = protocol + host + primoMapping + state + "&docid=" + recordId + "&context=" + context + "&vid=" + vid + "&lang=" + language + "&search_scope=" + scope + "&tab=" + tab;
 
         return deeplink;
     }
+
     private getProtocol(url: URL) {
         return url.protocol + "//";
     }
@@ -83,22 +53,23 @@ export class PnxCard extends LitElement {
         return false;
         //TODO
     }
+
     private getState() {
         return "/fulldisplay?"
     }
 
-    private async getThumbnailLinks() {
+    private async getThumbnailLinks(doc: any, vid: string, institution: string, almaDThumbnailBaseURL: string, defaultThumbnailUrl?: string) {
 
         try {
-            let linksArray = this.doc.delivery.link || [];
-            // let type = this.getType(false, this.doc);
+            let linksArray = doc.delivery.link || [];
+            // let type = this.getType(false, doc);
 
             // const defaultThumbnail = this.defineDefaultThumbnail(type);
             let thumbnailLinks = linksArray.filter((e: any) => e.displayLabel === 'thumbnail')
 
-            const almaD = await this.getThumbnailFromAlmaD();
+            const almaD = await this.getThumbnailFromAlmaD(doc, vid, institution, almaDThumbnailBaseURL);
             if (almaD) {
-              return almaD;
+                return almaD;
             }
 
             let other = await this.getThumbnailFromOther(thumbnailLinks);
@@ -106,7 +77,7 @@ export class PnxCard extends LitElement {
                 return other;
             }
 
-            const syndeticsEXL = await this.getThumbnailFromSyndeticsEXL(thumbnailLinks);
+            const syndeticsEXL = await this.getThumbnailFromSyndeticsEXL(thumbnailLinks, doc);
             if (syndeticsEXL) {
                 return syndeticsEXL;
             }
@@ -121,8 +92,8 @@ export class PnxCard extends LitElement {
                 return google;
             }
 
-            if (this.defaultThumbnailUrl) {
-                return this.defaultThumbnailUrl
+            if (defaultThumbnailUrl) {
+                return defaultThumbnailUrl
             }
 
             throw 'no thumbnail';
@@ -132,10 +103,10 @@ export class PnxCard extends LitElement {
         }
     }
 
-    private async getThumbnailFromAlmaD() {
+    private async getThumbnailFromAlmaD(doc: any, vid: string, institution: string, almaDThumbnailBaseURL: string) {
         try {
-            if (this.isAlmaD()) {
-                const thumbnailLink = await this.getAlmaDigitalThumbnailForPnx();
+            if (this.isAlmaD(doc)) {
+                const thumbnailLink = await this.getAlmaDigitalThumbnailForPnx(doc, institution, vid, almaDThumbnailBaseURL);
                 return await this.resolveAlmaDigitalImage(thumbnailLink);
             } else {
                 return '';
@@ -169,13 +140,14 @@ export class PnxCard extends LitElement {
             return '';
         }
     }
-    private getAllButSpecificLinkFilterFactory( linkIdentifier:string) {
-        return (thumbnailLink : any) => {
+
+    private getAllButSpecificLinkFilterFactory(linkIdentifier: string) {
+        return (thumbnailLink: any) => {
             if (typeof thumbnailLink === 'string') {
                 return thumbnailLink.indexOf(linkIdentifier) === -1
             }
             let linkURL = thumbnailLink?.linkURL;
-            if(!linkURL) {
+            if (!linkURL) {
                 return false;
             }
             if (typeof linkURL === 'string') {
@@ -185,15 +157,15 @@ export class PnxCard extends LitElement {
         }
     }
 
-    private async getThumbnailFromSyndeticsEXL(thumbnailLinks: any, useUnbound?: boolean) {
+    private async getThumbnailFromSyndeticsEXL(thumbnailLinks: any, doc: any, useUnbound?: boolean) {
         const syndeticsLinks = thumbnailLinks.filter((link: any) => this.getSpecificLink(link, 'syndetics.com') || this.getSpecificLink(link, 'primo'));
 
         if (syndeticsLinks.length > 0 || !this.isPrimo()) {
-            const isbns = [...new Set((this.doc?.pnx?.addata?.isbn || []).concat(this.doc?.pnx?.addata?.eisbn || []))];
-            const issns = [...new Set((this.doc?.pnx?.addata?.issn || []).concat(this.doc?.pnx?.addata?.eissn || []))];
-            const upc = this.doc?.pnx?.addata?.upcid || [];
+            const isbns = [...new Set((doc?.pnx?.addata?.isbn || []).concat(doc?.pnx?.addata?.eisbn || []))];
+            const issns = [...new Set((doc?.pnx?.addata?.issn || []).concat(doc?.pnx?.addata?.eissn || []))];
+            const upc = doc?.pnx?.addata?.upcid || [];
 
-            const syntetixBaseUrl = `https://syndetics.com/index.php?client=primo&${useUnbound? 'type=unbound&' : ''}`;
+            const syntetixBaseUrl = `https://syndetics.com/index.php?client=primo&${useUnbound ? 'type=unbound&' : ''}`;
 
             for (const isbn of isbns) {
                 syndeticsLinks.push(this.createLinkObj(`${syntetixBaseUrl}isbn=${isbn}/lc.jpg`));
@@ -224,7 +196,7 @@ export class PnxCard extends LitElement {
         return '';
     }
 
-    public getSpecificLink(thumbnailLink: any, linkIdentifier: any) {
+    private getSpecificLink(thumbnailLink: any, linkIdentifier: any) {
 
         if (typeof thumbnailLink === 'string') {//todo change
             return thumbnailLink.indexOf(linkIdentifier) > -1;
@@ -265,7 +237,7 @@ export class PnxCard extends LitElement {
             const gbUrl = linkUrl.replace('&callback=updateGBSCover', '');
             const response = await fetch(gbUrl);
             const data = await response.text();
-            let jsonData = JSON.parse(data.substring(data.indexOf('{'),data.indexOf('}')+2));
+            let jsonData = JSON.parse(data.substring(data.indexOf('{'), data.indexOf('}') + 2));
             const keys = Object.keys(jsonData);
 
             if (keys.length > 0) {
@@ -289,7 +261,7 @@ export class PnxCard extends LitElement {
         return '';
     }
 
-    public async createPromiseOnlyFailOnAllFailedResolveFirstSuccess(promiseArray: any) {
+    private async createPromiseOnlyFailOnAllFailedResolveFirstSuccess(promiseArray: any) {
         const reflectedPromises = promiseArray.map(this.reflect);
         const results = await Promise.all(reflectedPromises);
 
@@ -300,15 +272,18 @@ export class PnxCard extends LitElement {
             return ('');
         }
     }
+
     private reflect(promise: any) {
         return promise.then(
-            (v: any) => ({ value: v, status: "resolved" }),
-            (e: any) => ({ error: e, status: "rejected" })
+            (v: any) => ({value: v, status: "resolved"}),
+            (e: any) => ({error: e, status: "rejected"})
         );
     }
+
     private showICPLicenseFooter() {
         return false;
     }
+
     private removeLabelFromLinkUrl(thumbnailLink: any) {
         let linkUrl = thumbnailLink.linkURL;
         if (linkUrl && linkUrl.includes('$$L')) {
@@ -316,46 +291,50 @@ export class PnxCard extends LitElement {
         }
     }
 
-    private isAlmaD() {
+    private isAlmaD(doc: any) {
         if (this.isPrimo()) {
             return false;
         }
-        if (this.doc.context === 'SP' && this.doc?.pnx?.control?.sourceid === 'alma' && this.doc.delivery?.electronicServices) {
-            return (this.doc.delivery.electronicServices.filter(
+        if (doc.context === 'SP' && doc?.pnx?.control?.sourceid === 'alma' && doc.delivery?.electronicServices) {
+            return (doc.delivery.electronicServices.filter(
                 (svc: any) => svc.serviceType === 'DIGITAL').length > 0);
         } else {
-            return this.doc.delivery['hasD'] === true || this.doc.delivery['digitalAuxiliaryMode'] === true;
+            return doc.delivery['hasD'] === true || doc.delivery['digitalAuxiliaryMode'] === true;
         }
     }
 
-    private async getAlmaDigitalThumbnailForPnx(): Promise<string> {
-        const mmsId = this.doc?.pnx?.control?.sourcerecordid?.[0];
-        const institutionCode = this.doc?.delivery?.recordInstitutionCode || this.institution;
-        let thumbnailUrl = this.getAlmaDigitalThumbnailUrl(mmsId);
+    private async getAlmaDigitalThumbnailForPnx(doc: any, institution: string, vid: string, almaDThumbnailBaseURL: string): Promise<string> {
+        const mmsId = doc?.pnx?.control?.sourcerecordid?.[0];
+        const institutionCode = doc?.delivery?.recordInstitutionCode || institution;
+        let thumbnailUrl = this.getAlmaDigitalThumbnailUrl(mmsId, almaDThumbnailBaseURL, institutionCode);
 
         // For shared D - find the correct link to the thumbnail
-        if (this.doc?.delivery?.sharedDigitalCandidates && this.doc.delivery.sharedDigitalCandidates.length > 0) {
-            const response = await fetch(`${this.almaDThumbnailBaseURL}/${institutionCode}/${mmsId}?vid=${this.vid}`, {method: 'POST', body: JSON.stringify(this.doc?.delivery?.sharedDigitalCandidates)});
+        if (doc?.delivery?.sharedDigitalCandidates && doc.delivery.sharedDigitalCandidates.length > 0) {
+            const response = await fetch(`${almaDThumbnailBaseURL}/${institutionCode}/${mmsId}?vid=${vid}`, {
+                method: 'POST',
+                body: JSON.stringify(doc?.delivery?.sharedDigitalCandidates)
+            });
             thumbnailUrl = (await response.json()).data as string;
-        } else if (this.doc?.pnx?.control?.isDedup) {
-            const response = await fetch(`${this.almaDThumbnailBaseURL}/${mmsId}?vid=${this.vid}`);
+        } else if (doc?.pnx?.control?.isDedup) {
+            const response = await fetch(`${almaDThumbnailBaseURL}/${mmsId}?vid=${vid}`);
             if (!(await response.json())?.data?.hasDigitalInventory) {
                 return '';
             }
         }
 
-        if (this.isEsploroRecord()) {
+        if (this.isEsploroRecord(doc)) {
             thumbnailUrl += '?calculateAccessRights=true';
         }
 
         return thumbnailUrl;
     }
 
-    private isEsploroRecord() {
-        return this.doc.pnx.control.sourceformat?.[0] === 'ESPLORO' || false;
+    private isEsploroRecord(doc: any) {
+        return doc.pnx.control.sourceformat?.[0] === 'ESPLORO' || false;
     }
-    private getAlmaDigitalThumbnailUrl(mmsId: any) {
-        return `${this.almaDThumbnailBaseURL}/${this.institution}/${mmsId}`
+
+    private getAlmaDigitalThumbnailUrl(mmsId: any, almaDThumbnailBaseURL: string, institution: string) {
+        return `${almaDThumbnailBaseURL}/${institution}/${mmsId}`
     }
 
     private resolveAlmaDigitalImage(thumbnailUrl: any) {
@@ -370,7 +349,7 @@ export class PnxCard extends LitElement {
         };
     }
 
-    public async getImageLink(imageUrl: string) {
+    private async getImageLink(imageUrl: string) {
         return new Promise((resolve, reject) => {
             if (!imageUrl) {
                 reject('');
@@ -406,6 +385,3 @@ export class PnxCard extends LitElement {
         return "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/syndetics.com/index.php?client="
     }
 }
-
-
-

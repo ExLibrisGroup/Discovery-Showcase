@@ -1,47 +1,28 @@
 import {html, LitElement} from "lit";
 import {until} from 'lit-html/directives/until.js';
-import {customElement, property, state} from "lit/decorators.js";
+import {customElement, property} from "lit/decorators.js";
 import {register} from 'swiper/element/bundle';
-import {PnxCard} from "./pnx-card";
+import {DocumentCard} from "./document-card";
 
 register();
 
 @customElement('search-carousel')
 export class SearchCarousel extends LitElement {
+    @property() documents: any[] = [];
     @property() searchUrl: string = '';
     @property() titleText: string | undefined;
     @property() titleLink: string | undefined;
     @property() defaultThumbnailUrl: string | undefined;
 
-    @state()
-    private data: any;
-    private viewId!: string | null;
-    private language!: string | null;
-    private scope!: string | null;
-    private tab!: string | null;
-    private institution!: string | null;
-    private host!: string | null;
-
     constructor() {
         super();
-        PnxCard;
+        DocumentCard
         //This is for the bundler so it packages the other components with this one
 
     }
 
     override connectedCallback() {
         super.connectedCallback();
-        this.performQuery();
-    }
-
-    async performQuery() {
-        try {
-            const response = await fetch(this.searchUrl);
-            this.data = response.json();
-        } catch (error) {
-        }
-
-
     }
 
     //disables shadow root for lit element otherwise swiper styling doesn't work properly
@@ -51,35 +32,27 @@ export class SearchCarousel extends LitElement {
 
 
     override render() {
-        if (!this.data) {
+        if (!this.documents) {
             return html``;
         }
-        const parsedUrl = new URL(this.searchUrl);
-        this.host = parsedUrl.host;
-        this.viewId = parsedUrl.searchParams.get("vid");
-        this.language = parsedUrl.searchParams.get("lang")
-        this.scope = parsedUrl.searchParams.get("scope")
-        this.tab = parsedUrl.searchParams.get("tab")
-        this.institution = parsedUrl.searchParams.get("inst")
 
         const titleHtml = this.getTitleHtml();
 
-
-        const docsPromise = this.data.then((data: any) => data.docs.map((doc: any) =>
-            html`<swiper-slide>
-                <pnx-card .doc="${doc}" .host="${this.host}" .institution="${this.institution}" .vid="${this.viewId}" 
-                          .language="${this.language}" .scope="${this.scope}" 
-                          .tab="${this.tab}" .defaultThumbnailUrl="${this.defaultThumbnailUrl}">
-                </pnx-card>
-            </swiper-slide>`))
+        const docsPromise = this.documents.map((doc: any) =>
+            html`
+                <swiper-slide>
+                    <document-card .thumbnail="${doc.thumbnail}" .docTitle="${doc.title}" 
+                                   .publisher="${doc.publisher}" .deepLink="${doc.deepLink}" >
+                    </document-card>
+                </swiper-slide>`)
 
         return html`
-            
+
             <div class="gallery-container">
                 ${titleHtml}
                 <button class="swiper-button-prev"></button>
                 <swiper-container init="false" class="swiper">
-                         ${until(docsPromise, ``)}
+                    ${until(docsPromise, ``)}
                 </swiper-container>
                 <!-- Navigation buttons -->
                 <button class="swiper-button-next"></button>
@@ -255,7 +228,8 @@ export class SearchCarousel extends LitElement {
 
     private getTitleHtml() {
         if (this.titleText) {
-            return this.titleLink ? html`<h2><a target="_blank" href="${this.titleLink}">${this.titleText}</a></h2>` : html`<h2>${this.titleText}</h2>`
+            return this.titleLink ? html`<h2><a target="_blank" href="${this.titleLink}">${this.titleText}</a>
+            </h2>` : html`<h2>${this.titleText}</h2>`
         }
         return html``;
     }
