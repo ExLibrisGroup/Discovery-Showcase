@@ -52,7 +52,7 @@ export class SnxSearchCarousel extends LitElement {
                 <div>Error Loading Carousel Widget!!</div>`;
         }
 
-        const genericDocs = this.snxService.transformSnxToGeneric(this.documents, this.defaultThumbnailUrl);
+        const genericDocs = this.snxService.transformSnxToGeneric(this.documents, this.defaultThumbnailUrl, this.searchUrl);
 
         return html`
             <search-carousel

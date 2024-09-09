@@ -129,7 +129,7 @@ Run this command in order to create a minified and bundled file:
 ```bash
 rollup -c
 ```
-It will create a bundled js file called discovery-showcase.js inside the dist folder
+It will create bundled js files called pnx-discovery-showcase.bundled.js (for primo users) and snx-discovery-showcase.bundled.js (for summon users) inside the dist folder. Separate bundles are created to minimize the size of both of them, and you likely only need one or the other depending on your use case.
 
 ## More information
 

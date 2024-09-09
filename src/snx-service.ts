@@ -4,7 +4,7 @@ export class SnxService {
 
     private imageService: ImageService = new ImageService();
 
-    public transformSnxToGeneric(docs: any[], defaultThumbnailUrl: string) {
+    public transformSnxToGeneric(docs: any[], defaultThumbnailUrl: string, searchUrl: string) {
         const genericDocs = [];
 
         for (const doc of docs) {
@@ -12,7 +12,7 @@ export class SnxService {
                 title: doc?.title.replace(/<\/?[^>]+(>|$)/g, '') ?? '', // Remove HTML tags, including <mark> tags
                 publisher: doc?.publisher ?? '',
                 thumbnail: this.getThumbnailLinks(doc, defaultThumbnailUrl),
-                deepLink: doc?.link ?? ''
+                deepLink: this.getDeeplink(doc, searchUrl)
             }
             genericDocs.push(genericDoc);
         }
@@ -30,6 +30,13 @@ export class SnxService {
         } catch (error) {
             throw error; // Rethrow the error for higher-level error handling
         }
+    }
+
+    private getDeeplink(doc: any, searchUrl: string) {
+        const searchUrlParts = searchUrl.split('/api');
+        const summonDomain = searchUrlParts[0];
+        const canCreateBookmark = summonDomain?.includes('summon') && doc?.bookmark || false
+        return canCreateBookmark ? `${summonDomain}/#!/search?bookMark=${doc.bookmark}` : doc?.link || '';
     }
 
 }
