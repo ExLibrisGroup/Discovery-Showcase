@@ -126,6 +126,7 @@ export class SearchCarousel extends LitElement {
                         height: 100%;
                         display: block;
                         font-size: 14px;
+                        font-style: normal;
                         color: #000;
                         padding: 0;
                         --width-param: 700px;
