@@ -1,17 +1,18 @@
+import { ImageService } from "./image-service";
+
 export class SnxService {
 
-    public transformSnxToGeneric(docs: any[], defaultThumbnailUrl: string) {
+    private imageService: ImageService = new ImageService();
+
+    public transformSnxToGeneric(docs: any[], defaultThumbnailUrl: string, searchUrl: string) {
         const genericDocs = [];
-
-        // const parsedUrl = new URL(searchUrl);
-
 
         for (const doc of docs) {
             const genericDoc = {
-                title: doc?.title ?? '',
+                title: doc?.title.replace(/<\/?[^>]+(>|$)/g, '') ?? '', // Remove HTML tags, including <mark> tags
                 publisher: doc?.publisher ?? '',
-                thumbnail: this.getThumbnailUrl(doc, defaultThumbnailUrl),
-                deepLink: this.getDeeplink(doc)
+                thumbnail: this.getThumbnailLinks(doc, defaultThumbnailUrl),
+                deepLink: this.getDeeplink(doc, searchUrl)
             }
             genericDocs.push(genericDoc);
         }
@@ -19,17 +20,23 @@ export class SnxService {
     }
 
 
-    private async getThumbnailUrl(doc: any, defaultThumbnailUrl: string) {
-        return doc?.thumbnail_large ?? doc.thumbnail_medium ?? doc.thumbnail_small ?? defaultThumbnailUrl;
+    private async getThumbnailLinks(doc: any, defaultThumbnailUrl: string) {
+        const thumbnailLink = doc?.thumbnail_large ?? doc.thumbnail_medium ?? doc.thumbnail_small ?? defaultThumbnailUrl;
+        try {
+            if (thumbnailLink) {
+                return await this.imageService.getImageLink(thumbnailLink);
+            }
+            throw 'no thumbnail';
+        } catch (error) {
+            throw error; // Rethrow the error for higher-level error handling
+        }
     }
 
-    getAlmaDThumbnailBaseUrl(doc: any) {
-        const parsedUrl = new URL(doc["@id"]);
-        return `${parsedUrl.origin}/view/delivery/thumbnail`
-    }
-
-    private getDeeplink(doc: any) {
-        return doc?.link ?? '';
+    private getDeeplink(doc: any, searchUrl: string) {
+        const searchUrlParts = searchUrl.split('/api');
+        const summonDomain = searchUrlParts[0];
+        const canCreateBookmark = summonDomain?.includes('summon') && doc?.bookmark || false
+        return canCreateBookmark ? `${summonDomain}/#!/search?bookMark=${doc.bookmark}` : doc?.link || '';
     }
 
 }

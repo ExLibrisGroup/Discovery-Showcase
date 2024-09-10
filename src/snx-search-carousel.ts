@@ -9,8 +9,8 @@ register();
 @customElement('snx-search-carousel')
 export class SnxSearchCarousel extends LitElement {
     @property() searchUrl: string = '';
-    @property() titleText: string | undefined;
-    @property() titleLink: string | undefined;
+    @property() titleText: string = 'Search Results';
+    @property() titleLink: string = '';
     @property() defaultThumbnailUrl: string = '';
 
     @state()
@@ -52,14 +52,13 @@ export class SnxSearchCarousel extends LitElement {
                 <div>Error Loading Carousel Widget!!</div>`;
         }
 
-        const genericDocs = this.snxService.transformSnxToGeneric(this.documents, this.defaultThumbnailUrl);
+        const genericDocs = this.snxService.transformSnxToGeneric(this.documents, this.defaultThumbnailUrl, this.searchUrl);
 
         return html`
             <search-carousel
                     .documents="${genericDocs}"
                     titleText="${this.titleText}"
                     titleLink="${this.titleLink}"
-                    defaultThumbnailUrl="${this.defaultThumbnailUrl}"
                     searchUrl="${this.searchUrl}">
             </search-carousel>`
     }

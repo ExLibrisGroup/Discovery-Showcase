@@ -1,5 +1,8 @@
+import { ImageService } from "./image-service";
 
 export class PnxService {
+
+    private imageService: ImageService = new ImageService();
 
     public transformPnxToGeneric(docs: any[], searchUrl: string, defaultThumbnailUrl: string) {
         const genericDocs = [];
@@ -126,7 +129,7 @@ export class PnxService {
         if (otherThumbnailLinks.length) {
             const promiseArray = otherThumbnailLinks.map((link: any) => {
                 this.removeLabelFromLinkUrl(link);
-                return this.getImageLink(link.linkURL);
+                return this.imageService.getImageLink(link.linkURL);
             });
 
             try {
@@ -215,7 +218,7 @@ export class PnxService {
         let syndeticsProxy = this.getSyndetixWithProxy();
         let promiseArray = syndeticsLinks.map((link: any) => {
             const imageUrl = link.linkURL.replace('https://syndetics.com/index.php?client=', syndeticsProxy);
-            return this.getImageLink(imageUrl);
+            return this.imageService.getImageLink(imageUrl);
         })
         return await this.createPromiseOnlyFailOnAllFailedResolveFirstSuccess(promiseArray);
     }
@@ -247,7 +250,7 @@ export class PnxService {
                     const returnedLink = {
                         displayLabel: 'thumbnail',
                         linkType: 'http://purl.org/pnx/linkType/thumbnail',
-                        linkURL: this.handleLink(thumbnailUrl),
+                        linkURL: this.imageService.handleLink(thumbnailUrl),
                     };
                     return returnedLink.linkURL;
                 }
@@ -338,7 +341,7 @@ export class PnxService {
     }
 
     private resolveAlmaDigitalImage(thumbnailUrl: any) {
-        return this.getImageLink(thumbnailUrl);
+        return this.imageService.getImageLink(thumbnailUrl);
     }
 
     private createLinkObj(url: any) {
@@ -347,38 +350,6 @@ export class PnxService {
             linkType: 'http://purl.org/pnx/linkType/thumbnail',
             linkURL: url
         };
-    }
-
-    private async getImageLink(imageUrl: string) {
-        return new Promise((resolve, reject) => {
-            if (!imageUrl) {
-                reject('');
-                return;
-            }
-
-            const image = new Image();
-            image.onload = () => {
-                if (image.width > 1) {
-                    resolve(imageUrl);
-                } else {
-                    reject('');
-                }
-            };
-
-            image.onerror = () => {
-                reject('');
-            };
-
-            image.src = this.handleLink(imageUrl);
-        });
-    }
-
-    private handleLink(link: string) {
-        let newLink = link;
-        if (window.location.protocol === 'https:') {
-            newLink = link.replace('http://', 'https://');
-        }
-        return newLink;
     }
 
     private getSyndetixWithProxy() {
