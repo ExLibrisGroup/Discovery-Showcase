@@ -188,7 +188,7 @@ export class SearchCarousel extends LitElement {
                             const currentLabel = activeSlide.getAttribute('aria-label') || '';
 
                             // Append dynamic content, e.g., the current slide number or a custom message
-                            const additionalText = activeSlide?.doc?.pnx?.display?.title?.[0] + activeSlide?.doc?.pnx?.display?.publisher?.[0] ?? '';
+                            const additionalText = (activeSlide as any)?.doc?.pnx?.display?.title?.[0] + (activeSlide as any)?.doc?.pnx?.display?.publisher?.[0] ?? '';
 
                             const labelToReturn = (currentLabel.includes(additionalText)) ? (`${currentLabel}`) : (`${currentLabel} - ${additionalText}`);
 
