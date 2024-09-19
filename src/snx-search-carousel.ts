@@ -29,6 +29,13 @@ export class SnxSearchCarousel extends LitElement {
         this.performQuery();
     }
 
+    override updated(changedProperties: any) {
+        if (changedProperties.has('searchUrl')) {
+          console.log('searchUrl changed:', this.searchUrl);
+          this.performQuery();
+        }
+      }
+
     async performQuery() {
         try {
             const response = await fetch(this.searchUrl);
