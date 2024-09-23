@@ -28,6 +28,9 @@ export class SnxService {
             }
             throw 'no thumbnail';
         } catch (error) {
+            if(thumbnailLink !== defaultThumbnailUrl) { // If the thumbnail link is not the default thumbnail, try to get the default thumbnail
+                return await this.imageService.getImageLink(defaultThumbnailUrl);
+            }
             throw error; // Rethrow the error for higher-level error handling
         }
     }
