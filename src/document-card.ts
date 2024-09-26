@@ -19,8 +19,7 @@ export class DocumentCard extends LitElement {
 
     override render() {
         const imagePlaceHolder = html`
-            <div style="background-color: ${this.getRandomColor()}"
-                 class="image-place-holder icon.sprite-m.format-sprite.format--generic_36px"></div>`;
+            <img src="images/format/-generic_36px.png" alt="" class="image-placeHolder">`;
         const imgPromise = this.thumbnail.then((url: string) => {
             console.log(`getImageUrl returned ${url}`)
             return html`
@@ -39,14 +38,14 @@ export class DocumentCard extends LitElement {
         `
     }
 
-    private getRandomColor() {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    }
+    // private getRandomColor() {
+    //     const letters = '0123456789ABCDEF';
+    //     let color = '#';
+    //     for (let i = 0; i < 6; i++) {
+    //         color += letters[Math.floor(Math.random() * 16)];
+    //     }
+    //     return color;
+    // }
 }
 
 
