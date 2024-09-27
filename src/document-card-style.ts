@@ -38,10 +38,18 @@ export const styles = css`
         color: var(--description-font-color);
     }
 
-    img, .image-place-holder {
+    img {
         height: var(--image-height);
         display: block;
         object-fit: contain;
+    }
+
+    .image-placeHolder {
+        height: var(--image-height);
+        display: block;
+        object-fit: contain;
+        z-index: 1;
+        opacity: 0.5;
     }
 `;
 
