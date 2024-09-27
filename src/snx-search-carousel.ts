@@ -3,6 +3,7 @@ import {customElement, property, state} from "lit/decorators.js";
 import {register} from 'swiper/element/bundle';
 import {SearchCarousel} from "./search-carousel";
 import {SnxService} from "./snx-service";
+import { Externals } from "./Externals";
 
 register();
 
@@ -16,6 +17,7 @@ export class SnxSearchCarousel extends LitElement {
     @state()
     private documents: any[] = [];
     private snxService: SnxService = new SnxService();
+    private externals: Externals = new Externals(window);
 
     constructor() {
         super();
@@ -36,16 +38,19 @@ export class SnxSearchCarousel extends LitElement {
         }
       }
 
-    async performQuery() {
+      async performQuery() {
         try {
-            const response = await fetch(this.searchUrl);
-            const data = await response.json();  // Await the JSON parsing
-            this.documents = data.documents;
+            const data = await this.externals.jsonp(this.searchUrl);
+            
+            // Assume `documents` is part of the returned data
+            this.documents = data.documents || [];
         } catch (error) {
+            console.error("An error occurred while fetching documents:", error);
         }
-
+    
         console.log("here snx: ", this.documents);
     }
+    
 
     //disables shadow root for lit element otherwise swiper styling doesn't work properly
     protected override createRenderRoot() {
