@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="utf-8"/>
     <title>&lt;my-element> Demo</title>
-    <script type="module" src="../search-carousel.js"></script>
+    <script type="module" src="../pnx-search-carousel.js"></script>
+    <script type="module" src="../snx-search-carousel.js"></script>
 
-  </head>
-  <body>
+</head>
+<body>
 
-  <search-carousel titleText="test!" titleLink="https://www.google.com" defaultThumbnailUrl="../dist/default.png"
-          searchUrl="http://il-urmsand01.corp.exlibrisgroup.com:1801/primaws/rest/external/pnxs?acTriggered=false&blendFacetsSeparately=false&citationTrailFilterByAvailability=true&disableCache=false&getMore=0&inst=TRAINING_1_INST&isCDSearch=false&lang=en&limit=10&newspapersActive=false&newspapersSearch=false&offset=0&otbRanking=false&pcAvailability=false&q=any,contains,history&qExclude=&qInclude=&rapido=false&refEntryActive=false&rtaLinks=true&scope=MyInst_and_CI&searchInFulltextUserSelection=true&skipDelivery=N&sort=rank&tab=Everything&vid=TRAINING_1_INST:Auto1">
+<pnx-search-carousel titleText="Primo Carousel Test!"
+                     titleLink="https://www.google.com"
+                     defaultThumbnailUrl="../dist/default.png"
+                     searchUrl="https://na02.primo.exlibrisgroup.com/primaws/rest/external/pnxs?acTriggered=false&blendFacetsSeparately=false&citationTrailFilterByAvailability=true&disableCache=false&getMore=0&inst=EXLDEV1_INST&isCDSearch=false&lang=en&limit=10&newspapersActive=true&newspapersSearch=false&offset=0&otbRanking=false&pcAvailability=true&q=any,contains,artificial+intelligence&qExclude=&qInclude=&rapido=false&refEntryActive=true&rtaLinks=true&scope=MyInstitution&searchInFulltextUserSelection=true&skipDelivery=Y&sort=rank&tab=LibraryCatalog&vid=EXLDEV1_INST:Alma">
+</pnx-search-carousel>
 
-</search-carousel>
-  </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<snx-search-carousel titleText="Summon Carousel Test!"
+                     titleLink="https://www.google.com"
+                     defaultThumbnailUrl="../dist/default.png"
+                     searchUrl="https://demo.summon.serialssolutions.com/api/search?screen_res=W1486H382&__refererURL=&pn=1&ps=10&ho=t&include.ft.matches=t&fvf%5B%5D=IsOpenAccess%2Ctrue%2Cf&fvf%5B%5D=Language%2CEnglish%2Cf&l=en&q=artificial%20intelligence&print.books.only=true">
+</snx-search-carousel>
+</body>
 
 </html>
