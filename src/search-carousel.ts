@@ -21,6 +21,9 @@ export class SearchCarousel extends LitElement {
     private tab!: string | null;
     private institution!: string | null;
     private host!: string | null;
+    private originalAriaLabelList: string[] = [];
+    private firstLoad = true;
+    private isNeedToChangeAriaLabel = false;
 
     constructor() {
         super();
@@ -66,36 +69,40 @@ export class SearchCarousel extends LitElement {
 
 
         const docsPromise = this.data.then((data: any) => data.docs.map((doc: any) =>
-            html`<swiper-slide>
-                <pnx-card .doc="${doc}" .host="${this.host}" .institution="${this.institution}" .vid="${this.viewId}" 
-                          .language="${this.language}" .scope="${this.scope}" 
-                          .tab="${this.tab}" .defaultThumbnailUrl="${this.defaultThumbnailUrl}">
-                </pnx-card>
-            </swiper-slide>`))
+            html`
+                <swiper-slide .doc="${doc}">
+                    <pnx-card .doc="${doc}" .host="${this.host}" .institution="${this.institution}"
+                              .vid="${this.viewId}"
+                              .language="${this.language}" .scope="${this.scope}"
+                              .tab="${this.tab}" .defaultThumbnailUrl="${this.defaultThumbnailUrl}">
+                    </pnx-card>
+                </swiper-slide>`))
 
         return html`
-            
+
             <div class="gallery-container">
                 ${titleHtml}
-                <button class="swiper-button-prev"></button>
+                <button @click="${this.activateChangeAriaLabel}" class="swiper-button-prev"></button>
                 <swiper-container init="false" class="swiper">
-                         ${until(docsPromise, ``)}
+                    ${until(docsPromise, ``)}
                 </swiper-container>
                 <!-- Navigation buttons -->
-                <button class="swiper-button-next"></button>
-                <div class="swiper-pagination"></div>
+                <button @click="${this.activateChangeAriaLabel}" class="swiper-button-next"></button>
+                <div  @click="${this.activateChangeAriaLabel}" class="swiper-pagination"></div>
             </div>
         `;
     }
 
     protected override updated() {
-        const swiperEl = this.renderRoot.querySelector('swiper-container');
+        const swiperEl = this.renderRoot.querySelector('swiper-container') as HTMLElement & { swiper: any };
         const nextEl = this.renderRoot.querySelector('.swiper-button-next');
         const prevEl = this.renderRoot.querySelector('.swiper-button-prev');
         const paginationEl = this.renderRoot.querySelector('.swiper-pagination');
         if (!swiperEl) {
             return;
         }
+
+
         const params = {
             // inject same style to shadow DOM
             effect: "coverflow",
@@ -145,7 +152,53 @@ export class SearchCarousel extends LitElement {
                 prevSlideMessage: 'Previous slide',
                 nextSlideMessage: 'Next slide',
                 firstSlideMessage: 'This is the first slide',
-                lastSlideMessage: 'This is the last slide',
+                lastSlideMessage: 'This is the last slide'
+            },
+            on: {
+                // This event triggers when the slide changes
+                slideChange: () => {
+                    if (this.isNeedToChangeAriaLabel) {
+                        const slides = swiperEl.querySelectorAll('swiper-slide') as NodeListOf<HTMLElement>;
+                        const activeSlide = slides[swiperEl.swiper.activeIndex];
+
+                        // Reset all slides' aria-live to 'polite'
+                        slides.forEach((slide: HTMLElement, index: number) => {
+
+                            // This is keep the original default aria-label
+                            if (this.firstLoad) {
+                                const currentLabel = slide.getAttribute('aria-label') || '';
+                                this.originalAriaLabelList.push(currentLabel);
+                            }
+
+                            // Get the current aria-label
+                            slide.setAttribute('aria-live', 'off');
+                            if (index !== swiperEl.swiper.activeIndex) {
+                                slide.setAttribute('aria-label', this.originalAriaLabelList[index]);
+                            }
+                        });
+
+                        // This boolean is for the first initialization of original aria-label list
+                        this.firstLoad = false;
+
+                        // Set the active slide's aria-live to 'assertive'
+                        if (activeSlide) {
+                            activeSlide.setAttribute('aria-live', 'assertive');
+
+                            // Get the current aria-label
+                            const currentLabel = activeSlide.getAttribute('aria-label') || '';
+
+                            // Append dynamic content, e.g., the current slide number or a custom message
+                            const additionalText = (activeSlide as any)?.doc?.pnx?.display?.title?.[0] + (activeSlide as any)?.doc?.pnx?.display?.publisher?.[0] ?? '';
+
+                            const labelToReturn = (currentLabel.includes(additionalText)) ? (`${currentLabel}`) : (`${currentLabel} - ${additionalText}`);
+
+                            // Update the aria-label attribute with the new text
+                            activeSlide.setAttribute('aria-label', labelToReturn);
+                        }
+
+                        this.isNeedToChangeAriaLabel = false;
+                    }
+                }
             },
             injectStyles: [
                 `
@@ -241,7 +294,7 @@ export class SearchCarousel extends LitElement {
                         background-color: black;
                     }
                     
-                    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+                    .swiper-pagination-horizontalswiper-pagination-bullets .swiper-pagination-bullet{
                         --swiper-pagination-bullet-horizontal-gap: 8px;
                     }
             `,
@@ -253,9 +306,14 @@ export class SearchCarousel extends LitElement {
         swiperEl.initialize();
     }
 
+    private activateChangeAriaLabel() {
+        this.isNeedToChangeAriaLabel = true;
+    }
+
     private getTitleHtml() {
         if (this.titleText) {
-            return this.titleLink ? html`<h2><a target="_blank" href="${this.titleLink}">${this.titleText}</a></h2>` : html`<h2>${this.titleText}</h2>`
+            return this.titleLink ? html`<h2><a target="_blank" href="${this.titleLink}">${this.titleText}</a>
+            </h2>` : html`<h2>${this.titleText}</h2>`
         }
         return html``;
     }
